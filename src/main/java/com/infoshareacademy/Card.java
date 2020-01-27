@@ -25,7 +25,7 @@ public class Card {
     }
 
     public void setSUITSFromUserInput(String suits) {
-        switch (suits) {
+        switch (suits.toUpperCase()) {
             case "DIAMONDS": {
                 setSuits(SUITS.DIAMONDS);
                 break;
@@ -46,7 +46,7 @@ public class Card {
     }
 
     public void setRANKSFromUserInput(String ranks) {
-        switch (ranks) {
+        switch (ranks.toUpperCase()) {
             case "JACK": {
                 setRanks(RANKS.JACK);
                 break;
