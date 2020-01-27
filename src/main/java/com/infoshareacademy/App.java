@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class App {
     public static void main( String[] args ) {
 
-        //ExerciseB
+        Card card = new Card();
+        card.setSuits(SUITS.DIAMONDS);
+        card.setRanks(RANKS.JACK);
+        System.out.println(card.description());
+
+       /* //ExerciseB
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
@@ -21,7 +26,7 @@ public class App {
 
 
         double result = calculator.calculate(calculator.num1,calculator.num2,calculator.sign);
-        System.out.println(calculator.num1 + calculator.sign + calculator.num2 + "="+ result);
+        System.out.println(calculator.num1 + calculator.sign + calculator.num2 + "="+ result);*/
 
 
         /*  System.out.println("Exercise A");
