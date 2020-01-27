@@ -6,8 +6,18 @@ public class App {
     public static void main( String[] args ) {
 
         Card card = new Card();
-        card.setSuits(SUITS.DIAMONDS);
-        card.setRanks(RANKS.JACK);
+
+        System.out.println("Enter Cards suits DIAMONDS/CLUBS/HEARTS/SPADES");
+        Scanner scanner = new Scanner(System.in);
+        String suits = scanner.nextLine();
+        card.setSUITSFromUserInput(suits);
+
+
+        System.out.println("Enter Cards suits JACK/ACE/KING/QUEEN");
+        Scanner scanner1 = new Scanner(System.in);
+        String ranks = scanner.nextLine();
+        card.setRANKSFromUserInput(ranks);
+
         System.out.println(card.description());
 
        /* //ExerciseB

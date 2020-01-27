@@ -6,7 +6,7 @@ public class Calculator {
     String  sign;
 
     public double calculate(double num1, double num2, String sign) {
-        switch (sign) {
+        switch (this.sign) {
             case "+": {
                 return this.num1 + this.num2;
             }
