@@ -1,42 +1,63 @@
 package com.infoshareacademy;
 
-import com.infoshareacademy.zadanie1.ZadanieB;
+import com.infoshareacademy.zadanie1C.Card;
+import com.infoshareacademy.zadanie1C.Ranks;
+import com.infoshareacademy.zadanie1C.Suits;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
 
-    //zmienna oznaczająca ostateczne uzyskanie wyniku i zakonczenie działania kalkulatora
-    public static Boolean isFinished = false;
-
     public static void main(String[] args) {
 
-// zbieranie danych dla metody
+        //tworzy kartę losując rank i suit
+        Card randomCard = new Card(Card.getRandomSuit(), Card.getRandomRank());
+        Card randomCard1 = new Card(Card.getRandomSuit(), Card.getRandomRank());
+        Card randomCard2 = new Card(Card.getRandomSuit(), Card.getRandomRank());
 
-        while (!isFinished) {
+        //printuje wyniki
+        System.out.println("---------------------------------");
+        System.out.println("Losowo wygenerowane karty: ");
+        System.out.println(randomCard.getDescription(randomCard));
+        System.out.println(randomCard.getDescription(randomCard1));
+        System.out.println(randomCard.getDescription(randomCard2));
+        System.out.println("--------------------------------");
+
+
+        //umozliwia użytkownikowi stworzenie własnej karty
+
+        //pozwala skorygować błędy użytkownikowi
+        Boolean isPicked = null;
+        while (isPicked == null) {
+
+            //wybór koloru karty ze skanera
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Stwórz swoją własną kartę - wybierz kolor karty wpisując literę odpowiadającą danej opcji:");
+            System.out.println("c - clubs");
+            System.out.println("d - diamonds");
+            System.out.println("h - hearts");
+            System.out.println("s - spades");
+            String customSuitScan = scanner.nextLine();
+            Suits customSuit = Card.createCustomSuit(customSuitScan);
+
+            //wybor figury karty ze skanera
+            System.out.println("--------------------------------");
+            System.out.println("wybierz figurę karty wpisując literę odpowiadającą danej opcji:");
+            System.out.println("a - ace");
+            System.out.println("k - king");
+            System.out.println("q - queen");
+            System.out.println("j - jack");
+            String customRankScan = scanner.nextLine();
+            Ranks customRank = Card.createCustomRank(customRankScan);
+
+            // Przywraca program do działania po błędzie użytkownika
             try {
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Podaj pierwszą liczbę:");
-                long firstNumber = scanner.nextLong();
-                System.out.println("Podaj drugą liczbę:");
-                long secondNumber = scanner.nextLong();
-                String nothing = scanner.nextLine();
-                System.out.println("Podaj symbol działania (+,-,* lub /)");
-                String symbol = scanner.nextLine();
-
-// wywołanie metody i zabezpieczenie przed wprowadzeniem liczb zmiennoprzecinkowych i znaków innych od liczby
-
-                ZadanieB.calculateTwoNumbersFromScanner(firstNumber, secondNumber, symbol);
-
-            } catch (InputMismatchException e) {
-                System.out.println("Wprowadzono niepoprawne dane - wprowadzaj tylko liczby całkowite ");
+                Card customCard = new Card(customSuit, customRank);
+                System.out.println(customCard.getDescription(customCard));
+                isPicked = true;
             } catch (Exception e) {
-                System.out.println("Coś poszło nie tak - skontaktuj się z twórcą kalkulatora :D ");
-                break;
+                System.out.println("Wybrano błędne literki, spróbuj jeszcze raz ");
             }
-
-
         }
     }
 }
