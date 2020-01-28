@@ -1,4 +1,4 @@
-package com.infoshareacademy.zadanie1C;
+package com.infoshareacademy.zadanie1.ZadanieC;
 
 public enum Ranks {
     ACE,

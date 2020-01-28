@@ -1,8 +1,8 @@
 package com.infoshareacademy;
 
-import com.infoshareacademy.zadanie1C.Card;
-import com.infoshareacademy.zadanie1C.Ranks;
-import com.infoshareacademy.zadanie1C.Suits;
+import com.infoshareacademy.zadanie1.ZadanieC.Card;
+import com.infoshareacademy.zadanie1.ZadanieC.Ranks;
+import com.infoshareacademy.zadanie1.ZadanieC.Suits;
 
 import java.util.Scanner;
 
