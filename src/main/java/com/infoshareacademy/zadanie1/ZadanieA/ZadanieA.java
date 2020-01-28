@@ -1,6 +1,6 @@
 package com.infoshareacademy.zadanie1.ZadanieA;
 
-public class Zadanie_A {
+public class ZadanieA {
 
     public static char returnFirstLetterFromScanner(String string) {
 
