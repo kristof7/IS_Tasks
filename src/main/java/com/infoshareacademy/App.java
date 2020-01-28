@@ -1,5 +1,6 @@
 package com.infoshareacademy;
 
+import com.infoshareacademy.zadanie1.ZadanieA.Zadanie_A;
 import com.infoshareacademy.zadanie1.ZadanieC.Card;
 import com.infoshareacademy.zadanie1.ZadanieC.Ranks;
 import com.infoshareacademy.zadanie1.ZadanieC.Suits;
@@ -9,6 +10,34 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+
+
+
+        /* Uruchomienie zadania 1A */
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wprowadź ciąg znaków, a ja zwrócę pierwszą występującą LITERĘ w tym ciągu:");
+        String word = scanner.nextLine();
+        System.out.println(word + " - " + Zadanie_A.returnFirstLetterFromScanner(word));
+
+
+
+
+        /*Uruchomienie zadania 1B*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Uruchomienie zadania 1C*/
 
         //tworzy kartę losując rank i suit
         Card randomCard = new Card(Card.getRandomSuit(), Card.getRandomRank());
@@ -31,13 +60,13 @@ public class App {
         while (isPicked == null) {
 
             //wybór koloru karty ze skanera
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner1 = new Scanner(System.in);
             System.out.println("Stwórz swoją własną kartę - wybierz kolor karty wpisując literę odpowiadającą danej opcji:");
             System.out.println("c - clubs");
             System.out.println("d - diamonds");
             System.out.println("h - hearts");
             System.out.println("s - spades");
-            String customSuitScan = scanner.nextLine();
+            String customSuitScan = scanner1.nextLine();
             Suits customSuit = Card.createCustomSuit(customSuitScan);
 
             //wybor figury karty ze skanera
@@ -47,7 +76,7 @@ public class App {
             System.out.println("k - king");
             System.out.println("q - queen");
             System.out.println("j - jack");
-            String customRankScan = scanner.nextLine();
+            String customRankScan = scanner1.nextLine();
             Ranks customRank = Card.createCustomRank(customRankScan);
 
             // Przywraca program do działania po błędzie użytkownika
