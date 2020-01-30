@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main( String[] args ) {
 
-        Card card = new Card();
+       /* Card card = new Card();
 
         System.out.println("Enter Cards suits DIAMONDS/CLUBS/HEARTS/SPADES");
         Scanner scanner = new Scanner(System.in);
@@ -18,25 +18,25 @@ public class App {
         String ranks = scanner.nextLine();
         card.setRANKSFromUserInput(ranks);
 
-        System.out.println(card.description());
+        System.out.println(card.description());*/
 
-       /* //ExerciseB
+        //ExerciseB
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
         System.out.println("Please enter first number:");
-        calculator.num1 = scanner.nextDouble();
+        double num1 = scanner.nextDouble();
 
         System.out.println("Please enter second number:");
-        calculator.num2 = scanner.nextDouble();
+        double num2 = scanner.nextDouble();
 
         System.out.println("What action do you perform: +,-,/,*?");
         Scanner scanner1 = new Scanner(System.in);
-        calculator.sign = scanner1.nextLine();
+        String sign = scanner1.nextLine();
 
 
-        double result = calculator.calculate(calculator.num1,calculator.num2,calculator.sign);
-        System.out.println(calculator.num1 + calculator.sign + calculator.num2 + "="+ result);*/
+        double result = calculator.calculate(num1, num2, sign);
+        System.out.println(num1 + sign + num2 + "="+ result);
 
 
         /*  System.out.println("Exercise A");

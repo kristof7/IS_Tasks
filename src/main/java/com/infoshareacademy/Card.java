@@ -1,45 +1,45 @@
 package com.infoshareacademy;
 
 public class Card {
-    private SUITS suits;
-    private RANKS ranks;
+    private Suit suit;
+    private Rank rank;
 
-    public SUITS getSuits() {
-        return suits;
+    public Suit getSuit() {
+        return suit;
     }
 
-    public void setSuits(SUITS suits) {
-        this.suits = suits;
+    public void setSuit(Suit suit) {
+        this.suit = suit;
     }
 
-    public RANKS getRanks() {
-        return ranks;
+    public Rank getRanks() {
+        return rank;
     }
 
-    public void setRanks(RANKS ranks) {
-        this.ranks = ranks;
+    public void setRanks(Rank rank) {
+        this.rank = rank;
     }
 
     public String description() {
-        return suits + "-" + ranks;
+        return suit + "-" + rank;
     }
 
     public void setSUITSFromUserInput(String suits) {
         switch (suits.toUpperCase()) {
             case "DIAMONDS": {
-                setSuits(SUITS.DIAMONDS);
+                setSuit(Suit.DIAMONDS);
                 break;
             }
             case "CLUBS": {
-                setSuits(SUITS.CLUBS);
+                setSuit(Suit.CLUBS);
                 break;
             }
             case "HEARTS": {
-                setSuits(SUITS.HEARTS);
+                setSuit(Suit.HEARTS);
                 break;
             }
             case "SPADES": {
-                setSuits(SUITS.SPADES);
+                setSuit(Suit.SPADES);
                 break;
             }
         }
@@ -48,19 +48,19 @@ public class Card {
     public void setRANKSFromUserInput(String ranks) {
         switch (ranks.toUpperCase()) {
             case "JACK": {
-                setRanks(RANKS.JACK);
+                setRanks(Rank.JACK);
                 break;
             }
             case "ACE": {
-                setRanks(RANKS.ACE);
+                setRanks(Rank.ACE);
                 break;
             }
             case "KING": {
-                setRanks(RANKS.KING);
+                setRanks(Rank.KING);
                 break;
             }
             case "QUEEN": {
-                setRanks(RANKS.QUEEN);
+                setRanks(Rank.QUEEN);
                 break;
             }
         }

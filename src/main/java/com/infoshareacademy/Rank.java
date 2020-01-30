@@ -1,6 +1,6 @@
 package com.infoshareacademy;
 
-public enum RANKS {
+public enum Rank {
     ACE,
     KING,
     QUEEN,

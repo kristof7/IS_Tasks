@@ -1,6 +1,6 @@
 package com.infoshareacademy;
 
-public enum SUITS {
+public enum Suit {
     CLUBS,
     DIAMONDS,
     HEARTS,
