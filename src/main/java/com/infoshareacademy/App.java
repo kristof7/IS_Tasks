@@ -7,9 +7,7 @@ public class App {
 
 
     public static char printChar(String name) {
-        char[] chars = {'c', 'o', 'k', 'o', 'l', 'w', 'i', 'e', 'k'};
-        name = new String(chars);
-        System.out.println(name + " - " + chars[0]);
-        return chars[0];
+        System.out.println(name + " - " + name.charAt(0));
+        return name.charAt(0);
     }
 }
