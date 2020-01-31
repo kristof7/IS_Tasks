@@ -13,7 +13,7 @@ public class App {
 
 //--------------ZADANIE C---VERSION2-SCANNER-(UPDATED)---------------------
 
-        //----Some Card obiects------
+        //----Some Card objects------
         System.out.println("Example cards:");
         Card card1 = new Card();
         card1.setRanks(Ranks.ACE);
@@ -44,9 +44,16 @@ public class App {
         System.out.println("Choose Card's rank (1-ACE , 2-KING, 3-QUEEN, 4-JACK):");
         //----Here user input rank value in number----
         int rank = scanner.nextInt();
+        if (rank > 4 || rank < 1) {
+            System.out.println("The number you input is not valid, choose numbers only from 1 to 4.");
+        }
+
         System.out.println("Choose Card's suit (1-CLUBS , 2-DIAMONDS, 3-HEARTS, 4-SPADES):");
         //----Here user input suit value in number----
         int suit = scanner.nextInt();
+        if (suit > 4 || rank < 1) {
+            System.out.println("The number you input is not valid, choose numbers only from 1 to 4.");
+        }
 
         //----rank & suit are reduced by one to start counting from 1, not 0----
         rank = rank - 1;
