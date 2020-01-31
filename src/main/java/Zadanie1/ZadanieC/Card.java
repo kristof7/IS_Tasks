@@ -13,7 +13,7 @@ public class Card {
     public Suits suits() {
         return getSuits();
     }
-//----Getters-----
+//----Setters & Getters-----
 
     public Ranks getRanks() {
         return ranks;
