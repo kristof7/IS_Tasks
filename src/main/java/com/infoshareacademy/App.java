@@ -11,8 +11,31 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-//--------------ZADANIE C---VERSION2-SCANNER----------------------
+//--------------ZADANIE C---VERSION2-SCANNER-(UPDATED)---------------------
 
+        //----Some Card obiects------
+        System.out.println("Example cards:");
+        Card card1 = new Card();
+        card1.setRanks(Ranks.ACE);
+        card1.setSuits(Suits.SPADES);
+
+        Card card2 = new Card();
+        card2.setRanks(Ranks.KING);
+        card2.setSuits(Suits.CLUBS);
+
+        Card card3 = new Card();
+        card3.setRanks(Ranks.QUEEN);
+        card3.setSuits(Suits.HEARTS);
+
+        Card card4 = new Card();
+        card4.setRanks(Ranks.JACK);
+        card4.setSuits(Suits.DIAMONDS);
+
+        System.out.println(card1.getRanks() + " of " + card1.getSuits());
+        System.out.println(card2.getRanks() + " of " + card1.getSuits());
+        System.out.println(card3.getRanks() + " of " + card1.getSuits());
+        System.out.println(card4.getRanks() + " of " + card1.getSuits());
+        System.out.println("---------------------------------------------------");
 
         Scanner scanner = new Scanner(System.in);
         //----This class shows the combination of a rank with a suit by entering the corresponding numbers
@@ -25,15 +48,11 @@ public class App {
         //----Here user input suit value in number----
         int suit = scanner.nextInt();
 
-        Ranks[] ranks = Ranks.values();
-        Suits[] suits = Suits.values();
-
         //----rank & suit are reduced by one to start counting from 1, not 0----
         rank = rank - 1;
         suit = suit - 1;
 
-        System.out.println("The choosen card is: " + ranks[rank] + " of " + suits[suit]);
-
+        Card.getDescription(rank, suit);
 
     }
 }

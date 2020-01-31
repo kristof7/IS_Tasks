@@ -4,12 +4,13 @@ public class Card {
     private Ranks ranks;
     private Suits suits;
 
-    public Card(Suits spades, Ranks ace) {
+    public Card() {
     }
 
     public Ranks ranks() {
         return getRanks();
     }
+
     public Suits suits() {
         return getSuits();
     }
@@ -29,5 +30,12 @@ public class Card {
 
     public void setSuits(Suits suits) {
         this.suits = suits;
+    }
+
+    //----GetDescription Method-----
+    public static void getDescription(int i, int j) {
+        Ranks[] ranks = Ranks.values();
+        Suits[] suits = Suits.values();
+        System.out.println("The choosen card is: " + ranks[i] + " of " + suits[j]);
     }
 }
