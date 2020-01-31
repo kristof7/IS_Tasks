@@ -1,26 +1,57 @@
 package com.infoshareacademy;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        /*zastosowanie pętli "while" w celu ciągłego i nieprzerwanego działania kalkulatora, działanie programu
+         zostaje przerwane tylko wtedy gdy użytkownik wprowadzi inny znak, niż dowolna liczba */
+        int i = 1;
+        while (i != 0) {
+            try {
 
-        Card card1 = new Card();
-        Card card2 = new Card();
+                System.out.println("Podaj dwie dowolne liczby?");
+                double number1 = scanner.nextDouble();
+                double number2 = scanner.nextDouble();
 
-        card1.setRank(Ranks.ACE);
-        card1.setSuit(Suits.HEARTS);
-        card1.getDescription();
 
-        card1.setRank(Ranks.KING);
-        card1.setSuit(Suits.DIAMONDS);
-        card1.getDescription();
+                System.out.println("Twoje liczby to: " + number1 + " " + number2);
 
-        card2.setRank(Ranks.QUEEN);
-        card2.setSuit(Suits.CLUBS);
-        card2.getDescription();
+                System.out.println("Podaj jakie działania arytmetyczne z podanych w nawiasie chcesz wykonać " +
+                        "na tych liczbach (+, -, *, /)?");
 
-        card2.setRank(Ranks.JACK);
-        card2.setSuit(Suits.SPADES);
-        card2.getDescription();
+                char ch, ignore;
+                ch = (char) System.in.read(); //wczytuje znak z klawiatury
+                do {
+                    ignore = (char) System.in.read();
+                } while (ignore != '\n'); //usuwa pozostałe znaki z bufora wejściowego
+
+                switch (ch) {
+                    case '+':
+                        System.out.println("Wynik Twojego działania to " + (number1 + number2));
+                        break;
+                    case '-':
+                        System.out.println("Wynik Twojego działania to " + (number1 - number2));
+                        break;
+                    case '*':
+                        System.out.println("Wynik Twojego działania to " + number1 * number2);
+                        break;
+                    case '/':
+                        System.out.println("Wynik Twojego działania to " + number1 / number2);
+                        break;
+                    default:
+                        System.out.println("Nie ma takiego działania.");
+                }
+
+            } catch (Exception e) {
+                System.out.println("Nieprawidłowa liczba.");
+                break;
+            }
+            i++;
+        }
     }
 }
+
+
 
