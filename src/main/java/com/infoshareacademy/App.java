@@ -4,79 +4,48 @@ import java.util.Scanner;
 
 public class App {
 
-    static Double cyfra1;
-    static Double cyfra2;
-    static Character dzialanie;
-    static Double wynik;
-    static boolean wartosc1=true;
-    static boolean wartosc2=true;
-    static boolean wartosc3=true;
-
     public static void main(String[] args) {
+        Integer cardsQuantity = null;
 
+        System.out.println("Podaj liczbe kart do utworzenia: ");
 
-
-        System.out.println("Podaj pierwsza liczbe:");
-        while(wartosc1) {
+        while (cardsQuantity == null) {
             try {
-                Scanner scanner = new Scanner(System.in);
-                cyfra1 = scanner.nextDouble();
-                wartosc1 = false;
+                Scanner sc = new Scanner(System.in);
+                cardsQuantity = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("Podana wartosc nie jest liczba, sprobuj ponownie");
+                System.out.println("Podana wartosc jest nieprawidlowa");
+
             }
         }
+        for (int i = 0; i < cardsQuantity; i++) {
+            Ranks rank = null;
+            Suits suit = null;
 
-        System.out.println("Podaj druga liczbe:");
-        while(wartosc2) {
-            try {
-                Scanner scanner = new Scanner(System.in);
-                cyfra2 = scanner.nextDouble();
-                wartosc2 = false;
-            } catch (Exception e) {
-                System.out.println("Podana wartosc nie jest liczba, sprobuj ponownie");
-            }
-        }
 
-        System.out.println("Podaj symbol działania (+,-,*,/):");
-        while(wartosc3) {
-            Scanner scanner = new Scanner(System.in);
-            dzialanie = scanner.next().charAt(0);
-            if (dzialanie == '+' || dzialanie == '-' || dzialanie == '/' || dzialanie == '*') {
-                wartosc3 = false;
-            }else {
-                System.out.println("Podana wartosc nie jest jednym z symboli dzialania, sprobuj ponownie");
-            }
-        }
-
-        if (dzialanie=='+'){
-            dzialanie=1;
-        }else if (dzialanie=='-'){
-            dzialanie=2;
-        }else if (dzialanie=='*'){
-            dzialanie=3;
-        }else{
-            dzialanie=4;
-        }
-
-        switch(dzialanie) {
-            case 1:  wynik= cyfra1 + cyfra2;
-                System.out.println("wynik dzialania: "+wynik);
-                break;
-            case 2:  wynik= cyfra1 - cyfra2;
-                System.out.println("wynik dzialania: "+wynik);
-                break;
-            case 3:  wynik=  cyfra1 * cyfra2;
-                System.out.println("wynik dzialania: "+wynik);
-                break;
-            case 4:
-                if(cyfra2==0){
-                    System.out.println("nie mozna dzielic przez 0");
-                } else {
-                    wynik =  cyfra1 / cyfra2;
-                    System.out.println("wynik dzialania: " + wynik);
+            System.out.println("Podaj jedna z figur (ACE/QUEEN/JACK/KING): ");
+            while (rank == null) {
+                try {
+                    Scanner scanner = new Scanner(System.in);
+                    rank = Ranks.valueOf(scanner.nextLine());
+                } catch (Exception e) {
+                    System.out.println("Podana wartosc jest nieprawidlowa, sprobuj ponownie");
                 }
-                break;
+            }
+
+            System.out.println("Podaj jeden z kolorow (CLUBS/DIAMONDS/HEARTS/SPADES): ");
+            while (suit == null) {
+                try {
+                    Scanner scanner = new Scanner(System.in);
+                    suit = Suits.valueOf(scanner.nextLine());
+                } catch (Exception e) {
+                    System.out.println("Podana wartosc jest nieprawidlowa, sprobuj ponownie");
+                }
+            }
+
+            Card card = new Card(rank, suit);
+            System.out.println("\n" + card.getDescription() + "\n");
         }
+
     }
 }
