@@ -1,4 +1,5 @@
 import ExerciseB.Calculator;
+import ExerciseC.Card;
 import com.infoshareacademy.ExerciseA.ExerciseA;
 
 import java.util.Calendar;
@@ -8,9 +9,19 @@ public class App {
     public static void main( String[] args ) {
 /*
 ------------------------------------------------------
-       ZADANIE 1 - B
+      ZADANIE 1 - C
 ------------------------------------------------------
 */
+        Card.getDescription();
+
+
+
+/*
+
+------------------------------------------------------
+       ZADANIE 1 - B
+------------------------------------------------------
+
         try {
             Scanner scanner = new Scanner(System.in);
             Calculator calculator = new Calculator();
@@ -32,6 +43,7 @@ public class App {
         catch (Exception e) {
             System.out.println("Coś poszło nie tak ! Spróbuj jeszcze raz !");
         }
+*/
 
 /*
 ------------------------------------------------------
