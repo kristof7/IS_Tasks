@@ -1,5 +1,6 @@
 import ExerciseB.Calculator;
 import ExerciseC.Card;
+import ExerciseC.Ranks;
 import com.infoshareacademy.ExerciseA.ExerciseA;
 
 import java.util.Calendar;
@@ -7,15 +8,36 @@ import java.util.Scanner;
 
 public class App {
     public static void main( String[] args ) {
+
+/*
+------------------------------------------------------
+      ZADANIE 1 - C User Input
+------------------------------------------------------
+*/
+        try {
+            Card card = new Card();
+
+            System.out.println("Enter suits of card : ");
+            Scanner scanner = new Scanner(System.in);
+            String suits = scanner.nextLine();
+            card.suitsInput(suits);
+
+            System.out.println("Enter ranks of card : ");
+            Scanner scanner1 = new Scanner(System.in);
+            String ranks = scanner1.nextLine();
+            card.ranksInput(ranks);
+
+            System.out.println(Card.getDescription());
+        }
+        catch (Exception e) {
+            System.out.println("Wprowadziłeś błędną wartość !! Spróbuj ponownie !!");
+        }
 /*
 ------------------------------------------------------
       ZADANIE 1 - C
 ------------------------------------------------------
 */
-        Card.getDescription();
-
-
-
+      //  Card.getDescription();
 /*
 
 ------------------------------------------------------
@@ -47,7 +69,7 @@ public class App {
 
 /*
 ------------------------------------------------------
-        ZADANIE 1 - A
+        ZADANIE 1 - A - pobieranie z klawiatury
 ------------------------------------------------------
 
         System.out.println("Zadanie 1 - A : ");
@@ -61,7 +83,15 @@ public class App {
         char letter = zadanie1A.firstChar(input);
 
         System.out.println(input + " - " + letter);
+
+------------------------------------------------------
+        ZADANIE 1 - A
+------------------------------------------------------
  */
+
+//        ExerciseA.firstChar("wyraz");
+//        ExerciseA.firstChar("CosTam");
+//        ExerciseA.firstChar("ISAcademy");
 
     }
 }
