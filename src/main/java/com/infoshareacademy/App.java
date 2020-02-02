@@ -46,11 +46,4 @@ public class App {
 
 
     }
-
-public static char returnFirstCharacter(String input) {
-
-        char firstCharacter = input.charAt(0);
-
-        return firstCharacter;
-    }
 }
