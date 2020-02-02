@@ -1,0 +1,126 @@
+From 9fb81f2e3c9235f49a2e85adc2698761133fd36f Mon Sep 17 00:00:00 2001
+From: tomlisow <tomasz.lisowski@protonmail.ch>
+Date: Sun, 26 Jan 2020 16:30:45 +0100
+Subject: [PATCH 1/2] Homework 1
+
+---
+ .gitignore                                  |  3 ++
+ README.md                                   | 53 +++++++++++++++++++++
+ pom.xml                                     | 19 ++++++++
+ src/main/java/com/infoshareacademy/App.java |  7 +++
+ 4 files changed, 82 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/infoshareacademy/App.java
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..3ff4ead
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++target/
++.idea
++*.iml
+\ No newline at end of file
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..31070db
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,53 @@
++# Zadanie 1 - JSE
++
++### Zadanie A (1 pkt)
++Stwórz metodę, która przyjmuje parametr typu String i zwraca typ char.
++Metoda pobiera pierwszą literę napisu z parametru i zwraca ją (jako typ char).
++
++Skorzystaj z te metody i wypisz wynik w postaci: parametr - pierwszaLitera
++
++np.<br/>
++Adam - A, <br/>
++rower - r
++
++Przetesuj działanie dla kilku przykładowych wartości.
++
++** (dla chętnych) wartość parametru pobieraj z klawiatury. 
++<br/>
++
++### Zadanie B (1,5 pkt)
++Stwórz prosty kalkulator, które pobiera od użytkownika (z klawiatury) dwie dowolne liczby oraz symbol działania (+, -, *, /). <br/>
++Kalkulator powinien wyświetlić poprawny wynik dla podanych parametrów.
++
++np.<br/>
++Podaj pierwszą liczbę:<br/>
++12<br/>
++Podaj drugą liczbę:<br/>
++4<br/>
++Podaj symbol działania (+,-,*,/):<br/>
++/<br/>
++Wynik działania 12 / 4 = 3.<br/>
++<br/>
++
++### Zadanie C (2,5 pkt)
++Stwórz dwa typy ENUM określające kolor i figurę kart: <br/>
++* SUITS (CLUBS, DIAMONDS, HEARTS, SPADES) <br/>
++* RANKS (ACE, KING, QUEEN, JACK) <br/>
++ 
++Stwórz klasę o nazwie Card, która posiada dwa pola: suit (typu SUITS) i rank (typu RANKS). Dodaj gettery i settery. <br/>
++Stwórz w tej klasie metodę getDescription(), która zwróci opis karty jako tekst w postaci "figura - kolor", np. "ace - spades" <br/>
++Stwórz kilka przykładowych obiektów Card i przetestuj program.
++
++** (dla chętnych) stwórz karty pobierając kolor i figurę z klawiatury
++
++# Forma oddania zadania
++Zadanie powinno być oddane w formie commitów na oddzielnym branchu o nazwie w konwecji `nrZadania_ImięNazwisko` (np: `1_TomaszLisowski`)
++Wykonaj zadanie na podanym branchu.
++
++Do zdobycia jest 5 pkt.
++Zadania oddane po terminie są oceniane na max połowę pkt.
++
++####Powodzenia!
++
++# :clock3: Termin
++## 02.02.2020 godz. 23:59
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+index 0000000..dd90ffd
+--- /dev/null
++++ b/pom.xml
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++  <modelVersion>4.0.0</modelVersion>
++
++  <groupId>com.infoshareacademy</groupId>
++  <artifactId>jjdz8-homeworks</artifactId>
++  <version>1.0-SNAPSHOT</version>
++
++  <name>jjdz8-homeworks</name>
++
++  <properties>
++    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    <maven.compiler.source>11</maven.compiler.source>
++    <maven.compiler.target>11</maven.compiler.target>
++  </properties>
++
++</project>
+diff --git a/src/main/java/com/infoshareacademy/App.java b/src/main/java/com/infoshareacademy/App.java
+new file mode 100644
+index 0000000..b150480
+--- /dev/null
++++ b/src/main/java/com/infoshareacademy/App.java
+@@ -0,0 +1,7 @@
++package com.infoshareacademy;
++
++public class App {
++    public static void main( String[] args ) {
++        System.out.println("JJDZ8 - homeworks!");
++    }
++}
+-- 
+2.17.1
+
