@@ -5,8 +5,13 @@ public class App {
         System.out.println("JJDZ8 - homeworks!");
 
         //Zadanie A
-        System.out.println("Zadanie A");
-        FirstLetter firstletter = new FirstLetter();
-        firstletter.firstLetter();
+//        System.out.println("Zadanie A");
+//        FirstLetter firstletter = new FirstLetter();
+//        firstletter.firstLetter();
+
+        //Zadanie B
+        System.out.println("Zadanie B");
+        Calculator calculator = new Calculator();
+        calculator.interaction();
     }
 }
