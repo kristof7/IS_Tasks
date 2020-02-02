@@ -1,4 +1,6 @@
-package com.infoshareacademy;
+package com.infoshareacademy.ExerciseA;
+
+import com.infoshareacademy.ExerciseA.ExerciseA;
 
 import java.util.Scanner;
 
