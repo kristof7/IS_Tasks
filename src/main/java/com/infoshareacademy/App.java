@@ -10,8 +10,13 @@ public class App {
 //        firstletter.firstLetter();
 
         //Zadanie B
-        System.out.println("Zadanie B");
-        Calculator calculator = new Calculator();
-        calculator.interaction();
+//        System.out.println("Zadanie B");
+//        Calculator calculator = new Calculator();
+//        calculator.interaction();
+
+        //Zadanie C
+        System.out.println("Zadanie C");
+        Cards card = new Cards();
+        card.getDescription();
     }
 }
