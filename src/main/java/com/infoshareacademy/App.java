@@ -1,39 +1,31 @@
 package com.infoshareacademy;
 
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Podaj pierwsza liczbe: ");
-            Double a = scanner.nextDouble();
-            System.out.println("Podaj druga liczbe: ");
-            Double b = scanner.nextDouble();
-            Scanner scanner1 = new Scanner((System.in));
-            System.out.println("Podaj symbol dzialania(+,-,*,/");
-            String z = scanner1.nextLine();
 
-            Double sum;
-            if (z.equals("+")) {
-                sum = a + b;
-                System.out.println("Wynik dzialania " + a + " " + z + " " + b + " = " + sum);
-            }
-            if (z.equals("-")) {
-                sum = a - b;
-                System.out.println("Wynik dzialania " + a + " " + z + " " + b + " = " + sum);
-            }
-            if (z.equals("*")) {
-                sum = a * b;
-                System.out.println("Wynik dzialania " + a + " " + z + " " + b + " = " + sum);
-            }
-            if (z.equals("/")) {
-                sum = a / b;
-                System.out.println("Wynik dzialania " + a + " " + z + " " + b + " = " + sum);
-            }
-        } catch (Exception e) {
-            System.out.println("Podaj inna liczbe.");
-        }
+        Card card1 = new Card();
+        Card card2 = new Card();
+
+        card1.setRank(Ranks.ACE);
+        card1.setSuit(Suits.CLUBS);
+        System.out.println(card1.getDescription(card1.getSuit(), card1.getRank()));
+        card2.setRank(Ranks.KING);
+        card2.setSuit(Suits.HEARTS);
+        System.out.println(card2.getDescription(card2.getSuit(), card2.getRank()));
+    }
+
+    public enum Suits {
+        CLUBS,
+        DIAMONDS,
+        HEARTS,
+        SPADES;
+    }
+
+    public enum Ranks {
+        ACE,
+        KING,
+        QUEEN,
+        JACK;
     }
 }
 
