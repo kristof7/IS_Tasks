@@ -4,43 +4,67 @@ import java.util.Scanner;
 
 public class Kalkulator {
     public void obliczenia() {
-        double wynik = 0.0;
-        Scanner podanaWartosc = new Scanner(System.in);
-        Scanner podanaWartosc2 = new Scanner(System.in);
-        System.out.println("Podaj pierwsza liczbe : ");
-        Double liczba1 = podanaWartosc.nextDouble();
+        double wynik = 0;
+        double liczba1 = 0;
+        double liczba2 = 0;
+        double licznik = 0;
+        Scanner podanaWartoscDzialania = new Scanner(System.in);
 
-        System.out.println("Podaj druga liczbe : ");
-        Double liczba2 = podanaWartosc.nextDouble();
-
+        while (licznik == 0) {
+            Scanner podanaWartoscLiczbowa1 = new Scanner(System.in);
+            try {
+                System.out.println("Podaj pierwsza liczbe : ");
+                liczba1 = podanaWartoscLiczbowa1.nextDouble();
+                licznik +=1;
+            } catch (Exception e) {
+                System.out.println("bledna wartosc, podaj prawidlowa : ");
+            }
+        }
+        licznik = 0;
+        while (licznik == 0) {
+            Scanner podanaWartoscLiczbowa2 = new Scanner(System.in);
+            try {
+                System.out.println("Podaj druga liczbe : ");
+                liczba2 = podanaWartoscLiczbowa2.nextDouble();
+                licznik +=1;
+            } catch (Exception e) {
+                System.out.println("bledna wartosc, podaj prawidlowa : ");
+            }
+        }
+       licznik = 0;
         System.out.println("Podaj rodzaj dzialania (+,-,*,/) : ");
-        String rodzajDzialania = podanaWartosc2.nextLine();
+        while (licznik == 0) {
+            String rodzajDzialania = podanaWartoscDzialania.nextLine();
 
-        switch (rodzajDzialania) {
-            case "+":
-                wynik = dodawanie(liczba1, liczba2);
-                System.out.println("Wynik operacji to : " + wynik);
-                break;
-            case "-":
-                wynik = odejmowanie(liczba1, liczba2);
-                System.out.println("Wynik operacji to : " + wynik);
-                break;
-            case "*":
-                wynik = mnozenie(liczba1, liczba2);
-                System.out.println("Wynik operacji to : " + wynik);
-                break;
-            case "/":
-                if (liczba2 == 0) {
-                    System.out.println("nie podzielisz przez 0 :) , wybierz ponownie liczby i dzialanie");
-                    break;
-                } else {
-                    wynik = dzielenie(liczba1, liczba2);
+            switch (rodzajDzialania) {
+                case "+":
+                    wynik = dodawanie(liczba1, liczba2);
                     System.out.println("Wynik operacji to : " + wynik);
+                    licznik +=1;
+                    break;
+                case "-":
+                    wynik = odejmowanie(liczba1, liczba2);
+                    System.out.println("Wynik operacji to : " + wynik);
+                    licznik +=1;
+                    break;
+                case "*":
+                    wynik = mnozenie(liczba1, liczba2);
+                    System.out.println("Wynik operacji to : " + wynik);
+                    licznik +=1;
+                    break;
+                case "/":
+                    if (liczba2 == 0) {
+                        System.out.println("nie podzielisz przez 0 :) , wybierz ponownie dzialanie");
+                        break;
+                    } else {
+                        wynik = dzielenie(liczba1, liczba2);
+                        System.out.println("Wynik operacji to : " + wynik);
+                        break;
+                    }
+                default: {
+                    System.out.println("Niepoprawna operacja, wskaz prawidlowa (+,-,*,/)");
                     break;
                 }
-            default: {
-                System.out.println("Niepoprawna operacja, cyk i od nowa :)");
-                break;
             }
         }
     }

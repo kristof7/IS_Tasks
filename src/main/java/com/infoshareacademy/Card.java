@@ -5,11 +5,17 @@ import java.util.Scanner;
 public class Card {
 
     public enum Suit{
-        CLUBS, DIAMONDS, HEARTS, SPADES
+        CLUBS,
+        DIAMONDS,
+        HEARTS,
+        SPADES
     }
 
     public enum Rank{
-        ACE, KING, QUEEN, JACK
+        ACE,
+        KING,
+        QUEEN,
+        JACK
     }
 
     public Suit suit;
