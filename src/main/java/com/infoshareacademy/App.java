@@ -6,44 +6,61 @@ public class App {
     public static void main( String[] args ) {
 
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
+        Card nowaKarta = new Card();
 
+        System.out.println("Wybór figury: ");
+        System.out.println("1. As");
+        System.out.println("2. Król");
+        System.out.println("3. Królowa");
+        System.out.println("4. Walet");
+        int figura = scanner.nextInt();
 
-        System.out.println("Prosty kalkulatorek, który dodaj odejmuje mnoży i dzieli!");
-        System.out.println("Podaj pierwszą liczbę: ");
-        double a = scanner.nextDouble();
-        System.out.println("Podaj drugą liczbę: ");
-        double b = scanner.nextDouble();
-        System.out.println("Jaką operacje chcesz wykonać? Wpisz :");
-        System.out.println("+ dodawnie");
-        System.out.println("- odejmowanie");
-        System.out.println("* mnożenie");
-        System.out.println("/ dzielenie");
-        String operacja = scanner1.nextLine();
-
-
-        if (operacja.equals("+")){
-            double result = a + b;
-            System.out.println("wynik działania "+ a + operacja + b +" = " + result);
-        }
-        else if (operacja.equals("-")) {
-            double result =  a - b;
-            System.out.println("wynik działania " + a + operacja + b + " = " + result);
-        }
-        else if (operacja.equals("*")){
-            double result = a * b;
-            System.out.println("wynik działania " + a + operacja + b + " = " + result);
-        }
-        else if (operacja.equals("/")){
-            double result = a / b;
-            System.out.println("wynik działania " + a + operacja + b + " = " + result);
-        }
-        else {
-            System.out.println("Błędny znak operacji");
+        switch (figura){
+            case 1:
+                nowaKarta.setRank(RANKS.ACE);
+                break;
+            case 2:
+                nowaKarta.setRank(RANKS.KING);
+                break;
+            case 3:
+                nowaKarta.setRank(RANKS.QUEEN);
+                break;
+            case 4:
+                nowaKarta.setRank(RANKS.JACK);
         }
 
+        System.out.println("Wybór koloru: ");
+        System.out.println("1. Karo");
+        System.out.println("2. Kier");
+        System.out.println("3. Pik");
+        System.out.println("4. Trefl");
+        int kolor = scanner.nextInt();
 
+        switch (kolor){
+            case 1:
+                nowaKarta.setSuit(SUITS.DIAMONDS);
+                break;
+            case 2:
+                nowaKarta.setSuit(SUITS.HEARTS);
+                break;
+            case 3:
+                nowaKarta.setSuit(SUITS.SPADES);
+                break;
+            case 4:
+                nowaKarta.setSuit(SUITS.CLUBS);
+                break;
+        }
 
+        Card waletPik = new Card(RANKS.JACK, SUITS.SPADES);
+        Card damaTrefl = new Card(RANKS.QUEEN, SUITS.CLUBS);
+        Card krolKier = new Card(RANKS.KING, SUITS.HEARTS);
+        Card asKaro = new Card(RANKS.ACE, SUITS.DIAMONDS);
+
+        System.out.println(waletPik.getDescription());
+        System.out.println(damaTrefl.getDescription());
+        System.out.println(krolKier.getDescription());
+        System.out.println(asKaro.getDescription());
+        System.out.println(nowaKarta.getDescription());
 
     }
 }
