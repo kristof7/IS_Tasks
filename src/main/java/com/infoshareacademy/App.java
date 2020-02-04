@@ -3,6 +3,7 @@ package com.infoshareacademy;
 import com.infoshareacademy.zadanie1.ZadanieA.ZadanieA;
 import com.infoshareacademy.zadanie1.ZadanieB.ZadanieB;
 import com.infoshareacademy.zadanie1.ZadanieC.Card;
+import com.infoshareacademy.zadanie1.ZadanieC.CardService;
 import com.infoshareacademy.zadanie1.ZadanieC.Ranks;
 import com.infoshareacademy.zadanie1.ZadanieC.Suits;
 
@@ -57,16 +58,18 @@ public class App {
 
         System.out.println("-----------------Zad 1c ------------------");
         //tworzy kartę losując rank i suit
-        Card randomCard = new Card(Card.getRandomSuit(), Card.getRandomRank());
-        Card randomCard1 = new Card(Card.getRandomSuit(), Card.getRandomRank());
-        Card randomCard2 = new Card(Card.getRandomSuit(), Card.getRandomRank());
+        Card randomCard = new Card(CardService.getRandomSuit(), CardService.getRandomRank());
+        Card randomCard1 = new Card(CardService.getRandomSuit(), CardService.getRandomRank());
+        Card randomCard2 = new Card(CardService.getRandomSuit(), CardService.getRandomRank());
+
 
         //printuje wyniki
         System.out.println("---------------------------------");
         System.out.println("Losowo wygenerowane karty: ");
-        System.out.println(randomCard.getDescription(randomCard));
-        System.out.println(randomCard.getDescription(randomCard1));
-        System.out.println(randomCard.getDescription(randomCard2));
+        System.out.println(randomCard.getDescription());
+        System.out.println(randomCard1.getDescription());
+        System.out.println(randomCard2.getDescription());
+
         System.out.println("--------------------------------");
 
         //umozliwia użytkownikowi stworzenie własnej karty
@@ -82,7 +85,7 @@ public class App {
             System.out.println("h - hearts");
             System.out.println("s - spades");
             String customSuitScan = scanner.nextLine();
-            Suits customSuit = Card.createCustomSuit(customSuitScan);
+            Suits customSuit = CardService.createCustomSuit(customSuitScan);
 
             //wybor figury karty ze skanera
             System.out.println("--------------------------------");
@@ -92,12 +95,12 @@ public class App {
             System.out.println("q - queen");
             System.out.println("j - jack");
             String customRankScan = scanner.nextLine();
-            Ranks customRank = Card.createCustomRank(customRankScan);
+            Ranks customRank = CardService.createCustomRank(customRankScan);
 
             // Przywraca program do działania po błędzie użytkownika
             try {
                 Card customCard = new Card(customSuit, customRank);
-                System.out.println(customCard.getDescription(customCard));
+                System.out.println(customCard.getDescription());
                 isPicked = true;
             } catch (Exception e) {
                 System.out.println("Wybrano błędne literki, spróbuj jeszcze raz ");
