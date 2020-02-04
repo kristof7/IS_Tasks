@@ -1,7 +1,7 @@
 package com.infoshareacademy;
 import static com.infoshareacademy.Zadanie_1.Zadanie_A.FirstLetter.printFirstLetter;
 import static com.infoshareacademy.Zadanie_1.Zadanie_B.Calculator.calculateData;
-import static com.infoshareacademy.Zadanie_1.Zadanie_C.Card.addNewCard;
+import static com.infoshareacademy.Zadanie_1.Zadanie_C.CardService.addNewCard;
 
 
 public class App {
