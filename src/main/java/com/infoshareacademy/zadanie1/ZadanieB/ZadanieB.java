@@ -6,31 +6,31 @@ import java.util.InputMismatchException;
 
 public class ZadanieB {
 
-    public static void calculateTwoNumbersFromScanner(long number1, long number2, String symbol)
+    public static void calculateTwoNumbersFromScanner(float number1, float number2, String symbol)
             throws InputMismatchException, Exception {
 
-        long result;
+        float result;
         float resultDivided;
 
         switch (symbol) {
             case "+": {
-                result = (long) number1 + (long) number2;
+                result =  number1 + number2;
                 System.out.println("Wynik działania " + number1 + " " + symbol + " " + number2 +
-                        " = " + (long) result);
+                        " = " +  result);
                 App.isFinished = true;
                 break;
             }
             case "-": {
-                result = (long) number1 - (long) number2;
+                result =  number1 -  number2;
                 System.out.println("Wynik działania " + number1 + " " + symbol + " " + number2 +
-                        " = " + (long) result);
+                        " = " +  result);
                 App.isFinished = true;
                 break;
             }
             case "*": {
-                result = (long) number1 * (long) number2;
+                result =  number1 *  number2;
                 System.out.println("Wynik działania " + number1 + " " + symbol + " " + number2 +
-                        " = " + (long) result);
+                        " = " +  result);
                 App.isFinished = true;
                 break;
             }
@@ -39,9 +39,9 @@ public class ZadanieB {
                     System.out.println("Dzielenie przez 0!");
                     break;
                 } else {
-                    resultDivided = (float) number1 / number2;
+                    resultDivided = number1 / number2;
                     System.out.println("Wynik działania " + number1 + " " + symbol + " " + number2 +
-                            " = " + (float) resultDivided);
+                            " = " +  resultDivided);
                     App.isFinished = true;
                     break;
                 }

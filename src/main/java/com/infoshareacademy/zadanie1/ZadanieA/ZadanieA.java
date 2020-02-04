@@ -2,7 +2,7 @@ package com.infoshareacademy.zadanie1.ZadanieA;
 
 public class ZadanieA {
 
-    public static char returnFirstLetterFromScanner(String string) {
+    public static char returnFirstLetterFromString(String string) {
 
     /* - metoda zwraca pierwszą LITERĘ wprowadzonego w skanerze stringa,
     pomija znaki specjalne, liczby, spacje*/
