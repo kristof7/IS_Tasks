@@ -1,24 +1,30 @@
 package com.infoshareacademy.Zadanie_1.Zadanie_B;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
     public static void calculateData() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj pierwsza liczbe:");
-        double a = scanner.nextDouble();
-        System.out.println("Podaj druga liczbe");
-        double b = scanner.nextDouble();
-        System.out.println("Podaj symbol dzialania (+,-,*,/):");
-        Scanner scanner2 = new Scanner(System.in);
-        String symbol = scanner2.nextLine();
-        if (symbol.equals("*") || symbol.equals("/") || symbol.equals("+") || symbol.equals("-")) {
-            if (b == 0 && symbol.equals("/")) {
-                System.out.println("Nie mozna dzielic przez 0");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Podaj pierwsza liczbe:");
+            double a = scanner.nextDouble();
+            System.out.println("Podaj druga liczbe");
+            double b = scanner.nextDouble();
+            System.out.println("Podaj symbol dzialania (+,-,*,/):");
+            Scanner scanner2 = new Scanner(System.in);
+            String symbol = scanner2.nextLine();
+            if (symbol.equals("*") || symbol.equals("/") || symbol.equals("+") || symbol.equals("-")) {
+                if (b == 0 && symbol.equals("/")) {
+                    System.out.println("Nie mozna dzielic przez 0");
+                } else {
+                    System.out.println("Wynik dzialania " + a + " " + symbol + " " + b + " = " + calculate(a, b, symbol));
+                }
             } else {
-                System.out.println("Wynik dzialania " + a + " " + symbol + " " + b + " = " + calculate(a, b, symbol));
+                System.out.println("Podales(as) nieprawidlowy symbol dzialania.");
             }
-        } else {
-            System.out.println("Podales(as) nieprawidlowy symbol dzialania.");
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Musisz podac liczbe np. 2.1 lub 4!");
         }
     }
 
