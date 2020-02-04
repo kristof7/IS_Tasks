@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 
 public class ZadanieB {
 
-    public static void calculateTwoNumbersFromScanner(float number1, float number2, String symbol)
+    public static void calculateTwoNumbersFromString(float number1, float number2, String symbol)
             throws InputMismatchException, Exception {
 
         float result;

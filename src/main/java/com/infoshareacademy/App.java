@@ -42,7 +42,7 @@ public class App {
 
                 // wywołanie metody i zabezpieczenie przed wprowadzeniem znaków innych od liczby
 
-                ZadanieB.calculateTwoNumbersFromScanner(firstNumber, secondNumber, symbol);
+                ZadanieB.calculateTwoNumbersFromString(firstNumber, secondNumber, symbol);
 
             } catch (InputMismatchException e) {
                 System.out.println("Wprowadzono niepoprawne dane - spróbuj jeszcze raz");
