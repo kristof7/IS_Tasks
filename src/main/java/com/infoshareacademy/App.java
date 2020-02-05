@@ -4,16 +4,18 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Double number1 = null;
+        Double number2 = null;
         /*zastosowanie pętli "while" w celu ciągłego i nieprzerwanego działania kalkulatora, działanie programu
-         zostaje przerwane tylko wtedy gdy użytkownik wprowadzi inny znak, niż dowolna liczba */
-        int i = 1;
-        while (i != 0) {
+        nie zostaje nawet przerwane, gdy użytkownik wprowadzi inny znak, niż dowolna liczba, jest proszony do skutku
+        o wprowadznie liczby */
+        while (number1 == null && number2 == null || number1 != null && number2 != null) {
+            Scanner scanner = new Scanner(System.in);
             try {
 
                 System.out.println("Podaj dwie dowolne liczby?");
-                double number1 = scanner.nextDouble();
-                double number2 = scanner.nextDouble();
+                number1 = scanner.nextDouble();
+                number2 = scanner.nextDouble();
 
 
                 System.out.println("Twoje liczby to: " + number1 + " " + number2);
@@ -46,9 +48,7 @@ public class App {
 
             } catch (Exception e) {
                 System.out.println("Nieprawidłowa liczba.");
-                break;
             }
-            i++;
         }
     }
 }
