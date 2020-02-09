@@ -14,3 +14,4 @@ Każde zadanie ma treść opisaną w pliku `README.md` w swoim katalogu.
 Jeśli przeglądasz to repozytorium na GitHub'ie to klikając w poniższe linki przejdziesz na stronę z podglądem instrukcji.
 
 * [Zadanie 1 - Java SE](./Ex1)
+* [Zadanie 2 - Java SE](./Ex2)
