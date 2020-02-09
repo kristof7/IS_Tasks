@@ -1,4 +1,4 @@
-package com.infoshareacademy.tasks.cards;
+package infoshareacademy.tasks.cards;
 
 public class Card {
     private Suit suit;

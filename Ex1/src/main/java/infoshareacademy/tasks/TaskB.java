@@ -1,4 +1,4 @@
-package com.infoshareacademy.tasks;
+package infoshareacademy.tasks;
 
 import java.util.Scanner;
 

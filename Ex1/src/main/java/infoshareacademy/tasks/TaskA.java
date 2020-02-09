@@ -1,4 +1,4 @@
-package com.infoshareacademy.tasks;
+package infoshareacademy.tasks;
 
 public class TaskA {
     public static char getFirstLetter(String text) {

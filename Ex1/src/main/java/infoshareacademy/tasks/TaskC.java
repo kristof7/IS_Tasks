@@ -1,8 +1,8 @@
-package com.infoshareacademy.tasks;
+package infoshareacademy.tasks;
 
-import com.infoshareacademy.tasks.cards.Card;
-import com.infoshareacademy.tasks.cards.Rank;
-import com.infoshareacademy.tasks.cards.Suit;
+import infoshareacademy.tasks.cards.Card;
+import infoshareacademy.tasks.cards.Rank;
+import infoshareacademy.tasks.cards.Suit;
 
 public class TaskC {
     public static void run() {
