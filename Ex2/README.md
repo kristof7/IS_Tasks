@@ -5,10 +5,11 @@
 Program pobiera na wejściu 2 liczby: <br/>
 - informację z jakiego zakresu będzie losował dane (od 1 do podanej liczby) <br/>
 - ilość liczb do wylosowania <br/>
-​
+
+
 Wynikiem są wylosowane liczby (bez powtórzeń) i wyświetlone jedna pod drugą.
- 
 Np.: <br/>
+
 podaj zakres liczb: 49 <br/>
 podaj ilość liczb do wylosowania: 6 <br/>
 ..losu..losu..losu.. <br/>
@@ -24,9 +25,11 @@ podaj ilość liczb do wylosowania: 6 <br/>
 - program powinien być odporny na błędy (np. podanie tekstu zamiast liczby)
 - zadbaj, żeby w wyniku nie zdarzyły się powtórzenia
 - kod napisz w osobnej klasie, tzn. w metodzie main() powinna być tylko jedna linia kodu: Lotto.start();
-​
+
+
 Za wykonanie powyższych poleceń można dostać max punktów. 
 ​
+
 <br/>Dodatkowe wymagania dla chętnych:
 - wyświetl wynik posortowany od najmniejszej do największej wartości
 - wyświetlaj wyniki losowania, liczba po liczbie, z odstępem sekundy pomiędzy kolejnymi liczbami
@@ -37,11 +40,14 @@ Za wykonanie powyższych poleceń można dostać max punktów.
 # Forma oddania zadania
 Utwórz branch o nazwie wg konwencji `2_imieNazwisko`, np. `2_TomaszLisowski`<br/>
 Wykonaj zadanie na podanym branchu. <br/>
-​
+
+
 Dopiero tak zgłoszone zadanie podlega ocenie.
-​
+
+
 Do zdobycia jest 5 pkt.
 Zadania oddane po terminie są oceniane na max połowę pkt.
+
 ​
 #### Powodzenia!
 
