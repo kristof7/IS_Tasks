@@ -1,65 +1,67 @@
 package com.infoshareacademy;
 
+import Zadanie1.ZadanieB.ExerciseB;
 import Zadanie1.ZadanieC.Card;
 import Zadanie1.ZadanieC.Ranks;
 import Zadanie1.ZadanieC.Suits;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-//--------------ZADANIE C---VERSION2-SCANNER-(UPDATED)---------------------
-
-        //----Some Card objects------
-        System.out.println("Example cards:");
-        Card card1 = new Card();
-        card1.setRanks(Ranks.ACE);
-        card1.setSuits(Suits.SPADES);
-
-        Card card2 = new Card();
-        card2.setRanks(Ranks.KING);
-        card2.setSuits(Suits.CLUBS);
-
-        Card card3 = new Card();
-        card3.setRanks(Ranks.QUEEN);
-        card3.setSuits(Suits.HEARTS);
-
-        Card card4 = new Card();
-        card4.setRanks(Ranks.JACK);
-        card4.setSuits(Suits.DIAMONDS);
-
-        System.out.println(card1.getRanks() + " of " + card1.getSuits());
-        System.out.println(card2.getRanks() + " of " + card1.getSuits());
-        System.out.println(card3.getRanks() + " of " + card1.getSuits());
-        System.out.println(card4.getRanks() + " of " + card1.getSuits());
-        System.out.println("---------------------------------------------------");
-
+//--------------ZADANIE B--------------------------
         Scanner scanner = new Scanner(System.in);
-        //----This class shows the combination of a rank with a suit by entering the corresponding numbers
-        System.out.println("This application displays the combination of a rank with a suit by entering the corresponding numbers.");
-        System.out.println("You will be asked to input two numbers, first is for rank, second for suit.");
-        System.out.println("Choose Card's rank (1-ACE , 2-KING, 3-QUEEN, 4-JACK):");
-        //----Here user input rank value in number----
-        int rank = scanner.nextInt();
-        if (rank > 4 || rank < 1) {
-            System.out.println("The number you input is not valid, choose numbers only from 1 to 4.");
-        }
+        scanner.useLocale(Locale.US);
 
-        System.out.println("Choose Card's suit (1-CLUBS , 2-DIAMONDS, 3-HEARTS, 4-SPADES):");
-        //----Here user input suit value in number----
-        int suit = scanner.nextInt();
-        if (suit > 4 || rank < 1) {
-            System.out.println("The number you input is not valid, choose numbers only from 1 to 4.");
-        }
+        System.out.println("This program calculate mathematical operations such as addition, subtraction, multiplication and division.");
+        System.out.println("The program will ask you to input three values such as first number, operator and second number.");
+        int i = 0;
+        do {
+            try {
+                System.out.println("Input first number:");
+                scanner = new Scanner(System.in);
+                double numberA = scanner.nextDouble();
 
-        //----rank & suit are reduced by one to start counting from 1, not 0----
-        rank = rank - 1;
-        suit = suit - 1;
+                System.out.println("Input operator, you can choose between + , - , * , / only:");
+                scanner = new Scanner(System.in);
+                char oper = scanner.next().charAt(0);
 
-        Card.getDescription(rank, suit);
+                if (oper == '+' || oper == '-' || oper == '*' || oper == '/') {
+                } else {
+                    System.out.println("Wrong operator inputed!, remember to use only ( + , - , * , / ) operators");
+                    break;
+                }
+
+                System.out.println("Input second number:");
+                scanner = new Scanner(System.in);
+                double numberB = scanner.nextDouble();
+
+                Double resultSum = ExerciseB.sum(numberA, numberB);
+                Double resultSub = ExerciseB.sub(numberA, numberB);
+                Double resultProd = ExerciseB.prod(numberA, numberB);
+                Double resultQuot = ExerciseB.quot(numberA, numberB);
+
+                if (oper == '+') {
+                    System.out.println("The addition of: " + numberA + " " + oper + " " + numberB + " = " + (String.format("%.2f", resultSum)));
+                } else if (oper == '-') {
+                    System.out.println("The subbtraction of: " + numberA + " " + oper + " " + numberB + " = " + (String.format("%.2f", resultSub)));
+                } else if (oper == '*') {
+                    System.out.println("The multiplication of: " + numberA + " " + oper + " " + numberB + " = " + (String.format("%.2f", resultProd)));
+                } else if (oper == '/') {
+                    System.out.println("The division of: " + numberA + " " + oper + " " + numberB + " = " + (String.format("%.2f", resultQuot)));
+                } else {
+                    System.out.println("Wrong operator inputed!, remember to use only ( + , - , * , / ) operators");
+                }
+
+            } catch (Exception e) {
+                System.out.println("It's not valid value, please try again.. ");
+            }
+        } while (i <= 0);
+        i++;
 
     }
 }
