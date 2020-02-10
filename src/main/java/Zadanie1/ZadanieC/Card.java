@@ -1,5 +1,6 @@
 package Zadanie1.ZadanieC;
 
+
 public class Card {
     private Ranks ranks;
     private Suits suits;
