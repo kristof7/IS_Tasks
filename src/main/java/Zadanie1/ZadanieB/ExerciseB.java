@@ -38,7 +38,7 @@ public class ExerciseB {
             System.out.println("Input operator, you can only choose between ( +, -, *, / ):");
             scanner = new Scanner(System.in);
             oper = scanner.nextLine();
-            if (oper.matches(Arrays.toString(opers))) {
+            if (oper.equals(opers[0]) || oper.equals(opers[1]) || oper.equals(opers[2]) || oper.equals(opers[3]) ) {
                 goodOper = true;
             } else {
                 goodOper = false;
