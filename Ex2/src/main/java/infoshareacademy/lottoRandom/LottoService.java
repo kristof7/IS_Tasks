@@ -27,7 +27,7 @@ public class LottoService {
     public void randomNumbers(Integer amount, Integer minRange, Integer maxRangeList) {
         this.randomNumbers = new HashSet<>();
         while (randomNumbers.size() < amount) {
-            Integer number = ThreadLocalRandom.current().nextInt(minRange, maxRangeList);
+            Integer number = ThreadLocalRandom.current().nextInt(minRange, maxRangeList + 1);
             randomNumbers.add(number);
         }
     }
