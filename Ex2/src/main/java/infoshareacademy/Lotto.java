@@ -1,12 +1,8 @@
-package infoshareacademy;
-
 import java.util.*;
 
-import static java.lang.System.out;
+import static java.lang.System.*;
 
-class Lotto {
-
-
+public class Lotto {
     static void randomLotto() {
         Scanner scanner1 = new Scanner(System.in);
         out.println("Ile liczb chcesz uzyskać??");
@@ -16,16 +12,18 @@ class Lotto {
             out.println("podaj zakres");
             int l = scanner2.nextInt();
 
-            Set<Integer> zbior = new HashSet<Integer>();
+            Set<Integer> zbior = new TreeSet<Integer>();
             Random r = new Random();
 
+            int k = 0;
             for (int j = 0; j < i; j++)
-                for (int k = 0; k<i; k++)
+
+                do {
                     zbior.add(r.nextInt(l));
+                }
+                while(k>i);
 
-            for (Integer liczbaLosowa : zbior)
-
-            {
+            for (Integer liczbaLosowa : zbior){
                 System.out.println(liczbaLosowa);
             }
         }
