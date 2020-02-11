@@ -18,7 +18,6 @@ public class Lotto {
         int koniecZakresu = 0;
         int iloscLiczbDoWylosowania = 0;
         boolean licznik = false;
-        boolean licznik2 = false;
         SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy_HH_mm");
         Date date = new Date();
         String data = formatter.format(date);
@@ -39,16 +38,13 @@ public class Lotto {
         while(!licznik) {
             Scanner wartosciLiczb2 = new Scanner(System.in);
             try {
-                while(!licznik2) {
-                    System.out.print("Podaj ilosc liczb : ");
-                    iloscLiczbDoWylosowania = wartosciLiczb2.nextInt();
-                    if (koniecZakresu >= iloscLiczbDoWylosowania) {
-                        licznik2 = true;
-                    }else {
-                        System.out.println("ilosc liczb wieksza niz zakres, wybierz ponownie");
-                    }
+                System.out.print("Podaj ilosc liczb : ");
+                iloscLiczbDoWylosowania = wartosciLiczb2.nextInt();
+                if (koniecZakresu >= iloscLiczbDoWylosowania) {
+                    licznik = true;
+                }else {
+                    System.out.println("ilosc liczb wieksza niz zakres, wybierz ponownie");
                 }
-                licznik = true;
             } catch (Exception e) {
                 System.out.println("bledna wartosc, podaj prawidlowa : ");
             }
