@@ -1,5 +1,6 @@
 package infoshareacademy;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -29,7 +30,11 @@ public class Lotto {
             }
             for (Integer randomNumber: randomNumbers) {
                 System.out.println(randomNumber);
+                FileWriter myWriter = new FileWriter("lotto.txt");
+                myWriter.write(randomNumbers.toString());
+                myWriter.close();
             }
+            System.out.println("Wyniki losowania zostały zapisane do pliku lotto.txt");
         } catch (Exception e) {
             System.out.println("Coś poszło nie tak. Spróbuj ponownie odpalić maszynę losującą i postępować zgodnie " +
                     "z wyświetlającymi się instrukcjami.");
