@@ -1,7 +1,13 @@
 package infoshareacademy;
 
+import java.util.*;
+
 public class App {
+
     public static void main(String[] args) {
-        System.out.println("Lotto");
+
+        Lotto lotto = new Lotto();
+        lotto.Start();
+
     }
 }
