@@ -1,7 +1,8 @@
 package infoshareacademy;
 
-public class App {
+public class Lottery {
     public static void main(String[] args) {
-        System.out.println("Lotto");
+
+        Lotto.draw();
     }
 }
