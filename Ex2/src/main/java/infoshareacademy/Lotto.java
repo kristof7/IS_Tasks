@@ -29,6 +29,10 @@ public class Lotto {
                 Collections.sort(randomNumbers);
             }
             for (Integer randomNumber: randomNumbers) {
+                try {
+                    Thread.sleep(1000);
+                } catch (Exception e) {
+                }
                 System.out.println(randomNumber);
                 FileWriter myWriter = new FileWriter("lotto.txt");
                 myWriter.write(randomNumbers.toString());
