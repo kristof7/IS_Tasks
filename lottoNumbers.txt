@@ -1,1 +1,1 @@
-Your 6 draw numbers are: [1, 4, 5, 28, 36, 49]
+Your -1 draw numbers are: []
