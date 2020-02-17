@@ -5,14 +5,14 @@
 Do zaprojektowania mamy aplikację dla małej Pizzerii (obsługa zamówień od klientów oraz zarządzanie posiłkami).
 
 
-#####_Menu_
+<br>_Menu_<br/>
 - pizza (mała, średnia, duża) :pizza:
 - hamburger :hamburger:
 - napoje (cola, sok, piwo) :beer:
 
 Typ pizzy: Pepperoni, Capricciosa, Hawajska, itp.
 
-#####_Zamówienie_
+<br>_Zamówienie_<br/>
 - klient/adres/telefon
 - rodzaj zamówienia (pizza/kebab + napoje)
 
@@ -26,7 +26,7 @@ Wyobraź sobie teraz taką sytuację:
 Wprowadź do swojej aplikacji powyższe zamówienia (zakodować w metodzie main, nie trzeba wprowadzać z konsoli).
 <br/><br/>
 
-#####Uwagi do rozwiązania:
+<br>Uwagi do rozwiązania:<br/>
    - w aplikacji powinna się znaleźć przynajmniej jedna klasa abstrakcyjna
    - wykorzystaj mechanizm dziedziczenia po klasie abstrakcyjnej
    - w programie powinna się znaleźć przynajmniej jedena klasa Enum
