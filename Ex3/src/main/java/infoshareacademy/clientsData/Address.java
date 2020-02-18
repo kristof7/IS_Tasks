@@ -1,4 +1,4 @@
-package infoshareacademy;
+package infoshareacademy.clientsData;
 
 public class Address {
     String street;

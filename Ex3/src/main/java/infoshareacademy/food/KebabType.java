@@ -1,7 +1,6 @@
-package infoshareacademy;
+package infoshareacademy.food;
 
 public enum KebabType {
-
     HAMBURGER(15.50),
 
     KEBAB(19.90),

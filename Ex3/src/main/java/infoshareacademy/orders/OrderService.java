@@ -1,7 +1,11 @@
-package infoshareacademy;
+package infoshareacademy.orders;
+
+import infoshareacademy.calculator.Calculator;
+import infoshareacademy.food.Food;
+import infoshareacademy.food.Foods;
+import infoshareacademy.clientsData.Client;
 
 public class OrderService {
-
     Order order;
 
     public void createOrder(Foods foods, Client client) {

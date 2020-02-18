@@ -1,7 +1,6 @@
-package infoshareacademy;
+package infoshareacademy.food;
 
 public enum DrinkType {
-
     WATER(4.5),
 
     COLA(6.90),

@@ -1,9 +1,8 @@
-package infoshareacademy;
+package infoshareacademy.food;
+
+import infoshareacademy.orders.OrderType;
 
 public abstract class Food {
-
-    public abstract double calculatePrice();
-
     private OrderType orderType;
 
     private int amount;
@@ -12,6 +11,8 @@ public abstract class Food {
         this.amount = amount;
         this.orderType = orderType;
     }
+
+    public abstract double calculatePrice();
 
     public OrderType getOrderType() {
         return orderType;

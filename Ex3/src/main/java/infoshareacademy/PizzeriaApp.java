@@ -1,5 +1,10 @@
 package infoshareacademy;
 
+import infoshareacademy.clientsData.Address;
+import infoshareacademy.clientsData.Client;
+import infoshareacademy.food.*;
+import infoshareacademy.orders.OrderService;
+
 public class PizzeriaApp {
     public static void main(String[] args) {
 

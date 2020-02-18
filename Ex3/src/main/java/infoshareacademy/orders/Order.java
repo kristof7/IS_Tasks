@@ -1,10 +1,13 @@
-package infoshareacademy;
+package infoshareacademy.orders;
+
+import infoshareacademy.food.Food;
+import infoshareacademy.food.Foods;
+import infoshareacademy.clientsData.Client;
 
 import java.util.ArrayList;
 import java.util.Map;
 
 public class Order {
-
     private Client client;
 
     private Foods foods;
@@ -19,17 +22,18 @@ public class Order {
     public void specifyOrderType() {
         Map<OrderType, ArrayList<Food>> foodsMap = foods.getFoodsMap();
 
-        if (foodsMap.containsKey(OrderType.PIZZA) && foodsMap.containsKey(OrderType.KEBAB) && foodsMap.containsKey(OrderType.BEER))
-            this.orderType = OrderType.PIZZA_KEBAB_BEER;
+        if (foodsMap.containsKey(OrderType.PIZZA) && foodsMap.containsKey(OrderType.KEBAB) && foodsMap.containsKey(OrderType.DRINKS)){
+            this.orderType = OrderType.PIZZA_KEBAB_DRINKS;
+        }
         if (foodsMap.containsKey(OrderType.PIZZA)) this.orderType = OrderType.PIZZA;
         if (foodsMap.containsKey(OrderType.KEBAB)) this.orderType = OrderType.KEBAB;
-        if (foodsMap.containsKey(OrderType.BEER)) this.orderType = OrderType.BEER;
+        if (foodsMap.containsKey(OrderType.DRINKS)) this.orderType = OrderType.DRINKS;
         if (foodsMap.containsKey(OrderType.PIZZA) && foodsMap.containsKey(OrderType.KEBAB))
             this.orderType = OrderType.PIZZA_KEBAB;
-        if (foodsMap.containsKey(OrderType.KEBAB) && foodsMap.containsKey(OrderType.BEER))
-            this.orderType = OrderType.KEBAB_BEER;
-        if (foodsMap.containsKey(OrderType.PIZZA) && foodsMap.containsKey(OrderType.BEER))
-            this.orderType = OrderType.PIZZA_BEER;
+        if (foodsMap.containsKey(OrderType.KEBAB) && foodsMap.containsKey(OrderType.DRINKS))
+            this.orderType = OrderType.KEBAB_DRINKS;
+        if (foodsMap.containsKey(OrderType.PIZZA) && foodsMap.containsKey(OrderType.DRINKS))
+            this.orderType = OrderType.PIZZA_DRINKS;
 
     }
 

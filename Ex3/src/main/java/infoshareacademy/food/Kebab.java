@@ -1,7 +1,8 @@
-package infoshareacademy;
+package infoshareacademy.food;
+
+import infoshareacademy.orders.OrderType;
 
 public class Kebab extends Food {
-
     private KebabType type;
 
     public Kebab(int amount, KebabType type) {
@@ -20,6 +21,7 @@ public class Kebab extends Food {
                 "type=" + type +
                 ",kebab amount=" + getAmount() +
                 ", price=" + calculatePrice() +
+                ",order type: " + getOrderType()+
                 '}';
     }
 }

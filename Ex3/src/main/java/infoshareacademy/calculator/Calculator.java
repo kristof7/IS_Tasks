@@ -1,4 +1,4 @@
-package infoshareacademy;
+package infoshareacademy.calculator;
 
 public class Calculator {
 

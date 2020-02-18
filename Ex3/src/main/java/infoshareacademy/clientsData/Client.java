@@ -1,7 +1,6 @@
-package infoshareacademy;
+package infoshareacademy.clientsData;
 
 public class Client {
-
     String clientName;
 
     Address address;

@@ -1,11 +1,12 @@
-package infoshareacademy;
+package infoshareacademy.food;
+
+import infoshareacademy.orders.OrderType;
 
 public class Drinks extends Food {
-
     DrinkType drinkType;
 
     public Drinks(int amount, DrinkType drinkType) {
-        super(amount, OrderType.BEER);
+        super(amount, OrderType.DRINKS);
         this.drinkType = drinkType;
     }
 
@@ -20,6 +21,7 @@ public class Drinks extends Food {
                 "drinkType=" + drinkType +
                 ", drinks amount=" + getAmount() +
                 ", price=" + calculatePrice() +
+                ",order type: " + getOrderType()+
                 '}';
     }
 }

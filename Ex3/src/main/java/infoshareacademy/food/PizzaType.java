@@ -1,7 +1,6 @@
-package infoshareacademy;
+package infoshareacademy.food;
 
 public enum PizzaType {
-
     PEPPERONI(22),
 
     CAPRICOSA(23.50),

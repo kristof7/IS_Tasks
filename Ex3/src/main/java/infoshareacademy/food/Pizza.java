@@ -1,7 +1,9 @@
-package infoshareacademy;
+package infoshareacademy.food;
+
+import infoshareacademy.calculator.Calculator;
+import infoshareacademy.orders.OrderType;
 
 public class Pizza extends Food {
-
     private PizzaSize size;
 
     private PizzaType type;
@@ -24,6 +26,7 @@ public class Pizza extends Food {
                 ", type=" + type +
                 ",pizzas amount=" + getAmount() +
                 ", price=" + calculatePrice() +
+                ",order type: " + getOrderType()+
                 '}';
     }
 }

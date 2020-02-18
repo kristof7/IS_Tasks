@@ -1,7 +1,6 @@
-package infoshareacademy;
+package infoshareacademy.food;
 
 public enum PizzaSize {
-
     SMALL(1.0),
 
     MEDIUM(1.1),

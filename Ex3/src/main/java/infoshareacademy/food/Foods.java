@@ -1,10 +1,12 @@
-package infoshareacademy;
+package infoshareacademy.food;
+
+import infoshareacademy.orders.OrderType;
 
 import java.util.*;
 
 public class Foods {
-
     Map<OrderType, ArrayList<Food>> foodsMap = new HashMap<>();
+
     List<Food> allFoods = new ArrayList<>();
 
     public Map<OrderType, ArrayList<Food>> getFoodsMap() {
