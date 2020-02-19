@@ -14,7 +14,7 @@ Typ pizzy: Pepperoni, Capricciosa, Hawajska, itp.
 
 <br>_Zamówienie_<br/>
 - klient/adres/telefon
-- rodzaj zamówienia (pizza/kebab + napoje)
+- rodzaj zamówienia (pizza/hamburger + napoje)
 
 
 Wyobraź sobie teraz taką sytuację:
