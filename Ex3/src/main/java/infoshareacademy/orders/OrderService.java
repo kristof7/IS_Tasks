@@ -1,12 +1,13 @@
 package infoshareacademy.orders;
 
 import infoshareacademy.calculator.Calculator;
+import infoshareacademy.fileSaving.JsonCreator;
 import infoshareacademy.food.Food;
 import infoshareacademy.food.Foods;
 import infoshareacademy.clientsData.Client;
 
 public class OrderService {
-    Order order;
+    private Order order;
 
     public void createOrder(Foods foods, Client client) {
         this.order = new Order(client, foods);
@@ -26,5 +27,11 @@ public class OrderService {
         System.out.println(this.order);
     }
 
+    public Order getOrder() {
+        return order;
+    }
 
+    public static void saveOrders(Orders orders){
+        JsonCreator.createJson(orders);
+    }
 }

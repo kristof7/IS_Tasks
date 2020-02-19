@@ -14,4 +14,17 @@ public class Orders {
     public List<Order> getOrdersList() {
         return ordersList;
     }
+
+    public void add(Order...orders){
+        for (Order order: orders) {
+            this.ordersList.add(order);
+        }
+    }
+
+    public void printOrders() {
+        for (Order order : this.ordersList) {
+            System.out.println(order);
+        }
+    }
+
 }

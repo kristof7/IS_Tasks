@@ -1,5 +1,6 @@
 package infoshareacademy.food;
 
+import infoshareacademy.calculator.Calculator;
 import infoshareacademy.orders.OrderType;
 
 public class Drinks extends Food {
@@ -12,7 +13,7 @@ public class Drinks extends Food {
 
     @Override
     public double calculatePrice() {
-        return drinkType.getPrice() * this.getAmount();
+        return Calculator.round(drinkType.getPrice() * this.getAmount(),1);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package infoshareacademy.food;
 
+import infoshareacademy.calculator.Calculator;
 import infoshareacademy.orders.OrderType;
 
 public class Kebab extends Food {
@@ -12,7 +13,7 @@ public class Kebab extends Food {
 
     @Override
     public double calculatePrice() {
-        return type.getPrice() * getAmount();
+        return Calculator.round(type.getPrice() * getAmount(),1);
     }
 
     @Override

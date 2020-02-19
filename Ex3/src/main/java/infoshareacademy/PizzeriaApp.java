@@ -4,11 +4,13 @@ import infoshareacademy.clientsData.Address;
 import infoshareacademy.clientsData.Client;
 import infoshareacademy.food.*;
 import infoshareacademy.orders.OrderService;
+import infoshareacademy.orders.Orders;
+
 
 public class PizzeriaApp {
     public static void main(String[] args) {
 
-        OrderService orderService = new OrderService();
+       OrderService orderService = new OrderService();
         Foods foods = new Foods(new Pizza(1, PizzaSize.LARGE, PizzaType.PEPPERONI),
                 new Drinks(2, DrinkType.ORANGE_JUICE));
         orderService.createOrder(foods,
@@ -31,5 +33,32 @@ public class PizzeriaApp {
                 new Client("Paweł", new Address("Grunwaldzka", "Gdańsk"), "2339938694"));
         orderService2.printOrder();
         System.out.println("Total cost " + orderService2.calculateTotalCost(foods2) + "\n\n");
+
+        OrderService orderService3 = new OrderService();
+        Foods foods3 = new Foods(new Kebab(2, KebabType.HAMBURGER),
+                new Drinks(3, DrinkType.COLA));
+        orderService3.createOrder(foods3,
+                new Client("Kamila", new Address("Grunwaldzka", "Gdańsk"), "2339938694"));
+        orderService3.printOrder();
+        System.out.println("Total cost " + orderService3.calculateTotalCost(foods3) + "\n\n");
+
+        OrderService orderService4 = new OrderService();
+        Foods foods4 = new Foods(new Kebab(2, KebabType.HAMBURGER),
+                new Drinks(3, DrinkType.COLA));
+        orderService4.createOrder(foods3,
+                new Client("Karol", new Address("Grunwaldzka", "Gdańsk"), "2339938694"));
+        orderService4.printOrder();
+        System.out.println("Total cost " + orderService3.calculateTotalCost(foods3) + "\n\n");
+
+        Orders orders = new Orders(orderService.getOrder(),orderService1.getOrder(),orderService2.getOrder(),orderService3.getOrder());
+        OrderService.saveOrders(orders);
+
+
+
+
+
+
+
+
     }
 }
