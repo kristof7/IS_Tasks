@@ -1,6 +1,6 @@
 package infoshareacademy;
 
-public abstract class Menu {
+public abstract class Meal {
     enum Size {
         SMALL,
         MEDIUM,
@@ -12,16 +12,5 @@ public abstract class Menu {
         CAPRICIOSA,
         HAWAJSKA
     }
-
-    enum Drink {
-        COKE,
-        JUICE,
-        BEER
-    }
-
-    enum NumberOfItems {
-        ONE,
-        TWO,
-        THREE
-    }
 }
+

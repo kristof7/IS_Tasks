@@ -1,6 +1,6 @@
 package infoshareacademy;
 
-public class Hamburger extends Menu {
+public class Hamburger extends Meal {
     private String hamburger;
 
     public String getHamburger() {
@@ -9,5 +9,9 @@ public class Hamburger extends Menu {
 
     public void setHamburger(String hamburger) {
         this.hamburger = hamburger;
+    }
+
+    public String addHamburger(String hamburger) {
+        return hamburger;
     }
 }
