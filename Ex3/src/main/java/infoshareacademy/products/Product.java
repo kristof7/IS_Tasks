@@ -28,6 +28,8 @@ public abstract class Product {
         this.typeOfProduct = typeOfProduct;
     }
 
+    public abstract void printProductDetail();
+
 
 }
 

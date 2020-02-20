@@ -21,7 +21,8 @@ public class Drinks extends Product {
         this.typeOfDrinks = typeOfDrinks;
     }
 
-    public void printDrinksOrder () {
-        System.out.println("Drink : " + getTypeOfDrinks().toString().toLowerCase() + ", quantity : " + getQuantity() + ".");
+    @Override
+    public void printProductDetail() {
+        System.out.println(getTypeOfProduct() + ": " + typeOfDrinks + ", quantity: " + getQuantity());
     }
 }

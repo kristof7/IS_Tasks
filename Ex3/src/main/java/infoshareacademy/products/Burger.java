@@ -21,8 +21,9 @@ public class Burger extends Product{
         this.typeOfBurger = typeOfBurger;
     }
 
-    public void printBurgerOrder () {
-        System.out.println("Drink : " + getTypeOfBurger().toString().toLowerCase() + ", quantity : " + getQuantity() + ".");
+    @Override
+    public void printProductDetail() {
+        System.out.println(getTypeOfProduct() + ": " + typeOfBurger + ", quantity: " + getQuantity());
     }
 
 }

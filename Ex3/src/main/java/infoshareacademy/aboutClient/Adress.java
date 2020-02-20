@@ -25,5 +25,5 @@ public abstract class Adress {
         this.city = city;
     }
 
-    public abstract void createClient();
+    public abstract void printClientDetail();
 }

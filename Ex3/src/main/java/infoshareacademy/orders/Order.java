@@ -5,12 +5,12 @@ import infoshareacademy.products.Product;
 
 public class Order {
     private Client client;
-    private Product[] product;
+    private Product[] products;
 
 
-    public Order(Client client, Product... product) {
+    public Order(Client client, Product... products) {
         this.client = client;
-        this.product = product;
+        this.products = products;
     }
 
 
@@ -19,12 +19,15 @@ public class Order {
     }
 
     public Product[] getProduct() {
-        return product;
+        return products;
     }
 
     public void printOrder() {
         System.out.println("Order from : ");
-        client.createClient();
-        System.out.println("Orders :");
+        client.printClientDetail();
+        System.out.println("Products :");
+        for(Product product : products) {
+            product.printProductDetail();
+        }
     }
 }

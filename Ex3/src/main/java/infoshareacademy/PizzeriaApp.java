@@ -15,8 +15,6 @@ public class PizzeriaApp {
         Order order1 = new Order(client1, pizza1, drinks1);
 
         order1.printOrder();
-        pizza1.printPizzaOrder();
-        drinks1.printDrinksOrder();
 
         System.out.println("\n \n \n");
 
@@ -28,9 +26,6 @@ public class PizzeriaApp {
         Order order2 = new Order(client2, pizza2, pizza3, drinks2);
 
         order2.printOrder();
-        pizza2.printPizzaOrder();
-        pizza3.printPizzaOrder();
-        drinks2.printDrinksOrder();
 
         System.out.println("\n \n \n");
 
@@ -41,8 +36,6 @@ public class PizzeriaApp {
         Order order3 = new Order(client3, burger1, drinks3);
 
         order3.printOrder();
-        burger1.printBurgerOrder();
-        drinks3.printDrinksOrder();
 
 
 

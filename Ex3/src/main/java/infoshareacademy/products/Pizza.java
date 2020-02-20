@@ -31,7 +31,9 @@ public class Pizza extends Product {
         return TypeOfProduct.PIZZA;
     }
 
-    public void printPizzaOrder () {
-        System.out.println("Pizza " + getTypeOfPizza().toString().toLowerCase() + ", size : " + getSizeOfPizza().toString().toLowerCase() + ", quantity : " + getQuantity() + ".");
+    @Override
+    public void printProductDetail() {
+        System.out.println(getTypeOfProduct() + ": " + typeOfPizza + ", " + sizeOfPizza + ", quantity: " + getQuantity());
     }
+
 }

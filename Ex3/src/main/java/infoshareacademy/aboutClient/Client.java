@@ -30,7 +30,7 @@ public class Client extends Adress{
     }
 
     @Override
-    public void createClient() {
+    public void printClientDetail() {
         System.out.println(getName() + ", adress : " + getStreet() + "/" + getCity() + ", phone : " + getPhoneNumber() + ".");
     }
 }
