@@ -6,7 +6,7 @@ Do zaprojektowania mamy aplikację dla małej Pizzerii (obsługa zamówień od k
 
 
 <br>_Menu_<br/>
-- pizza (mała, średnia, duża) :pizza:
+- food (mała, średnia, duża) :food:
 - hamburger :hamburger:
 - napoje (cola, sok, piwo) :beer:
 
@@ -14,7 +14,7 @@ Typ pizzy: Pepperoni, Capricciosa, Hawajska, itp.
 
 <br>_Zamówienie_<br/>
 - klient/adres/telefon
-- rodzaj zamówienia (pizza/hamburger + napoje)
+- rodzaj zamówienia (food/hamburger + napoje)
 
 
 Wyobraź sobie teraz taką sytuację:
