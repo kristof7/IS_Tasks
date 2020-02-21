@@ -115,7 +115,7 @@ public class Lotto {
         System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.");
         System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡Następuje zwolnienie blokady.｡｡*ﾟ.*.｡｡");
         System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.");
-        System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡I losowanie " + range + " liczb｡*ﾟ.*.｡｡*ﾟ.*.｡");
+        System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡I losowanie z " + range + " liczb｡*ﾟ.*.｡｡*ﾟ.*.｡");
         System.out.println("｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.*.｡｡*ﾟ.");
 
         for (Integer i: luckyNumbersInList) {
