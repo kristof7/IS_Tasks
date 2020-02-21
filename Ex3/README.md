@@ -27,7 +27,7 @@ Wprowadź do swojej aplikacji powyższe zamówienia (zakodować w metodzie main,
 <br/><br/>
 
 <br>Uwagi do rozwiązania:<br/>
-   - w aplikacji powinna się znaleźć przynajmniej jedna klasa abstrakcyjna
+   - w aplikacji powinna się znaleźć pr     zynajmniej jedna klasa abstrakcyjna
    - wykorzystaj mechanizm dziedziczenia po klasie abstrakcyjnej
    - w programie powinna się znaleźć przynajmniej jedena klasa Enum
    - klasy, metody i pola powinny powinny mieć odpowiednie modyfikatory dostępu (public/private)
