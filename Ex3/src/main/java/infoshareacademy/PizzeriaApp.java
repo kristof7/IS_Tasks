@@ -33,9 +33,13 @@ public class PizzeriaApp {
         orderList.add(orderTwo);
         orderList.add(orderThree);
 
-        System.out.println(orderList.get(0));
-        System.out.println(orderList.get(1));
-        System.out.println(orderList.get(2));
+        for (String order : orderList) {
+            System.out.println(order);
+        }
+        Orders orders = FileManaging.readOrdersJsonFile();
+        orders.setOrderList(orderList);
+        orders.getOrderList();
+        FileManaging.saveOrdersToJsonFile(orders);
 
     }
 }
