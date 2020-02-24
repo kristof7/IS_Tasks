@@ -81,9 +81,6 @@ Metoda powinna wykorzystywać Java 8 Optional.
 <br/><br/>
 
 
-#####Za wykonanie powyższych zadań można dostać max 5 punktów. 
-​
-
 
 ​
 ​
