@@ -1,17 +1,16 @@
 # Zadanie 4. Java Struktury Danych, Date API, Optional
 ​
 ### Zadanie A - 1 pkt
-
-Dla tablicy wejściowej _input_ zawierającej liczby typu int zwrócić tablicę zawierającą ilość elementów ujemnych oraz sumę elementów dodatnich. 
+Dla tablicy wejściowej input zawierającej liczby typu int zwrócić tablicę zawierającą ilość elementów ujemnych oraz sumę elementów dodatnich.
 
 Jeśli tablica będzie pusta lub null, wtedy należy zwrócić pustą tablicę.
 
+Przykład:
 
-Przykład: 
-
-Wejście: _input_ int[] {-3, -2, -1, 0, 1, 2, 3, 4, 5} 
+Wejście: input int[] {-3, -2, -1, 0, 1, 2, 3, 4, 5}
 
 Program powinien zwrócić: int[] {3, 15}, czyli 3 liczby ujemne i suma liczb dodatnich równa 15.
+
 <br/><br/>
 
 ### Zadanie B - 1 pkt
