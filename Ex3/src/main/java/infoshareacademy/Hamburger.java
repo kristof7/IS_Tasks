@@ -1,7 +1,6 @@
 package infoshareacademy;
 
-public class Hamburger extends OrderItem{
-    private final String name = "Hamburger";
+public class Hamburger extends OrderItem implements Burger{
 
     Hamburger(Integer quantity){
         this.quantity = quantity;
