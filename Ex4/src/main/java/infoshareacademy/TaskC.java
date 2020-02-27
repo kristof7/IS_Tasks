@@ -11,9 +11,14 @@ public class TaskC {
         char[] nameChars = name.toLowerCase().toCharArray();
         Set<Character> nameCharsSet = new HashSet<>();
 
-        for (Character nameChar:nameChars) {
+        for (Character nameChar : nameChars) {
             nameCharsSet.add(nameChar);
         }
         return nameChars.length != nameCharsSet.size();
+    }
+
+
+    public static void run(String name){
+        System.out.println(name+", "+taskC(name));
     }
 }

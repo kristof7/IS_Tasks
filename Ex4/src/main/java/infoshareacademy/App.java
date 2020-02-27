@@ -45,10 +45,10 @@ public class App {
         System.out.println("Zadanie C");
         System.out.println();
 
-        System.out.println(TaskC.taskC("agata"));
-        System.out.println(TaskC.taskC("Pawel"));
-        System.out.println(TaskC.taskC("tomek"));
-        System.out.println(TaskC.taskC("rEmek"));
+        TaskC.run("agata");
+        TaskC.run("Pawel");
+        TaskC.run("tomek");
+        TaskC.run("rEmek");
 
         System.out.println();
         // Zadanie D
