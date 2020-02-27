@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class TaskE {
 
-    public void taskE(String key){
+    public void taskE(String studentName){
 
         Map<String, Optional<Integer>> marks = new HashMap<>();
 
@@ -20,11 +20,15 @@ public class TaskE {
 
 
 
-        if(marks.containsKey(key)) {
-            Optional<Integer> studentMark = marks.get(key);
+        if(marks.containsKey(studentName)) {
+            Optional<Integer> studentMark = marks.get(studentName);
             if (studentMark.isPresent()) {
-                System.out.println(key + " za zadanie domowe Ex4 uzyskal " + studentMark.get() + " pkt.");
-            } else System.out.println(key + " nie wykonał/a jeszcze zadania domowego");
-        } else System.out.println("Nie ma osoby o takim imieniu");
+                System.out.println(studentName + " za zadanie domowe Ex4 uzyskal " + studentMark.get() + " pkt.");
+            } else {
+                System.out.println(studentName + " nie wykonał/a jeszcze zadania domowego");
+            }
+        } else {
+            System.out.println("Nie ma osoby o takim imieniu");
+        }
     }
 }
