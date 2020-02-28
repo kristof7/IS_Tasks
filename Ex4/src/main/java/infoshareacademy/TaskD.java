@@ -1,5 +1,7 @@
 package infoshareacademy;
 
+import java.util.Map;
+
 public class TaskD {
-    // umieść tutaj rozwiązanie Zadania D
+
 }
