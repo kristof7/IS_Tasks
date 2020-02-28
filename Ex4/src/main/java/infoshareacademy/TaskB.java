@@ -33,9 +33,7 @@ public class TaskB {
         map.put("sum of negative numbers", sum1);
         map.put("sum of positive numbers", sum2);
 
-        for (String m : map.keySet()) {
-            System.out.println(m + " = " + map.get(m));
+        System.out.println(map);
 
         }
     }
-}
