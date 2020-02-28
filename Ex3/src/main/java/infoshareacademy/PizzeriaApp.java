@@ -2,9 +2,15 @@ package infoshareacademy;
 
 import infoshareacademy.Menu.*;
 import infoshareacademy.Restaurant.*;
+import infoshareacademy.utils.JsonConverter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PizzeriaApp {
     public static void main(String[] args) {
+
+
         Client firstClient = new Client("Adam", "Pogodna 13", "123");
         Order firstOrder = new Order(firstClient);
         firstOrder.addProduct(new Pizza(PizzaType.PEPPERONI, PizzaSize.BIG));
@@ -21,5 +27,12 @@ public class PizzeriaApp {
         Order thirdOrder = new Order(thirdClient);
         thirdOrder.addProduct(new Sandwich(SandwichType.HAMBURGER));
         thirdOrder.addProduct(new Drink(DrinkType.BEER));
+
+       OrderList orderList = new OrderList();
+        orderList.addOrder(firstOrder);
+        orderList.addOrder(secondOrder);
+        orderList.addOrder(thirdOrder);
+
+        JsonConverter.saveOrderToJsonFile(orderList);
     }
 }

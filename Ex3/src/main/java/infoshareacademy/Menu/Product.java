@@ -1,3 +1,5 @@
 package infoshareacademy.Menu;
 
-public abstract class Product { }
+public abstract class Product implements ToJson {
+
+}

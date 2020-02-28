@@ -1,7 +1,12 @@
 package infoshareacademy.Menu;
 
-public enum DrinkType {
+public enum DrinkType implements ToJson {
     COLA,
     JUICE,
-    BEER
+    BEER;
+
+    @Override
+    public String toJson() {
+        return "\"" + this.toString() + "\"";
+    }
 }

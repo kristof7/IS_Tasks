@@ -6,4 +6,8 @@ public class Sandwich extends Product {
     public Sandwich(SandwichType sandwichType) {
         this.sandwichType = sandwichType;
     }
+
+    public SandwichType getSandwichType() {
+        return sandwichType;
+    }
 }

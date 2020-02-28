@@ -1,7 +1,12 @@
 package infoshareacademy.Menu;
 
-public enum PizzaSize {
+public enum PizzaSize implements ToJson {
     BIG,
     MEDIUM,
-    SMALL
+    SMALL;
+
+    @Override
+    public String toJson() {
+        return "\"" + this.toString() + "\"";
+    }
 }

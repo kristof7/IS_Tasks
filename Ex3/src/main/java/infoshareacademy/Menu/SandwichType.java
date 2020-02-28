@@ -1,6 +1,11 @@
 package infoshareacademy.Menu;
 
-public enum SandwichType {
+public enum SandwichType implements ToJson {
     HAMBURGER,
-    KEBAB
+    KEBAB;
+
+    @Override
+    public String toJson() {
+        return "\"" + this.toString() + "\"";
+    }
 }

@@ -1,0 +1,58 @@
+{
+  "listOfOrders": [
+    {
+      "listOfProducts": [
+        {
+          "pizzaType": "PEPPERONI",
+          "pizzaSize": "BIG"
+        },
+        {
+          "drinkType": "JUICE"
+        },
+        {
+          "drinkType": "JUICE"
+        }
+      ],
+      "client": {
+        "clientName": "Adam",
+        "clientAddress": "Pogodna 13",
+        "clientPhone": "123"
+      }
+    },
+    {
+      "listOfProducts": [
+        {
+          "pizzaType": "HAWAJSKA",
+          "pizzaSize": "SMALL"
+        },
+        {
+          "pizzaType": "CPRICCIOSA",
+          "pizzaSize": "MEDIUM"
+        },
+        {
+          "drinkType": "COLA"
+        }
+      ],
+      "client": {
+        "clientName": "Anna",
+        "clientAddress": "Dluga 18/3",
+        "clientPhone": "456"
+      }
+    },
+    {
+      "listOfProducts": [
+        {
+          "sandwichType": "HAMBURGER"
+        },
+        {
+          "drinkType": "BEER"
+        }
+      ],
+      "client": {
+        "clientName": "Pawel",
+        "clientAddress": "Grunwaldzka 472b",
+        "clientPhone": "789"
+      }
+    }
+  ]
+}

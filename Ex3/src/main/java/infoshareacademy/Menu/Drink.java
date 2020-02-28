@@ -6,4 +6,8 @@ public class Drink extends Product {
     public Drink(DrinkType drinkType) {
         this.drinkType = drinkType;
     }
+
+    public DrinkType getDrinkType() {
+        return drinkType;
+    }
 }

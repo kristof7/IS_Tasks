@@ -1,7 +1,12 @@
 package infoshareacademy.Menu;
 
-public enum PizzaType {
+public enum PizzaType implements ToJson {
     PEPPERONI,
     CPRICCIOSA,
-    HAWAJSKA
+    HAWAJSKA;
+
+    @Override
+    public String toJson() {
+        return "\"" + this.toString() + "\"";
+    }
 }
