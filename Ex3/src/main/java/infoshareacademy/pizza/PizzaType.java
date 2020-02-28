@@ -1,4 +1,4 @@
-package infoshareacademy;
+package infoshareacademy.pizza;
 
 public enum PizzaType {
     AMERICANA,
