@@ -6,7 +6,7 @@ public enum DrinkType implements ToJson {
     BEER;
 
     @Override
-    public Strng toJson() {
+    public String toJson() {
         return "\"" + this.toString() + "\"";
     }
 }
