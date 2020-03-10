@@ -17,3 +17,4 @@ Jeśli przeglądasz to repozytorium na GitHub'ie to klikając w poniższe linki 
 * [Zadanie 2 - Java SE](./Ex2)
 * [Zadanie 3 - Java OOP](./Ex3)
 * [Zadanie 4 - Java Struktury Danych, Date API, Optional](./Ex4)
+* [Zadanie 5 - Java Struktury Danych, Clean Code](./Ex5)
