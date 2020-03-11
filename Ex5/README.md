@@ -1,9 +1,9 @@
 # Zadanie 5. Java Struktury Danych, Clean Code
-### Zadanie Quiz - 5 pkt
+### Zadanie Quiz - 5 pkt.
 
-Napisz program typu Quiz :thought_balloon:
+Napisz program typu Quiz. :thought_balloon:
 
-Quiz składa się z min. 3 pytań, a każde pytanie ma min. 3 odpowiedzi i tylko jedna jest prawidłowa.
+Quiz składa się z min. 3 pytań, a każde pytanie ma min. 3 odpowiedzi i tylko jedna jest prawidłowa.  
 Pytania do quizu są za każdym razem losowane z większej puli (min. 5 pytań).
 Tematyka pytań dowolna.  
 <br>_Przykładowe pytanie:_<br/>
@@ -21,15 +21,14 @@ Następnie program wyświetla informację, czy udzielono prawidłowej odpowiedzi
 Po wyświetleniu wszystkich pytań otrzymujemy informację z końcowym wynikiem.  
 
 
-
-######Uwagi do rozwiązania:
-   - Aplikacja powinna być napisana obiektowo (klasy np. Quiz, Question, Category (enum) itp.).
-   - Program powinien korzystać z min. dwóch różnych struktur danych (List, Map, Set).
-   - Pytania do quizu powinny być losowe i nie powinny się powtarzać (w ramach jednego quizu). 
-   - Szczególną uwagę należy zwrócić na zasady `clean code`.  
+##### Wymagania:
+   - Aplikacja powinna być napisana obiektowo (klasy np. Quiz, Question, Category (enum) itp.) - **1 pkt**.  
+   - Program powinien korzystać z min. **dwóch** różnych struktur danych (List, Map, Set) - **1 pkt**.  
+   - Pytania do quizu powinny być losowe i nie powinny się powtarzać (w ramach jednego quizu) - **1 pkt**.  
+   - Szczególną uwagę należy zwrócić na zasady `clean code` - **2 pkt**.  
   
-<br/>Za wykonanie powyższych poleceń można dostać max punktów. 
-​
+<br/>Maksymalną ilosćć punktów za zadanie można otrzymać tylko wówczas, jeśli wszystkie powyższe polecenia zostały wykonane.  
+
 
 <br/>_Dodatkowe wymagania dla chętnych:_
 1. Na początku quizu wybieramy kategorię i wylosowane pytania są tylko z tej kategorii.
@@ -56,7 +55,7 @@ Do zdobycia jest :five: pkt.
 Zadania oddane po terminie są oceniane na max połowę pkt.
 
 ​
-#### Powodzenia!
+#### Powodzenia! :smile:
 
 ### :clock12: Termin oddania:  
 ## Niedziela 22.03.2020 godz. 23:59
