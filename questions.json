@@ -1,0 +1,729 @@
+{
+  "categoriesList": [
+    {
+      "categoryNames": "MATH",
+      "questions": {
+        "questionList": [
+          {
+            "content": "Wynikiem pochodnej x^2 jest",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "0",
+                  "status": false
+                },
+                "B": {
+                  "content": "x/2",
+                  "status": false
+                },
+                "C": {
+                  "content": "2x",
+                  "status": true
+                },
+                "D": {
+                  "content": "2x/3",
+                  "status": false
+                },
+                "E": {
+                  "content": "2x^",
+                  "status": false
+                }
+              },
+              "correctAnswersForQuestion": {
+                "C": {
+                  "content": "2x",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz liczby pierwsz",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "6",
+                  "status": false
+                },
+                "B": {
+                  "content": "3",
+                  "status": true
+                },
+                "C": {
+                  "content": "11",
+                  "status": true
+                },
+                "D": {
+                  "content": "1",
+                  "status": false
+                },
+                "E": {
+                  "content": "9",
+                  "status": false
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "3",
+                  "status": true
+                },
+                "C": {
+                  "content": "11",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wskaż wartość liczby pi w zaokrągleniu do 2 miejsca",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "3.14",
+                  "status": true
+                },
+                "B": {
+                  "content": "3.12",
+                  "status": false
+                },
+                "C": {
+                  "content": "5.14",
+                  "status": false
+                },
+                "D": {
+                  "content": "4.14",
+                  "status": false
+                },
+                "E": {
+                  "content": "3.11",
+                  "status": false
+                }
+              },
+              "correctAnswersForQuestion": {
+                "A": {
+                  "content": "3.14",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Kiedy alternatywa jest prawdziwa",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "Kiedy oba twierdzenia są fałszywe",
+                  "status": false
+                },
+                "B": {
+                  "content": "Alternatywa dwóch zdań p∨q jest prawdziwa wtedy, gdy przynajmniej jedno ze zdań p lub q jest prawdziwe.",
+                  "status": true
+                },
+                "C": {
+                  "content": "Gdy oba zdania są prawdziwe",
+                  "status": true
+                },
+                "D": {
+                  "content": "żadne z powyższych",
+                  "status": false
+                },
+                "E": {
+                  "content": "wszystkie z powyższych",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "Alternatywa dwóch zdań p∨q jest prawdziwa wtedy, gdy przynajmniej jedno ze zdań p lub q jest prawdziwe.",
+                  "status": true
+                },
+                "C": {
+                  "content": "Gdy oba zdania są prawdziwe",
+                  "status": true
+                },
+                "E": {
+                  "content": "wszystkie z powyższych",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "3^3",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "3",
+                  "status": false
+                },
+                "B": {
+                  "content": "27",
+                  "status": true
+                },
+                "C": {
+                  "content": "9",
+                  "status": false
+                },
+                "D": {
+                  "content": "81",
+                  "status": false
+                },
+                "E": {
+                  "content": "9*3",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "27",
+                  "status": true
+                },
+                "E": {
+                  "content": "9*3",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "categoryNames": "PHARMACOLOGY",
+      "questions": {
+        "questionList": [
+          {
+            "content": "Wybierz leki przeciwzapalne i przeciwgorączkowe",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "ibuprofen",
+                  "status": true
+                },
+                "B": {
+                  "content": "naproksen",
+                  "status": true
+                },
+                "C": {
+                  "content": "paracetamol",
+                  "status": false
+                },
+                "D": {
+                  "content": "meloksikam",
+                  "status": true
+                },
+                "E": {
+                  "content": "acenokumarol",
+                  "status": false
+                }
+              },
+              "correctAnswersForQuestion": {
+                "A": {
+                  "content": "ibuprofen",
+                  "status": true
+                },
+                "B": {
+                  "content": "naproksen",
+                  "status": true
+                },
+                "D": {
+                  "content": "meloksikam",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz leki o działąniu przeciwzakrzepowym",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "omeprazol",
+                  "status": false
+                },
+                "B": {
+                  "content": "paracetamol",
+                  "status": false
+                },
+                "C": {
+                  "content": "acenokumarol",
+                  "status": true
+                },
+                "D": {
+                  "content": "Walsartan",
+                  "status": false
+                },
+                "E": {
+                  "content": "kwas acetylosalicylowy",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "C": {
+                  "content": "acenokumarol",
+                  "status": true
+                },
+                "E": {
+                  "content": "kwas acetylosalicylowy",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wskaż leki stosowane miescowo i doustnie",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "ibuprofen",
+                  "status": true
+                },
+                "B": {
+                  "content": "diclofenac",
+                  "status": true
+                },
+                "C": {
+                  "content": "klotrimazol",
+                  "status": true
+                },
+                "D": {
+                  "content": "benzydamina",
+                  "status": false
+                },
+                "E": {
+                  "content": "WNNKT",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "A": {
+                  "content": "ibuprofen",
+                  "status": true
+                },
+                "B": {
+                  "content": "diclofenac",
+                  "status": true
+                },
+                "C": {
+                  "content": "klotrimazol",
+                  "status": true
+                },
+                "E": {
+                  "content": "WNNKT",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wskaż witaminy rozpuszczalne w tłuszczach",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "B1",
+                  "status": false
+                },
+                "B": {
+                  "content": "biotyna",
+                  "status": false
+                },
+                "C": {
+                  "content": "K",
+                  "status": true
+                },
+                "D": {
+                  "content": "E",
+                  "status": true
+                },
+                "E": {
+                  "content": "K",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "C": {
+                  "content": "K",
+                  "status": true
+                },
+                "D": {
+                  "content": "E",
+                  "status": true
+                },
+                "E": {
+                  "content": "K",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz postaci leków stosowane do oczu",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "roztwór",
+                  "status": true
+                },
+                "B": {
+                  "content": "zawiesina",
+                  "status": true
+                },
+                "C": {
+                  "content": "emulsja",
+                  "status": true
+                },
+                "D": {
+                  "content": "żel",
+                  "status": true
+                },
+                "E": {
+                  "content": "maść",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "A": {
+                  "content": "roztwór",
+                  "status": true
+                },
+                "B": {
+                  "content": "zawiesina",
+                  "status": true
+                },
+                "C": {
+                  "content": "emulsja",
+                  "status": true
+                },
+                "D": {
+                  "content": "żel",
+                  "status": true
+                },
+                "E": {
+                  "content": "maść",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "categoryNames": "PROGRAMING",
+      "questions": {
+        "questionList": [
+          {
+            "content": "Wybierz poprawne stwierdzenia dotyczące TAblic w javie",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "Posiadają zawsze posortowane elementy",
+                  "status": false
+                },
+                "B": {
+                  "content": "Używają indeksów liczbowych do dostępu do poszczególnych elemntów",
+                  "status": true
+                },
+                "C": {
+                  "content": "Rozmiar tablicy jest stały",
+                  "status": true
+                },
+                "D": {
+                  "content": "Tablicę można poszerzyć za pomocą metody expand",
+                  "status": false
+                },
+                "E": {
+                  "content": "W przeciwieństwie do list, umożliwiają trzymanie elemntów prymitywnych",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "Używają indeksów liczbowych do dostępu do poszczególnych elemntów",
+                  "status": true
+                },
+                "C": {
+                  "content": "Rozmiar tablicy jest stały",
+                  "status": true
+                },
+                "E": {
+                  "content": "W przeciwieństwie do list, umożliwiają trzymanie elemntów prymitywnych",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz poprawne stwierdzenia dotyczące ArrayList",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "Posiadają zawsze posortowane elementy",
+                  "status": false
+                },
+                "B": {
+                  "content": "Używają indeksów liczbowych do dostępu do poszczególnych elemntów",
+                  "status": true
+                },
+                "C": {
+                  "content": "Rozmiar jest stały",
+                  "status": false
+                },
+                "D": {
+                  "content": "Umożliwiją trzymanie obiektów",
+                  "status": true
+                },
+                "E": {
+                  "content": "umożliwiają trzymanie elemntów prymitywnych",
+                  "status": false
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "Używają indeksów liczbowych do dostępu do poszczególnych elemntów",
+                  "status": true
+                },
+                "D": {
+                  "content": "Umożliwiją trzymanie obiektów",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz obiektowe języki programowania",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "Php",
+                  "status": false
+                },
+                "B": {
+                  "content": "Java",
+                  "status": true
+                },
+                "C": {
+                  "content": "JavaScript",
+                  "status": false
+                },
+                "D": {
+                  "content": "Phyton",
+                  "status": true
+                },
+                "E": {
+                  "content": "C#",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "Java",
+                  "status": true
+                },
+                "D": {
+                  "content": "Phyton",
+                  "status": true
+                },
+                "E": {
+                  "content": "C#",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Wybierz poprawny zapis deklarowania Tablicy w javie",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "String tablice \u003d new String();",
+                  "status": false
+                },
+                "B": {
+                  "content": "String[] tablica \u003d new String[10] ",
+                  "status": true
+                },
+                "C": {
+                  "content": "JavaScript",
+                  "status": false
+                },
+                "D": {
+                  "content": "String[] tablica \u003d {ola, monika}",
+                  "status": true
+                },
+                "E": {
+                  "content": "Strin[] tablica \u003d new Array;",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "String[] tablica \u003d new String[10] ",
+                  "status": true
+                },
+                "D": {
+                  "content": "String[] tablica \u003d {ola, monika}",
+                  "status": true
+                },
+                "E": {
+                  "content": "Strin[] tablica \u003d new Array;",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "content": "Klasy w javie:",
+            "answers": {
+              "answersForQuestion": {
+                "A": {
+                  "content": "nazwy zaczynają się od małych liter",
+                  "status": false
+                },
+                "B": {
+                  "content": "zaczynamy dużą literą",
+                  "status": true
+                },
+                "C": {
+                  "content": "mogą być abstrakcyjne",
+                  "status": true
+                },
+                "D": {
+                  "content": "Powinny być rzeczownikami",
+                  "status": true
+                },
+                "E": {
+                  "content": "mogą rozszerzać inne klasy i implementować interfejsy",
+                  "status": true
+                }
+              },
+              "correctAnswersForQuestion": {
+                "B": {
+                  "content": "zaczynamy dużą literą",
+                  "status": true
+                },
+                "C": {
+                  "content": "mogą być abstrakcyjne",
+                  "status": true
+                },
+                "D": {
+                  "content": "Powinny być rzeczownikami",
+                  "status": true
+                },
+                "E": {
+                  "content": "mogą rozszerzać inne klasy i implementować interfejsy",
+                  "status": true
+                }
+              },
+              "answerOptions": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
