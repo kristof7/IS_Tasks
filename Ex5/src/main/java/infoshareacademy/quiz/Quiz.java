@@ -35,8 +35,7 @@ public class Quiz {
                 continue;
             }
             System.out.println("incorrect answer // Correct answers: ");
-            question.getAnswers().getCorrectAnswersForQuestion().forEach((key, value) -> System.out.print(key+" / " ));
- //           this.gamer.addQuestionsWithWrongAnswers(question);
+            question.getAnswers().getCorrectAnswersForQuestion().forEach((key, value) -> System.out.print(key + " / "));
         }
         this.gamer.setNotes(notes);
     }

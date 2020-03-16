@@ -640,7 +640,7 @@
                 },
                 "E": {
                   "content": "Strin[] tablica \u003d new Array;",
-                  "status": true
+                  "status": false
                 }
               },
               "correctAnswersForQuestion": {
@@ -650,10 +650,6 @@
                 },
                 "D": {
                   "content": "String[] tablica \u003d {ola, monika}",
-                  "status": true
-                },
-                "E": {
-                  "content": "Strin[] tablica \u003d new Array;",
                   "status": true
                 }
               },
