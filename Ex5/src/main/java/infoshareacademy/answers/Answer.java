@@ -17,6 +17,6 @@ public class Answer {
 
     @Override
     public String toString() {
-        return content ;
+        return content;
     }
 }

@@ -161,10 +161,6 @@
                 "C": {
                   "content": "Gdy oba zdania są prawdziwe",
                   "status": true
-                },
-                "E": {
-                  "content": "wszystkie z powyższych",
-                  "status": true
                 }
               },
               "answerOptions": [
@@ -392,7 +388,7 @@
                   "status": true
                 },
                 "E": {
-                  "content": "K",
+                  "content": "D",
                   "status": true
                 }
               },
@@ -406,7 +402,7 @@
                   "status": true
                 },
                 "E": {
-                  "content": "K",
+                  "content": "D",
                   "status": true
                 }
               },
