@@ -21,7 +21,6 @@ public class Quiz {
         this.category.randomQuestions();
         setGamerAnswersForQuestion();
         ScoresPrinter.print(this.gamer.getNotes());
-        QuestionsPrinter.printMistakeQuestionsWithCorrectAnswers(this.gamer);
         QuizService.playAgain();
     }
 
@@ -32,8 +31,11 @@ public class Quiz {
             int count = getNumberOfCorrectAnswersForQuestion(question);
             if (count == question.getAnswers().getCorrectAnswersForQuestion().size()) {
                 notes++;
+                System.out.println("correct answer");
                 continue;
             }
+            System.out.println("incorrect answer // Correct answers: ");
+            question.getAnswers().getCorrectAnswersForQuestion().forEach((key, value) -> System.out.print(key+" / " ));
             this.gamer.addQuestionsWithWrongAnswers(question);
         }
         this.gamer.setNotes(notes);
