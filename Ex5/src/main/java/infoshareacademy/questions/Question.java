@@ -20,15 +20,6 @@ public class Question {
         return answers;
     }
 
-    public void printQuestion() {
-        System.out.println("****************************************");
-        System.out.println(this.content);
-        System.out.println("****************************************");
-
-        this.answers.getAnswersForQuestion().forEach((key, value) -> System.out.println(key + " : " + value));
-        this.answers.setCorrectAnswersForQuestion();
-    }
-
     @Override
     public String toString() {
         return "Question{" +

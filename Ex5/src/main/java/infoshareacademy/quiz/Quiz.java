@@ -1,7 +1,9 @@
 package infoshareacademy.quiz;
 
+import infoshareacademy.categories.CategoriesPrinter;
 import infoshareacademy.gamers.Gamer;
 import infoshareacademy.fileOperations.JsonReader;
+import infoshareacademy.questions.QuestionsPrinter;
 import infoshareacademy.userInputDownloader.UserInput;
 import infoshareacademy.categories.Categories;
 import infoshareacademy.categories.Category;
@@ -13,23 +15,21 @@ public class Quiz {
     private Category category;
     private Categories categories = JsonReader.create(new Categories(), "questions.json");
 
-
     public void play() {
-        this.categories.printCategories();
+        CategoriesPrinter.printCategories(categories);
         this.category = this.categories.chooseOneCategory();
-        System.out.println("\n");
         this.category.randomQuestions();
         setGamerAnswersForQuestion();
-        printGameScore();
-        printGamerWrongQuestionWithCorrectAnswers();
+        ScoresPrinter.print(this.gamer.getNotes());
+        QuestionsPrinter.printMistakeQuestionsWithCorrectAnswers(this.gamer);
         QuizService.playAgain();
     }
 
     private void setGamerAnswersForQuestion() {
         int notes = 0;
         for (Question question : this.category.getChoosenQuestions()) {
-            question.printQuestion();
-            int count = getNumberOfGoodAnswers(question);
+            QuestionsPrinter.printQuestion(question);
+            int count = getNumberOfCorrectAnswersForQuestion(question);
             if (count == question.getAnswers().getCorrectAnswersForQuestion().size()) {
                 notes++;
                 continue;
@@ -39,7 +39,7 @@ public class Quiz {
         this.gamer.setNotes(notes);
     }
 
-    private int getNumberOfGoodAnswers(Question question) {
+    private int getNumberOfCorrectAnswersForQuestion(Question question) {
         System.out.println("Please enter correct answers, every answer divide by /");
         String[] choices = UserInput.uploadString().split("/");
         int count = 0;
@@ -50,30 +50,5 @@ public class Quiz {
         }
 
         return count;
-    }
-
-    private void printGameScore() {
-        if (this.gamer.getNotes() > 0) {
-            System.out.println("****************************************");
-            System.out.println("Congrats you have earn: " + gamer.getNotes());
-            System.out.println("****************************************");
-            return;
-        }
-        System.out.println("****************************************");
-        System.out.println("Sorry you have no correct answer");
-        System.out.println("****************************************");
-    }
-
-    private void printGamerWrongQuestionWithCorrectAnswers() {
-        System.out.println("****************************************");
-        System.out.println("Wrong answers for Question");
-        System.out.println("****************************************");
-
-        for (Question question : this.gamer.getWithWrongAnswers()) {
-            System.out.println(question.getContent());
-            System.out.println("Correct answers:");
-            question.getAnswers().getCorrectAnswersForQuestion().forEach((key, value) -> System.out.println(key + " : " + value));
-
-        }
     }
 }

@@ -26,15 +26,7 @@ public class Category {
         return choosenQuestions;
     }
 
-    public void setQuestions(Questions questions) {
-        this.questions = questions;
-    }
-
     public CategoryName getCategoryNames() {
         return categoryNames;
-    }
-
-    public void setCategoryNames(CategoryName categoryNames) {
-        this.categoryNames = categoryNames;
     }
 }

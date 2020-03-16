@@ -21,17 +21,14 @@ public class Categories {
         for (int i = 0; i < this.categoriesList.size(); i++) {
             if (i == index - 1) {
                 System.out.println(this.categoriesList.get(i).getCategoryNames());
-                category =  this.categoriesList.get(i);
+                category = this.categoriesList.get(i);
             }
         }
         return category;
     }
 
-    public void printCategories() {
-        System.out.println("Please choose category");
-        for (int i = 0; i < this.categoriesList.size(); i++) {
-            System.out.println(i + 1 + ". " + this.categoriesList.get(i).getCategoryNames());
-        }
+    public List<Category> getCategoriesList() {
+        return categoriesList;
     }
 
     @Override
