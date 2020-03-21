@@ -6,7 +6,7 @@ public enum Category {
     GEOGRAFIA,
     POLSKA;
 
-    public static void test(){
+    public static void category(){
 
         for (Category category : Category.values()) {
             System.out.print(category+", ");

@@ -10,31 +10,31 @@ public class Questions {
 
     public static void Questions() throws InterruptedException {
 
-        Map<Integer, String> pytania_IT = new LinkedHashMap<>();
-        pytania_IT.put(1, "Najlepszy jezyk programowania");
-        pytania_IT.put(2, "Czlowiek z IT to");
-        pytania_IT.put(3, "Polka Joanna Hoffman miała nie mały wpływ na firmę");
+        Map<Integer, String> question_IT_map = new LinkedHashMap<>();
+        question_IT_map.put(1, "Najlepszy jezyk programowania");
+        question_IT_map.put(2, "Czlowiek z IT to");
+        question_IT_map.put(3, "Polka Joanna Hoffman miała nie mały wpływ na firmę");
 
-        Map<Integer, String> pytania_SPORT = new LinkedHashMap<>();
-        pytania_SPORT.put(1, "Najbardziej popularny sport na świecie to piłka nożna a drugi");
-        pytania_SPORT.put(2, "Rekord Świata 100m mężczyzn na stadionie wynosi");
-        pytania_SPORT.put(3, "Obecny Mistrz Świata w piłce siatkowej mężczyzn");
+        Map<Integer, String> question_SPORT_map = new LinkedHashMap<>();
+        question_SPORT_map.put(1, "Najbardziej popularny sport na świecie to piłka nożna a drugi");
+        question_SPORT_map.put(2, "Rekord Świata 100m mężczyzn na stadionie wynosi");
+        question_SPORT_map.put(3, "Obecny Mistrz Świata w piłce siatkowej mężczyzn");
 
-        Map<Integer, String> pytania_GEOGRAFIA = new LinkedHashMap<>();
-        pytania_GEOGRAFIA.put(1, "Najwyzszy szczyt na świecie");
-        pytania_GEOGRAFIA.put(2, "\"Żelazna Dama\" została zbudowana na wystawę światową w 1889, w którym państwie");
-        pytania_GEOGRAFIA.put(3, "Flagowy statek Krzysztofa Kolumba z podróży \"Odkrycia Ameryki\"");
+        Map<Integer, String> question_GEOGRAFIA_map = new LinkedHashMap<>();
+        question_GEOGRAFIA_map.put(1, "Najwyzszy szczyt na świecie");
+        question_GEOGRAFIA_map.put(2, "\"Żelazna Dama\" została zbudowana na wystawę światową w 1889, w którym państwie");
+        question_GEOGRAFIA_map.put(3, "Flagowy statek Krzysztofa Kolumba z podróży \"Odkrycia Ameryki\"");
 
-        Map<Integer, String> pytania_POLSKA = new LinkedHashMap<>();
-        pytania_POLSKA.put(1, "Co robi prawdziwy polak podczas urlopu");
-        pytania_POLSKA.put(2, "Sport narodowy polaków");
-        pytania_POLSKA.put(3, "Polski szyk mody zawiera");
+        Map<Integer, String> question_POLSKA_map = new LinkedHashMap<>();
+        question_POLSKA_map.put(1, "Co robi prawdziwy polak podczas urlopu");
+        question_POLSKA_map.put(2, "Sport narodowy polaków");
+        question_POLSKA_map.put(3, "Polski szyk mody zawiera");
 
         Map<Integer, Object> questionsCategoryMap = new LinkedHashMap<>();
-        questionsCategoryMap.put(1, pytania_IT);
-        questionsCategoryMap.put(2, pytania_SPORT);
-        questionsCategoryMap.put(3, pytania_GEOGRAFIA);
-        questionsCategoryMap.put(4, pytania_POLSKA);
+        questionsCategoryMap.put(1, question_IT_map);
+        questionsCategoryMap.put(2, question_SPORT_map);
+        questionsCategoryMap.put(3, question_GEOGRAFIA_map);
+        questionsCategoryMap.put(4, question_POLSKA_map);
 
         Integer numberOfCategories = questionsCategoryMap.size();
         int i = 1;

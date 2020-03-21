@@ -10,7 +10,7 @@ public class Quiz {
         TimeUnit.SECONDS.sleep(2);
         System.out.println("# Pytania są jednokrotnego wyboru");
         System.out.print("# Pytania z kategorii: ");
-        Category.test();
+        Category.category();
         TimeUnit.SECONDS.sleep(3);
         System.out.println("\n");
         Questions.Questions();
