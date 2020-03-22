@@ -1,10 +1,9 @@
-package infoshareacademy;
+package main.java.infoshareacademy;
 
 public class QuizApp {
 
     public static void main(String[] args) {
-
-        System.out.println("Ex 5");
-
+        System.out.println("Zadanie 5:");
+        Menu.quizAppStart();
     }
 }
