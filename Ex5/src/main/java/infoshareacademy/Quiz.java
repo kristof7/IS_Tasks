@@ -1,4 +1,4 @@
-package org.example;
+package infoshareacademy;
 
 public class Quiz {
 

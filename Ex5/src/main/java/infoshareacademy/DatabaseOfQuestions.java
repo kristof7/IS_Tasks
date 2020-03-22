@@ -1,6 +1,9 @@
-package org.example;
+package infoshareacademy;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class DatabaseOfQuestions {
     Set<Question> setOfQuestions = new HashSet<>();
