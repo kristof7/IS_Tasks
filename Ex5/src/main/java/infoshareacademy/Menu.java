@@ -40,9 +40,15 @@ public class Menu {
         }
     }
 
-    public static Character inputChar() {
+    private static char inputChar() {
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine().toLowerCase().charAt(0);
+        char input = '0';
+        try {
+            input = scanner.nextLine().toLowerCase().charAt(0);
+        } catch(StringIndexOutOfBoundsException siobe) {
+            System.out.println("Źle wpisałeś!");
+        }
+        return input;
     }
 
     public static void writeQuestion(Questions questions, int number) {
@@ -57,7 +63,6 @@ public class Menu {
         for(Map.Entry<Character, String> answer: answerMap.entrySet()){
             System.out.println(answer.getKey() + ". " + answer.getValue());
         }
-        //checkAnswer(answerMap, number);
     }
 
     public static void checkAnswer(Answers answers, Map<Character, String> answerMap, int number) {

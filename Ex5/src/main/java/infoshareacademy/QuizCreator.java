@@ -41,42 +41,17 @@ public class QuizCreator {
         for (int i = 0; i < answers.getAnswers().get(number).getFalseAnswers().length; i++) {
             answersSet.add(answers.getAnswers().get(number).getFalseAnswers()[i]);
         }
-        //Collections.shuffle(answerSet);
         return answersSet;
-//        char elementOfList = 'a';
-//        Iterator<String> i = allAnswers.iterator();
-//        while (i.hasNext())
-//            System.out.println(elementOfList++ + ". " + i.next());
-//        for (int i = 0; i <= answers.getAnswers().get(0).getFalseAnswers().length; i++) {
-//            System.out.println(elementOfList + ". " + allAnswers.);
-//            elementOfList++;
-//        }
     }
 
     public Map<Character, String> shuffleAnswers(HashSet<String> allAnswers) {
         char elementOfList = 'a';
-        //Collections.shuffle(allAnswers);
         Map<Character, String> answersMap = new HashMap<>();
-        //answerMap.put(answers.getAnswers().get(0).getCorrectAnswer());
-//        for (int i = 0; i < allAnswers.size(); i++) {
-//            answerMap.put(elementOfList, allAnswers.);
-//            elementOfList++;
-//        }
-
         for (String answer:
              allAnswers) {
             answersMap.put(elementOfList, answer);
             elementOfList++;
         }
-//        Iterator<String> i = allAnswers.iterator();
-//        while (i.hasNext())
-//            System.out.println(elementOfList++ + ". " + i.next());
-//        for (int i = 0; i <= answers.getAnswers().get(0).getFalseAnswers().length; i++) {
-//            System.out.println(elementOfList + ". " + allAnswers.);
-//            elementOfList++;
-//        }
         return answersMap;
     }
-
-
 }
