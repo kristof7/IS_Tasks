@@ -40,31 +40,28 @@ public class Questions {
 
     public static Question question3() {
         Question question3 = new Question();
-        question3.setQuestionText("Który z poniższych opisów pokrycia instrukcji kodu jest POPRAWNY?");
-        question3.setAnswer1("a. Pokrycie instrukcji kodu to miara określająca liczbę wierszy kodu źródłowego\n" +
-                "   (z wyłączeniem komentarzy), które zostały wykonane przez testy. ");
-        question3.setAnswer2("b. Pokrycie instrukcji kodu to miara określająca odsetek wierszy kodu źródłowego, które\n" +
-                "   zostały wykonane przez testy.");
-        question3.setAnswer3("c. Pokrycie instrukcji kodu to miara określająca odsetek instrukcji wykonywalnych\n" +
-                "   w kodzie źródłowym, które zostały wykonane przez testy. ");
-        question3.setAnswer4("d. Żadna z powyższych odpowiedzi nie jet poprawna");
+        question3.setQuestionText("Aby porównać czy dwa łańcuchy znaków (s1 s2) są identyczne użyjesz instrukcji:");
+        question3.setAnswer1("a.  if(s1 ==s2) system.out.println(\"takie same\"); ");
+        question3.setAnswer2("b.  if(s1 !=s2) system.out.println(\"takie same\");");
+        question3.setAnswer3("c.  if[s1 = =s2] system.out.println(\"takie same\");");
+        question3.setAnswer4("d.  if(s1.equals(s2)) system.out.println(\"takie same\");");
         List<String> question3Answers = new ArrayList<>();
-        question3Answers.add("b");
+        question3Answers.add("d");
         question3.setTrueAnswer(question3Answers);
         Collections.sort(question3Answers);
-        question3.setCategory(Category.ISTQB);
+        question3.setCategory(Category.JAVA);
         return question3;
     }
 
     public static Question question4() {
         Question question4 = new Question();
         question4.setQuestionText("Jak pobrać pojedynczy znak z obiektu String?");
-        question4.setAnswer1("a. metodą getChar");
+        question4.setAnswer1("a. metodą charAt");
         question4.setAnswer2("b. metodą codePointAt");
         question4.setAnswer3("c. poprzez uzycie indexu np. str[5]");
         question4.setAnswer4("d. Żadna z powyższych odpowiedzi nie jet poprawna");
         List<String> question4Answers = new ArrayList<>();
-        question4Answers.add("c");
+        question4Answers.add("a");
         question4.setTrueAnswer(question4Answers);
         Collections.sort(question4Answers);
         question4.setCategory(Category.JAVA);
@@ -218,5 +215,18 @@ public class Questions {
         return question13;
     }
 
-
+    public static Question question14() {
+        Question question14 = new Question();
+        question14.setQuestionText("Odwołania THIS nie można używać :");
+        question14.setAnswer1("a. W żadnym miejscu klasy implementującej interfejs");
+        question14.setAnswer2("b. W metodzie oznaczonej słowami static");
+        question14.setAnswer3("c. w metodach dowolnej klasy");
+        question14.setAnswer4("d. w metodach oznaczonych słowem kluczowym FINAL");
+        List<String> question14Answers = new ArrayList<>();
+        question14Answers.add("b");
+        question14.setTrueAnswer(question14Answers);
+        Collections.sort(question14Answers);
+        question14.setCategory(Category.JAVA);
+        return question14;
+    }
 }
