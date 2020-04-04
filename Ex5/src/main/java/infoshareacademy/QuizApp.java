@@ -6,7 +6,7 @@ public class QuizApp {
     public static void main(String[] args) {
         Question [] allQuestions = {
                 new Question("Co to jest String pool?", Category.JAVA,
-                        new String[]{"Nie ma zastosowania w javie.", "Tablica ze Stringami.", "Miejsce w pamieci gdzie przechowywan jest pula Stringow."}, 2),
+                        new String[]{"Nie ma zastosowania w javie.", "Tablica ze Stringami.", "Miejsce w pamieci gdzie przechowywana jest pula Stringow."}, 2),
                 new Question("Co to są obiekty immutable? ", Category.JAVA,
                         new String[]{"Obiekty, które są niemodyfikowalne i nie mogą po utworzeniu zmienić swojego stanu.", "To tak naprawdę klasy, które po utworzeniu mogą zmienić swój stan.", "To obiekty modyfikowalne."}, 0),
                 new Question("Co to jest Enum? ", Category.JAVA,
