@@ -25,9 +25,9 @@ public class Question {
         }
     }
 
-    public boolean isRightAnwserLetter (char odpowiedz) {
-        char poprawnOdp = abc[rightIndex];
-        return odpowiedz == poprawnOdp;
+    public boolean isRightAnwserLetter (char usersAnwser) {
+        char theRightAnwser = abc[rightIndex];
+        return usersAnwser == theRightAnwser;
     }
 
     public String toString(){
