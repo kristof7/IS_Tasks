@@ -3,10 +3,14 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class Books {
+@Stateless
+public class Books implements BooksRepository{
 
     private List<Book> books;
 
@@ -36,5 +40,17 @@ public class Books {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    @Override
+    public Optional<Book> findByAuthor(String author) {
+        return findAll().stream()
+                .filter(book -> book.getAuthor().equals(author)).findFirst();
+
+    }
+
+    @Override
+    public List<Book> findAll() {
+        return importBooks();
     }
 }
