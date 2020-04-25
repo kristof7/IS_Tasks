@@ -1,4 +1,4 @@
-package infoshareacademy.tasks.cards.c_task;
+package infoshareacademy.tasks.c_task;
 
 import java.util.Scanner;
 import java.util.StringJoiner;

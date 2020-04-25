@@ -1,4 +1,4 @@
-package infoshareacademy.tasks.cards.c_task;
+package infoshareacademy.tasks.c_task;
 
 public enum Rank {
     ACE("Ace"),
