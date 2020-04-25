@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TaskA {
 
     public char returnFirstChar(String example) {
-
         return example.charAt(0);
     }
 
