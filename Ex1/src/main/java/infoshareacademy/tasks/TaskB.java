@@ -12,15 +12,15 @@ public class TaskB {
         System.out.println("Please give a first number: ");
         Double firstNumber = scanNumber();
         System.out.println("Now please give a second number: ");
-        Double secondDouble = scanNumber();
+        Double secondNumber = scanNumber();
         System.out.println("Lastly advise of a math operator (+, -, *, /): ");
+        String mathOperator = scanMathOperator();
+        Double result = getResult(firstNumber, secondNumber, mathOperator);
+        System.out.println("Your equation is: " + firstNumber + " " + mathOperator + " " + secondNumber + " = " + result);
+    }
 
-
-            }
-
-
-    public double getResult(Double firstNumber, Double secondNumber, String mathOperator) {
-        int result;
+    public static Double getResult(Double firstNumber, Double secondNumber, String mathOperator) {
+        Double result = null;
         while (isCorrectInput(mathOperator)) {
             switch (mathOperator) {
                 case ADD:
@@ -40,25 +40,25 @@ public class TaskB {
         return result;
     }
 
-    public static Double scanNumber()throws IllegalArgumentException {
+    public static Double scanNumber() throws IllegalArgumentException {
         Scanner scan = new Scanner(System.in);
         boolean isDouble = true;
-        Double chosenNumber;
+        Double chosenNumber=null;
         while (isDouble) {
             try {
                 chosenNumber = scan.nextDouble();
             } catch (IllegalArgumentException e) {
-                System.out.println("Not accurate argument: please choose a double value);
+                System.out.println("Not accurate argument: please choose a double value");
             }
-            isDouble = chosenNumber instanceof Double :false ? true;
+            isDouble = chosenNumber instanceof Double ? false : true;
         }
         return chosenNumber;
     }
 
-    public static String scanMathOperator() throws  IllegalArgumentException{
+    public static String scanMathOperator() throws IllegalArgumentException {
         Scanner scan = new Scanner(System.in);
         boolean isString = true;
-        String chosenOperator;
+        String chosenOperator = null;
         while (isString) {
             try {
                 chosenOperator = scan.nextLine();
