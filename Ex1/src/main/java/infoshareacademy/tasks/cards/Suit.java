@@ -1,4 +1,4 @@
-package infoshareacademy.tasks.c_task;
+package infoshareacademy.tasks.cards;
 
 public enum Suit {
     CLUBS("Clubs"),

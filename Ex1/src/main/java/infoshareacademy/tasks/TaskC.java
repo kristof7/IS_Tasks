@@ -1,6 +1,8 @@
-package infoshareacademy.tasks.c_task;
+package infoshareacademy.tasks;
 
-public class CardApp {
+import infoshareacademy.tasks.cards.Card;
+
+public class TaskC {
     public static void main(String[] args) {
         System.out.println(Card.getDescription());
     }

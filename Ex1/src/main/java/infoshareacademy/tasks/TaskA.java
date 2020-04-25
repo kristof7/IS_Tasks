@@ -1,8 +1,8 @@
-package infoshareacademy.tasks.a_task;
+package infoshareacademy.tasks;
 
 import java.util.Scanner;
 
-public class FirstLetter {
+public class TaskA {
 
     public char returnFirstChar(String example) {
 
