@@ -30,19 +30,19 @@ public class TaskB {
             switch (mathOperator) {
                 case ADD:
                     result = firstNumber + secondNumber;
-                    x=!x;
+                    x = !x;
                     break;
                 case SUBTRACT:
                     result = firstNumber - secondNumber;
-                    x=!x;
+                    x = !x;
                     break;
                 case MULTIPLY:
                     result = firstNumber * secondNumber;
-                    x=!x;
+                    x = !x;
                     break;
                 case DIVIDE:
                     result = firstNumber / secondNumber;
-                    x=!x;
+                    x = !x;
                     break;
             }
         }

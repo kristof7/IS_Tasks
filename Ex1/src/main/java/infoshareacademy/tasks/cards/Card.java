@@ -1,8 +1,5 @@
 package infoshareacademy.tasks.cards;
 
-import java.util.Scanner;
-import java.util.StringJoiner;
-
 public class Card {
     private Rank rank;
     private Suit suit;
@@ -35,6 +32,4 @@ public class Card {
                 ", suit=" + suit +
                 '}';
     }
-
-
 }
