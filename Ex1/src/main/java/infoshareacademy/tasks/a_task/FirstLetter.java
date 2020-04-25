@@ -4,13 +4,15 @@ import java.util.Scanner;
 
 public class FirstLetter {
 
-    public char returnFirstChar() {
-        String string = "Java";
-        return string.charAt(0);
+    public char returnFirstChar(String example) {
+
+        return example.charAt(0);
     }
 
-    public static run() {
-        return scanString() + " - " + returnFirstChar();
+    public void run() {
+        System.out.println("Please enter an exemplary word: ");
+        String example = scanString();
+        System.out.println("Display of a word and its first letter: " + example + " - " + returnFirstChar(example));
     }
 
     public String scanString() {
