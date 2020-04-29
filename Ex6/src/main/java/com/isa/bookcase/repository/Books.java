@@ -5,6 +5,7 @@ import com.isa.bookcase.domain.Category;
 
 import javax.ejb.Stateless;
 import java.util.*;
+import java.util.stream.Stream;
 
 @Stateless
 public class Books implements BooksRepository {
@@ -49,5 +50,11 @@ public class Books implements BooksRepository {
        Collections.shuffle(books);
         return getBooks();
 
+    }
+
+    @Override
+    public Optional<Book> findBookForAuthor(String author) {
+        return findAll().stream()
+                .filter(book -> book.getAuthor().equals(author)).findAny();
     }
 }
