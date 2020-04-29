@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/books")
-public class Bookcase extends HttpServlet {
+@WebServlet("/book-for-today")
+public class RandomBook extends HttpServlet {
     @Inject
     BookService bookService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println(bookService.findAll());
+        resp.getWriter().println(bookService.writeRandomBook().get(1));
     }
 }

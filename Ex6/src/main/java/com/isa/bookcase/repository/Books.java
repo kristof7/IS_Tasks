@@ -1,13 +1,13 @@
 package com.isa.bookcase.repository;
 
-import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
+import com.isa.bookcase.domain.Category;
 
 import javax.ejb.Stateless;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 @Stateless
-public class Books implements  BooksRespository{
+public class Books implements BooksRepository {
 
     private List<Book> books;
 
@@ -38,14 +38,16 @@ public class Books implements  BooksRespository{
 
         return books;
     }
-    public void allBook(){
-        for (Book book : books) {
-            System.out.println(book.toString());
-        }
-    }
 
     @Override
     public List<Book> findAll() {
         return importBooks();
+    }
+
+    @Override
+    public List<Book> writeRandomBook() {
+       Collections.shuffle(books);
+        return getBooks();
+
     }
 }
