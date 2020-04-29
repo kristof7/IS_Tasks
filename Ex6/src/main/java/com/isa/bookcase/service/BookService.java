@@ -2,12 +2,10 @@ package com.isa.bookcase.service;
 
 import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.repository.BooksRepository;
+
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.xml.registry.infomodel.User;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 @RequestScoped
 public class BookService {

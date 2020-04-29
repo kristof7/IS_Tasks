@@ -1,6 +1,5 @@
 package com.isa.bookcase.servlets;
 
-import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.service.BookService;
 
 import javax.inject.Inject;
@@ -17,18 +16,14 @@ public class FindBook extends HttpServlet {
     BookService bookService;
 
     @Override
-    protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String author = req.getParameter("author");
         if (author == null || author.isEmpty()) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
         resp.getWriter().println("<!DOCTYPE html>");
-        if (author == null) {
-            resp.getWriter().println("author not fund " + author);
-        } else {
-            resp.getWriter().println(bookService.findBookForAuthor(author.toString()));
-        }
+        resp.getWriter().println(bookService.findBookForAuthor(author.toString()));
         resp.getWriter().println("</body>");
         resp.getWriter().println("</html>");
 

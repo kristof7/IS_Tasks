@@ -4,8 +4,10 @@ import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.domain.Category;
 
 import javax.ejb.Stateless;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class Books implements BooksRepository {
