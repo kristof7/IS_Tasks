@@ -1,6 +1,8 @@
 package com.isa.bookcase.domain;
 
-public class Book {
+
+
+public class Book{
 
     private String author;
     private String title;
@@ -39,6 +41,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
+        return "{" + author + ", " + title + "," +  category + "," +  forKids + " (" + pages + "str.)}\n";
     }
 }

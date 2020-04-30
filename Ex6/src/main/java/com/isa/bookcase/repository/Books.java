@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Stateless
 public class Books implements BooksRepository{
@@ -53,4 +54,10 @@ public class Books implements BooksRepository{
     public List<Book> findAll() {
         return importBooks();
     }
+
+    @Override
+    public Book randomBook() {
+        return books.get(new Random().nextInt(books.size())); }
+
+
 }

@@ -16,4 +16,11 @@ public class BookService {
     public Book findByAuthor(String author){return booksRepository.findByAuthor(author).orElse(null);}
 
     public List findAll(){return booksRepository.findAll();}
+
+    public Book randomBook(){return booksRepository.randomBook();}
+
+
+
+
+
 }
