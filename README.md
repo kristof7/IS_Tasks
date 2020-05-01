@@ -18,3 +18,4 @@ Jeśli przeglądasz to repozytorium na GitHub'ie to klikając w poniższe linki 
 * [Zadanie 3 - Java OOP](./Ex3)
 * [Zadanie 4 - Java Struktury Danych, Date API, Optional](./Ex4)
 * [Zadanie 5 - Java Struktury Danych, Clean Code](./Ex5)
+* [Zadanie 6 - Java EE - Servlet, EJB, CDI](./Ex6)
