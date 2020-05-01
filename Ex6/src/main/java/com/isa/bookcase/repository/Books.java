@@ -4,10 +4,11 @@ import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
 import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
-@Singleton
+@Stateless
 public class Books {
 
     private List<Book> books;

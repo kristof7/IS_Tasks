@@ -12,5 +12,7 @@ public class Library {
     @EJB
     private Books books;
 
+   // public List<Book> displayAllBooks() { return books.getBooks(); }
+
     public List<Book> displayAllBooks() { return books.getBooks(); }
 }
