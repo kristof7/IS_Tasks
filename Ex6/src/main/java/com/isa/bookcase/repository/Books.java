@@ -3,10 +3,15 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+import java.util.stream.Collectors;
 
-public class Books {
+@Stateless
+public class Books implements BookRepository{
 
     private List<Book> books;
 
@@ -34,7 +39,33 @@ public class Books {
         books.add(new Book("Antoine de Saint-Exupery", "Maly Ksiaze", Category.LITERATURA_PIEKNA, 112, true));
         books.add(new Book("Jojo Moyes", "Zanim się pojawiłeś", Category.OBYCZAJOWA_ROMANS, 382, false));
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
+        books.add(new Book("Z", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    @Override
+    public List<Book> findAll() {
+        return getBooks();
+    }
+
+    @Override
+    public Book getRandomBook() {
+
+        return books.get( new Random().nextInt(books.size()));
+    }
+
+    @Override
+    public List<Book> findByAuthor(String author) {
+
+        return findAll().stream()
+                .filter(book -> book.getAuthor().contains(author)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Book> findByAuthorAndTitle(String author, String title) {
+
+        return findByAuthor(author).stream()
+                .filter(book -> book.getTitle().contains(title)).collect(Collectors.toList());
     }
 }

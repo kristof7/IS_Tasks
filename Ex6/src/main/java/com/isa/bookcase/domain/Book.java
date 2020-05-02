@@ -36,8 +36,15 @@ public class Book {
         return forKids;
     }
 
+    public String PlTranslateForKids(){
+        if(isForKids()){
+            return " Tak";
+        }
+        return " Nie";
+    }
+
     @Override
     public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
+        return "<br>Autor : " + author + ", Tytuł : " + title + ", Kategoria : " + category + ", (" + pages + "str.) " + ", dla dzieci : " + PlTranslateForKids() ;
     }
 }
