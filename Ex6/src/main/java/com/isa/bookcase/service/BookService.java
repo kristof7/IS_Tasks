@@ -16,5 +16,11 @@ public class BookService {
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
+
+    public Book getRandomBook() {
+        return bookRepository.getRandomBook();
+    }
+
 }
+
 
