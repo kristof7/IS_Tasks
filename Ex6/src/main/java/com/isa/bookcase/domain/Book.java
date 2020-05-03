@@ -38,6 +38,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
+        return "Category: " + category+"\n Author: "+ author + "\n Tittle:  " + title +
+                "\n Number of pages(" + pages + "str.)";
     }
 }

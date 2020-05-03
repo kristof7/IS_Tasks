@@ -1,11 +1,13 @@
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="E-learning web app" />
-    <title>Book Store</title>
+    <meta name="description" content="Book Store" />
+    <title>find something for you</title>
     <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -15,11 +17,10 @@
     <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
-<jsp:include page="head-and-navbar.jsp"/>
 <main role="main">
-    <div class="container">
-
-    </div>
+    <ul>
+        <li><a href="index.jsp">back to main menu</a></li>
+    </ul>
 </main>
 
 <script

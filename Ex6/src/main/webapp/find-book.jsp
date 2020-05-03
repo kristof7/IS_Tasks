@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="E-learning web app" />
-    <title>Book Store</title>
+    <title>E-learning web app by Dream Team</title>
     <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -18,10 +18,30 @@
 <jsp:include page="head-and-navbar.jsp"/>
 <main role="main">
     <div class="container">
-
+        <form method="get" action="/find-book" class="contact-from">
+            <div class="form">
+                <label for="author">author:</label>
+                <input type="text" name="author" id="author"  />
+            </div>
+            <div class="form">
+                <button type="submit">
+                    search
+                </button>
+            </div>
+        </form>
+        <form method="get" action="/find-book" class="contact-from">
+            <div class="form">
+                <label for="tittle">title:</label>
+                <input type="tittle" name="tittle" id="tittle"  />
+            </div>
+            <div class="form">
+                <button type="submit">
+                    search
+                </button>
+            </div>
+        </form>
     </div>
 </main>
-
 <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

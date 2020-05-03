@@ -3,9 +3,11 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
+@Stateless
 public class Books {
 
     private List<Book> books;
@@ -36,5 +38,25 @@ public class Books {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    public List<Book> findByAuthorsName(String name) {
+        List<Book> authorBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getAuthor().toLowerCase().startsWith(name.toLowerCase())) {
+                authorBooks.add(book);
+            }
+        }
+        return authorBooks;
+    }
+
+    public List<Book> findByTittle(String tittle) {
+        List<Book> booksWithCorrectTittle = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().startsWith(tittle.toLowerCase())) {
+                booksWithCorrectTittle.add(book);
+            }
+        }
+        return booksWithCorrectTittle;
     }
 }
