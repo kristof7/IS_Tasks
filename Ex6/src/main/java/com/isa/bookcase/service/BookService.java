@@ -21,6 +21,14 @@ public class BookService {
         return bookRepository.getRandomBook();
     }
 
+    public List<Book> getBooksListByAuthor(String author) {
+        return bookRepository.getBooksListByAuthor(author);
+    }
+
+    public Book getBookByAuthor(String author) {
+        return bookRepository.getBookByAuthor(author).orElse(null);
+    }
+
 }
 
 
