@@ -40,4 +40,5 @@ public class Book {
     public String toString() {
         return "{" + author + ", " + title + " (" + pages + "str.)}";
     }
+
 }

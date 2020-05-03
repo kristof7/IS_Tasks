@@ -2,7 +2,6 @@ package com.isa.bookcase.servlet;
 
 import com.isa.bookcase.repository.Books;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +13,7 @@ import java.io.PrintWriter;
 public class Bookcase extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         PrintWriter pw = resp.getWriter();
         resp.setContentType("text/html");
@@ -28,11 +27,16 @@ public class Bookcase extends HttpServlet {
         int length = new Books().getBooks().size();
         for (int i = 0; i < length ; i++) {
             pw.println("<br>"+(i+1)+"." + "<br>");
-            pw.println("Author: " + books.getBooks().get(i).getAuthor() + "<br>");
-            pw.println("Title: " + books.getBooks().get(i).getTitle() + "<br>");
-            pw.println("Category: " + books.getBooks().get(i).getCategory() + "<br>");
-            pw.println("Pages: " + books.getBooks().get(i).getPages() + "<br>");
-            pw.println("For kids: " + books.getBooks().get(i).isForKids() + "<br>");
+            pw.println("Autor: " + books.getBooks().get(i).getAuthor() + "<br>");
+            pw.println("Tytul: " + books.getBooks().get(i).getTitle() + "<br>");
+            pw.println("Kategoria: " + books.getBooks().get(i).getCategory() + "<br>");
+            pw.println("Strony: " + books.getBooks().get(i).getPages() + "<br>");
+            if ((books.getBooks().get(i).isForKids())) {
+                pw.println("Dla dzieci: tak" + "<br>");
+            } else {
+                pw.println("Dla dzieci: nie" + "<br>");
+            }
+
         }
         pw.println("</body>");
         pw.println("</html>");

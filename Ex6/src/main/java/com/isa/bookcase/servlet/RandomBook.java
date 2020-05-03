@@ -30,13 +30,17 @@ public class RandomBook extends HttpServlet {
         int length = new Books().getBooks().size();
         int random = (int) (Math.random() * length);
         Book randomBook = books.getBooks().get(random);
-        pw.println("BOOK OF TODAY IS:" + "<br>");
+        pw.println("KSIAZKA DNIA:" + "<br>");
         pw.println("<br>");
-        pw.println("Author: " + randomBook.getAuthor() + "<br>");
-        pw.println("Title: " + randomBook.getTitle() + "<br>");
-        pw.println("Category: " + randomBook.getCategory() + "<br>");
-        pw.println("Pages: " + randomBook.getPages() + "<br>");
-        pw.println("For kids: " + randomBook.isForKids());
+        pw.println("Autor: " + randomBook.getAuthor() + "<br>");
+        pw.println("Tytul: " + randomBook.getTitle() + "<br>");
+        pw.println("Kategoria: " + randomBook.getCategory() + "<br>");
+        pw.println("Strony: " + randomBook.getPages() + "<br>");
+        if ((randomBook.isForKids())) {
+            pw.println("Dla dzieci: tak");
+        } else {
+            pw.println("Dla dzieci: nie");
+        }
 
 
         pw.println("</body>");
