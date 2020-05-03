@@ -18,7 +18,7 @@ public class Books {
         return books;
     }
 
-    private static List<Book> importBooks() {
+    static List<Book> importBooks() {
 
         List<Book> books = new ArrayList<>();
 

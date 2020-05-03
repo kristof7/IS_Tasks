@@ -1,13 +1,9 @@
 package com.isa.bookcase.servlet;
-//zaimplementuj wyszukiwanie książki po zadanym w request parametrze author,
-//jeśli parametr author nie został podany w request, zwróć status BAD_REQUEST (wykorzystaj klasę HttpServletResponse),
-//jeśli jako wartość parametru została podana np. tylko litera "A", powinny się wyświetlić wszystkie książki z imieniem lub nazwiskiem autora rozpoczynającym się na literę "A",
-//zaimplementuj wyszukiwanie książki po zadanym w request parametrze title,
-//w przypadku parametru title wyszukiwanie powinno działać w ten sam sposób jak dla parametru author (można podać dowolny ciąg znaków).
 
 import com.isa.bookcase.domain.Book;
-import com.isa.bookcase.repository.Books;
+import com.isa.bookcase.service.BookService;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +15,9 @@ import java.io.PrintWriter;
 
 @WebServlet("find-book")
 public class FindBook extends HttpServlet {
-  Books books = new Books();
 
+  @Inject
+  private BookService bookService;
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter printWriter = resp.getWriter();
@@ -31,10 +28,8 @@ public class FindBook extends HttpServlet {
     }
     String authorName = req.getParameter("author");
     String bookTitle = req.getParameter("title");
-    printWriter.println("Watorsc pola author: " + authorName);
-    printWriter.println("Watorsc pola title: " + bookTitle);
     printWriter.println("Znalezione ksiazki: \n");
-    for (Book book : books.getBooks()) {
+    for (Book book : bookService.getBooks()) {
       boolean authorFlag = false;
       boolean titleFlag = false;
       authorFlag = isIncludedInRepository(authorName,book.getAuthor());
@@ -50,6 +45,7 @@ public class FindBook extends HttpServlet {
   public void printBookInformation(Book book, PrintWriter pw){
     pw.println(book.toString());
   }
+
   public boolean isIncludedInRepository(String nameFromUser, String nameFromRepository){
     boolean result = false;
     if (nameFromUser.equalsIgnoreCase(nameFromRepository)) result = true;

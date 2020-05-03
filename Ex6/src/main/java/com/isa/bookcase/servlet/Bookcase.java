@@ -1,9 +1,9 @@
 package com.isa.bookcase.servlet;
-//Wszystkie książki
 
 import com.isa.bookcase.domain.Book;
-import com.isa.bookcase.repository.Books;
+import com.isa.bookcase.service.BookService;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +15,15 @@ import java.io.PrintWriter;
 
 @WebServlet("/books")
 public class Bookcase extends HttpServlet {
-  Books books = new Books();
+
+  @Inject
+  private BookService bookService;
+
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter printWriter = resp.getWriter();
     String childFriendly;
-    for (Book book: books.getBooks()) {
+    for (Book book: bookService.getBooks()) {
         if (book.isForKids()){
           childFriendly = " Ta ksiazka jest dla dzieci ";
         }
