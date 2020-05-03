@@ -1,6 +1,8 @@
 package com.isa.bookcase.servlet;
 
 import com.isa.bookcase.repository.BookRepository;
+import com.isa.bookcase.repository.Books;
+import com.isa.bookcase.service.BookService;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -19,12 +21,12 @@ powinna się wyświetlić losowa książka z repozytorium.
  */
 
 @Inject
-    BookRepository bookRepository;
+    BookService bookService;
 
 @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter writer = resp.getWriter();
-    writer.println(bookRepository.randomBook());
+    writer.println(bookService.randomBook());
 
     }
 }
