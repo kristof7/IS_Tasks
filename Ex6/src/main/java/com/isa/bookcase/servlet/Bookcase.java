@@ -25,10 +25,10 @@ public class Bookcase extends HttpServlet {
     String childFriendly;
     for (Book book: bookService.getBooks()) {
         if (book.isForKids()){
-          childFriendly = " Ta ksiazka jest dla dzieci ";
+          childFriendly = " Ta ksiazka jest dla dzieci";
         }
         else {
-          childFriendly = " Nie dla dzieci ";
+          childFriendly = " Ta ksiazka nie jest dla dzieci";
         }
       printWriter.println(book.toString() + childFriendly);
     }
