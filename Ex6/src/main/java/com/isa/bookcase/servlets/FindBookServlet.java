@@ -17,12 +17,12 @@ import java.util.Optional;
 public class FindBookServlet extends HttpServlet {
 
     @Inject
-    BookService bookService;
+    private BookService bookService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Optional<List<Book>> filteredBooks;
+        List<Book> filteredBooks;
         String authorSearchPhrase = req.getParameter("author");
         String titleSearchPhrase = req.getParameter("title");
 
@@ -57,7 +57,7 @@ public class FindBookServlet extends HttpServlet {
             printWriter.println("</html>");
             return;
         }
-        for ( Book filteredBook : filteredBooks.get() ) {
+        for ( Book filteredBook : filteredBooks ) {
             bookService.printBookDetails(printWriter, filteredBook);
         }
 

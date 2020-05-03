@@ -17,7 +17,7 @@ import java.util.List;
 public class RandomBookServlet extends HttpServlet {
 
     @Inject
-    BookService bookService;
+    private BookService bookService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -8,8 +8,6 @@ import javax.inject.Inject;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 
 @RequestScoped
 public class BookService {
@@ -21,46 +19,43 @@ public class BookService {
         return booksRepository.getBooks();
     }
 
-    public Optional<List<Book>> findByAuthor(String authorSearchPhrase) {
+    public List<Book> findByAuthor(String authorSearchPhrase) {
 
-        Optional<List<Book>> filteredBooks = Optional.of(new ArrayList<Book>());
+        List<Book> filteredBooks = new ArrayList<>();
         List<Book> books = booksRepository.getBooks();
 
         for ( Book book : books ) {
-            boolean bookAlreadyAdded = filteredBooks.get().contains(book);
+            boolean bookAlreadyAdded = filteredBooks.contains(book);
             String bookAuthor = book.getAuthor().toLowerCase();
             if ( bookAuthor.startsWith(authorSearchPhrase.toLowerCase()) &&
                     !bookAlreadyAdded) {
-                filteredBooks.get().add(book);
+                filteredBooks.add(book);
             } else {
                 String[] authorSplit = book.getAuthor().split(" ");
                 for ( String authorPart : authorSplit ) {
                     if ( authorPart.toLowerCase().startsWith(authorSearchPhrase.toLowerCase()) &&
                             !bookAlreadyAdded) {
-                        filteredBooks.get().add(book);
+                        filteredBooks.add(book);
                     }
                 }
             }
         }
-        if ( filteredBooks.get().isEmpty() ) {
-            filteredBooks = Optional.empty();
-        }
         return filteredBooks;
     }
 
-    public Optional<List<Book>> findByAuthorAndTitle(String authorSearchPhrase, String titleSearchPhrase) {
+    public List<Book> findByAuthorAndTitle(String authorSearchPhrase, String titleSearchPhrase) {
 
-        Optional<List<Book>> filteredBooks = Optional.of(new ArrayList<Book>());
+        List<Book> filteredBooks = new ArrayList<>();
         List<Book> books = booksRepository.getBooks();
 
         for ( Book book : books ) {
-            boolean bookAlreadyAdded = filteredBooks.get().contains(book);
+            boolean bookAlreadyAdded = filteredBooks.contains(book);
             String bookAuthor = book.getAuthor().toLowerCase();
             String bookTitle = book.getTitle().toLowerCase();
             if ( bookAuthor.startsWith(authorSearchPhrase.toLowerCase()) &&
                     bookTitle.startsWith(titleSearchPhrase.toLowerCase()) &&
                     !bookAlreadyAdded) {
-                filteredBooks.get().add(book);
+                filteredBooks.add(book);
             } else {
                 String[] authorSplit = book.getAuthor().split(" ");
                 String[] titleSplit = book.getTitle().split(" ");
@@ -69,15 +64,12 @@ public class BookService {
                         for (String titlePart : titleSplit) {
                             if ( titlePart.toLowerCase().startsWith(titleSearchPhrase.toLowerCase()) &&
                                     !bookAlreadyAdded) {
-                                filteredBooks.get().add(book);
+                                filteredBooks.add(book);
                             }
                         }
                     }
                 }
             }
-        }
-        if ( filteredBooks.get().isEmpty() ) {
-            filteredBooks = Optional.empty();
         }
         return filteredBooks;
     }
