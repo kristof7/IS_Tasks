@@ -1,7 +1,8 @@
 package com.isa.bookcase.repository;
 
-import com.isa.bookcase.domain.Category;
+
 import com.isa.bookcase.domain.Book;
+import com.isa.bookcase.domain.Category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Books {
         books.add(new Book("Jozef Ignacy Kraszewski", "Stara basn", Category.HISTORYCZNA, 304, false));
         books.add(new Book("J. K. Rowling", "Harry Potter i Kamien Filozoficzny", Category.FANTASTYKA_SCIENCE_FICTION, 328, true));
         books.add(new Book("Antoine de Saint-Exupery", "Maly Ksiaze", Category.LITERATURA_PIEKNA, 112, true));
-        books.add(new Book("Jojo Moyes", "Zanim się pojawiłeś", Category.OBYCZAJOWA_ROMANS, 382, false));
+        books.add(new Book("Jojo Moyes", "Zanim sie pojawiles", Category.OBYCZAJOWA_ROMANS, 382, false));
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;

@@ -1,5 +1,6 @@
 package com.isa.bookcase.domain;
 
+
 public enum Category {
 
     KRYMINAL_SENSACJA_THRILLER,
