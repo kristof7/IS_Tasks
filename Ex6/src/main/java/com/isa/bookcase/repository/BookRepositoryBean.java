@@ -31,4 +31,16 @@ public class BookRepositoryBean implements BookRepository {
         return findAll().stream()
                 .filter(book -> book.getAuthor().contains(author)).findFirst();
     }
+
+    @Override
+    public List<Book> getBooksListByTitle(String title) {
+        return findAll().stream()
+                .filter(book -> book.getTitle().contains(title)).collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<Book> getBookByTitle(String title) {
+        return findAll().stream()
+                .filter(book -> book.getTitle().contains(title)).findFirst();
+    }
 }

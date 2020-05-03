@@ -29,6 +29,16 @@ public class BookService {
         return bookRepository.getBookByAuthor(author).orElse(null);
     }
 
+    public List<Book> getBooksListByTitle(String title) {
+        return bookRepository.getBooksListByTitle(title);
+    }
+
+    public Book getBookByTitle(String title) {
+        return bookRepository.getBookByTitle(title).orElse(null);
+    }
+
+
+
 }
 
 

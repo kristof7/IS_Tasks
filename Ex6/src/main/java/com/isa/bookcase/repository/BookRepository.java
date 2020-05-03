@@ -12,4 +12,6 @@ public interface BookRepository {
     Book getRandomBook();
     List<Book> getBooksListByAuthor(String author);
     Optional<Book> getBookByAuthor(String author);
+    List<Book> getBooksListByTitle(String title);
+    Optional<Book> getBookByTitle(String title);
 }
