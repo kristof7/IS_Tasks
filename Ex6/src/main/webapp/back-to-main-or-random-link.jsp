@@ -18,10 +18,8 @@
 </head>
 <body>
 <main role="main">
-        <ul>
-            <li><a href="index.jsp">back to main menu</a></li>
-            <li><a href="/book-for-today">random ones more</a></li>
-        </ul>
+            <a class="btn btn-primary btn-lg active" href="index.jsp">back to main menu</a>
+            <a class="btn btn-primary btn-lg active" href="/book-for-today">random ones more</a>
 </main>
 
 <script

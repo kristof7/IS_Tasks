@@ -18,7 +18,7 @@ public class HtmlPreparer {
                 "</style>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<table>");
+        out.println("<table class=\"table table-hover\">");
         out.println("<tr>");
         headersList.forEach(header -> out.println("<th>" + header + "</th>"));
         out.println("</tr>");

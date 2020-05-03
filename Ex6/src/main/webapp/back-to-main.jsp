@@ -18,9 +18,7 @@
 </head>
 <body>
 <main role="main">
-    <ul>
-        <li><a href="index.jsp">back to main menu</a></li>
-    </ul>
+        <a class="btn btn-primary btn-lg active" href="index.jsp">back to main menu</a>
 </main>
 
 <script

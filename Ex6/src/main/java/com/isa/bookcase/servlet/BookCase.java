@@ -23,7 +23,7 @@ public class BookCase extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        HtmlPreparer.tableHeaderRaw(out, "category", "author", "title", "pages");
+        HtmlPreparer.tableHeaderRaw(out, "category", "author", "title", "pages", "is for kids");
         showAllBooks(resp);
         out.println("</table>");
         req.getRequestDispatcher("back-to-main.jsp").include(req, resp);
@@ -36,7 +36,8 @@ public class BookCase extends HttpServlet {
         service.showAllBooks().forEach(book -> {
             try {
                 PrintWriter out = resp.getWriter();
-                HtmlPreparer.tableOtherRaw(out, book.getCategory().toString(), book.getAuthor(), book.getTitle(), String.valueOf(book.getPages()));
+                HtmlPreparer.tableOtherRaw(out, book.getCategory().toString(), book.getAuthor(), book.getTitle(),
+                        String.valueOf(book.getPages()), String.valueOf(book.isForKids()));
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
