@@ -3,14 +3,17 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class Books {
+@RequestScoped
+public class BooksRepository {
 
     private List<Book> books;
 
-    public Books() {
+    public BooksRepository() {
         this.books = importBooks();
     }
 
