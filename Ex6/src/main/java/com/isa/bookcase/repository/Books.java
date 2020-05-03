@@ -3,10 +3,11 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.ejb.Stateless;
+import java.util.*;
 
-public class Books {
+@Stateless
+public class Books implements BooksRepository {
 
     private List<Book> books;
 
@@ -36,5 +37,38 @@ public class Books {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    @Override
+    public List<Book> findAllBooks() {
+        return importBooks();
+    }
+
+    @Override
+    public Book findRandomBook() {
+        return findAllBooks().get(new Random().nextInt(findAllBooks().size() - 1));
+    }
+
+    @Override
+    public Set<Book> findByAuthor(String author) {
+        Set<Book> findedByAuthorBooks = new HashSet<>();
+        for (Book book : books) {
+            if (book.getAuthor().substring(0, author.length()).trim().equalsIgnoreCase(author)) {
+                findedByAuthorBooks.add(book);
+            }
+        }
+        return findedByAuthorBooks;
+    }
+
+    @Override
+    public Set<Book> findByTitleAndAuthor(String title, String author) {
+        Set<Book> findedByAuthorBooks = findByAuthor(author);
+        Set<Book> result = new HashSet<>();
+        for (Book book : findedByAuthorBooks) {
+            if (book.getTitle().substring(0, title.length()).trim().equalsIgnoreCase(title)) {
+                result.add(book);
+            }
+        }
+        return result;
     }
 }

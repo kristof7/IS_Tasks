@@ -18,10 +18,13 @@
   </properties>
 
   <dependencies>
-
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
-
   <build>
-    <finalName>Ex6</finalName>
   </build>
 </project>
