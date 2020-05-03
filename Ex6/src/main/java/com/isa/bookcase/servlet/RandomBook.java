@@ -22,19 +22,19 @@ public class RandomBook extends HttpServlet {
     private RandomBookCDIRequestBean requestBean;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html;charset=UTF-8");
 
-        PrintWriter writer = resp.getWriter();
+        PrintWriter printWriter = resp.getWriter();
 
-        writer.println("<!DOCTYPE html>");
-        writer.println("<html>");
-        writer.println("<body>");
-        writer.println("<h1>Książka na dziś</h1>");
+        printWriter.println("<!DOCTYPE html>");
+        printWriter.println("<html>");
+        printWriter.println("<body>");
+        printWriter.println("<h1>Książka na dziś</h1>");
 
-        writer.println(requestBean.getRandomBook().toString());
+        printWriter.println(requestBean.getRandomBook().toString());
 
-        writer.println("</body>");
-        writer.println("</html>");
+        printWriter.println("</body>");
+        printWriter.println("</html>");
     }
 }

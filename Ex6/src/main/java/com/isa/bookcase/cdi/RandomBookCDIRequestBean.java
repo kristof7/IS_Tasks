@@ -8,12 +8,14 @@ import java.util.Random;
 
 @RequestScoped
 public class RandomBookCDIRequestBean {
+
     @EJB
     private Books books;
 
-    int rand = new Random().nextInt(12);
-
     public Book getRandomBook() {
+        int bound = books.getBooks().size();
+
+        int rand = new Random().nextInt(bound);
 
         return books.getBooks().get(rand);
     }

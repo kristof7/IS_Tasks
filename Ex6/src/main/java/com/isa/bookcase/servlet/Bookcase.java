@@ -21,23 +21,23 @@ public class Bookcase extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html;charset=UTF-8");
 
-        PrintWriter writer = resp.getWriter();
+        PrintWriter printWriter = resp.getWriter();
 
-        writer.println("<!DOCTYPE html>");
-        writer.println("<html>");
-        writer.println("<body>");
-        writer.println("<h1>Lista książek</h1>");
-        writer.println("<ul>");
+        printWriter.println("<!DOCTYPE html>");
+        printWriter.println("<html>");
+        printWriter.println("<body>");
+        printWriter.println("<h1>Lista książek</h1>");
+        printWriter.println("<ul>");
 
         for (Book book:library.displayAllBooks()) {
-            writer.println("<li>");
-            writer.println(book.toString() + " /" + book.getCategory() + "/ ");
-            if(book.isForKids()) writer.print("<span style=color:green>FOR KIDS!</span>");
-            writer.println("</li>");
+            printWriter.println("<li>");
+            printWriter.println(book.toString() + " /" + book.getCategory() + "/ ");
+            if(book.isForKids()) printWriter.print("<span style=color:green>FOR KIDS!</span>");
+            printWriter.println("</li>");
         }
 
-        writer.println("</ul>");
-        writer.println("</body>");
-        writer.println("</html>");
+        printWriter.println("</ul>");
+        printWriter.println("</body>");
+        printWriter.println("</html>");
     }
 }
