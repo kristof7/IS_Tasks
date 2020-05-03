@@ -35,15 +35,29 @@ public class FindBook extends HttpServlet {
     printWriter.println("Watorsc pola title: " + bookTitle);
     printWriter.println("Znalezione ksiazki: \n");
     for (Book book : books.getBooks()) {
-      if (authorName.equalsIgnoreCase(book.getAuthor())) printBookInformation(book, printWriter);
+      boolean authorFlag = false;
+      boolean titleFlag = false;
+      if (authorName.equalsIgnoreCase(book.getAuthor())) authorFlag = true;
       else {
         String[] nameArray = book.getAuthor().split("\\s");
         for (int i = 0; i < nameArray.length; i++) {
           if (authorName.length()> nameArray[i].length()) continue;
-          else if (findByName(authorName, nameArray[i])) printBookInformation(book, printWriter);
+          else if (findByName(authorName, nameArray[i])) authorFlag = true;
         }
       }
+     if (bookTitle != null && !(bookTitle.isEmpty()))
+      {
+        if (bookTitle.equalsIgnoreCase(book.getTitle())) titleFlag = true;
+        else {
+          String[] titleArray = book.getTitle().split("\\s");
+          for (int i = 0; i < titleArray.length ; i++) {
+            if (bookTitle.length() > titleArray[i].length()) continue;
+            else if (findByName(bookTitle, titleArray[i])) titleFlag = true;
+          }
+        }
 
+     } else titleFlag = true;
+     if (authorFlag && titleFlag) printBookInformation(book, printWriter);
     }
   }
   public boolean findByName(String nameFromUser, String nameExisting) {
