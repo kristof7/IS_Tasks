@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet("/find-book")
 public class FindBook extends HttpServlet {
@@ -27,8 +28,7 @@ public class FindBook extends HttpServlet {
         String authorParam = req.getParameter("author");
         String titleParam = req.getParameter("title");
 
-        Book book;
-
+        List<Book> book;
         if (titleParam == null || titleParam.isEmpty()) {
             book = bookService.findByAuthor(authorParam);
         } else if (authorParam == null || authorParam.isEmpty()) {
@@ -45,19 +45,20 @@ public class FindBook extends HttpServlet {
         pw.println("<body>");
 
         if (book != null) {
+            for (int i = 0; i < book.size(); i++) {
 
-            pw.println("Wynik wyszukiwania:" + "<br>");
-            pw.println("<br>");
-            pw.println("Autor: " + book.getAuthor() + "<br>");
-            pw.println("Tytul: " + book.getTitle() + "<br>");
-            pw.println("Kategoria: " + book.getCategory() + "<br>");
-            pw.println("Strony: " + book.getPages() + "<br>");
-            if ((book.isForKids())) {
-                pw.println("Dla dzieci: tak" + "<br>");
-            } else {
-                pw.println("Dla dzieci: nie" + "<br>");
+                pw.println("Wynik wyszukiwania:" + "<br>");
+                pw.println("<br>");
+                pw.println("Autor: " + book.get(i).getAuthor() + "<br>");
+                pw.println("Tytul: " + book.get(i).getTitle() + "<br>");
+                pw.println("Kategoria: " + book.get(i).getCategory() + "<br>");
+                pw.println("Strony: " + book.get(i).getPages() + "<br>");
+                if ((book.get(i).isForKids())) {
+                    pw.println("Dla dzieci: tak" + "<br>");
+                } else if (!book.get(i).isForKids()) {
+                    pw.println("Dla dzieci: nie" + "<br>");
+                }
             }
-
         } else if (titleParam == null || titleParam.isEmpty()) {
             pw.println("Autor '" + authorParam + "' nie zostal znaleziony!");
         } else if (authorParam == null || authorParam.isEmpty()) {
@@ -66,6 +67,5 @@ public class FindBook extends HttpServlet {
 
         pw.println("</body>");
         pw.println("</html>");
-
     }
 }
