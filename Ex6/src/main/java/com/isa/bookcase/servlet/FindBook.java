@@ -31,16 +31,7 @@ public class FindBook extends HttpServlet {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }else {
-            Enumeration en = req.getParameterNames();
-
-            while (en.hasMoreElements()) {
-                Object obj = en.nextElement();
-                String parm = (String) obj;
-
-                if (parm.equals("title")) {
-                    titleParam = req.getParameter("title");
-                }
-            }
+            titleParam = req.getParameter("title");
 
             if(titleParam == null || titleParam.isEmpty()){
                 writer.println(bookService.findByAuthor(authorParam));
