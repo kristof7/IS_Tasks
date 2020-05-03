@@ -33,6 +33,7 @@ public class FindBook extends HttpServlet {
         List<Book> booksByAuthor = bookService.getBooksListByAuthor(authorParam);
         Book bookByAuthor = bookService.getBookByAuthor(authorParam);
 
+        resp.setContentType("text/html;charset=UTF-8");
         printWriter.println("<!DOCTYPE html>");
         printWriter.println("<html>");
         printWriter.println("<body>");

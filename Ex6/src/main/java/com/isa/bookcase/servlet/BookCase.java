@@ -23,9 +23,19 @@ public class BookCase extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         PrintWriter printWriter = resp.getWriter();
+
         List<Book> books = bookService.findAll();
+
         for (Book book: books) {
-            printWriter.println(book);
+            resp.setContentType("text/html;charset=UTF-8");
+            printWriter.println("author: " + book.getAuthor() + "<br>");
+            printWriter.println("title: "  + book.getTitle() + "<br>");
+            printWriter.println("category: " + book.getCategory().getCategoryDescription() + "<br>");
+            printWriter.println("pages: " + book.getPages() + "<br>");
+            printWriter.println("for kids: " + (book.isForKids()? "yes" : "no") + "<br>");
+            printWriter.println("<br>");
+            printWriter.println("</body>");
+            printWriter.println("</html>");
         }
     }
 }
