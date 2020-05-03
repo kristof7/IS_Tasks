@@ -1,11 +1,8 @@
 package com.isa.bookcase.servlet;
 
 import com.isa.bookcase.cdi.RandomBookCDIRequestBean;
-import com.isa.bookcase.domain.Book;
-import com.isa.bookcase.service.Library;
 
 import javax.inject.Inject;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +12,6 @@ import java.io.PrintWriter;
 
 @WebServlet("/book-for-today")
 public class RandomBook extends HttpServlet {
-    @Inject
-    private Library library;
 
     @Inject
     private RandomBookCDIRequestBean requestBean;
