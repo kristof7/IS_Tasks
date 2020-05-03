@@ -3,10 +3,14 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
-public class Books {
+@Stateless
+public class Books implements BooksRepository{
 
     private List<Book> books;
 
@@ -36,5 +40,26 @@ public class Books {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    @Override
+    public List<Book> showAllBooks() {
+        return importBooks();
+    }
+
+    @Override
+    public Book showRandomBook() {
+        Random random = new Random();
+        return showAllBooks().get(random.nextInt(showAllBooks().size()));
+    }
+
+    @Override
+    public Optional<Book> findByAuthor(String author) {
+        return showAllBooks().stream().filter(book -> book.getAuthor().equals(author)).findFirst();
+    }
+
+    @Override
+    public Optional<Book> findByTitle(String title) {
+        return showAllBooks().stream().filter(book -> book.getTitle().equals(title)).findFirst();
     }
 }
