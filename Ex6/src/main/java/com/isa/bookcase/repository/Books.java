@@ -3,12 +3,13 @@ package com.isa.bookcase.repository;
 import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.domain.Book;
 
+import javax.ejb.Singleton;
 import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Stateless
+@Singleton
 public class Books {
 
     private List<Book> books;
