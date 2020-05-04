@@ -2,28 +2,36 @@ package com.isa.bookcase.service;
 
 import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.repository.BooksRepository;
+
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
-import javax.xml.registry.infomodel.User;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 @RequestScoped
 public class BookService {
     @EJB
     BooksRepository booksRepository;
 
-    public List findAll() {
+    public List<Book> findAll() {
         return booksRepository.findAll();
     }
 
-    public List writeRandomBook() {
-        return booksRepository.writeRandomBook();
+    public List showArandomBook() {
+        return booksRepository.showArandomBook();
     }
 
-    public Book findBookForAuthor(String author) {
-        return booksRepository.findBookForAuthor(author).orElse(null);
+    public List<Book> findBookForAuthor(String author) {
+        return findAll().stream().
+                filter(book -> book.getAuthor().toLowerCase().
+                        contains(author.toLowerCase())).
+                collect(Collectors.toList());
+    }
+
+    public List<Book> findBookForTitle(String title) {
+        return findAll().stream().
+                filter(book -> book.getTitle().toLowerCase().
+                        contains(title.toLowerCase())).collect(Collectors.toList());
     }
 
 }

@@ -2,10 +2,11 @@ package com.isa.bookcase.repository;
 
 import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.domain.Category;
-
 import javax.ejb.Stateless;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class Books implements BooksRepository {
@@ -42,12 +43,12 @@ public class Books implements BooksRepository {
 
     @Override
     public List<Book> findAll() {
-        return importBooks();
+        return books;
     }
 
     @Override
-    public List<Book> writeRandomBook() {
-       Collections.shuffle(books);
+    public List<Book> showArandomBook() {
+        Collections.shuffle(books);
         return getBooks();
 
     }
@@ -55,6 +56,11 @@ public class Books implements BooksRepository {
     @Override
     public Optional<Book> findBookForAuthor(String author) {
         return findAll().stream()
-                .filter(book -> book.getAuthor().equals(author)).findAny();
+                .filter(book -> book.getAuthor().equals(author)).findFirst();
+    }
+
+    @Override
+    public List<Book> findBookForTitle(String title) {
+        return books;
     }
 }

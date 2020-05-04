@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/book-for-today")
 public class RandomBook extends HttpServlet {
@@ -17,6 +18,12 @@ public class RandomBook extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println(bookService.writeRandomBook().get(1));
+        PrintWriter printWriter = resp.getWriter();
+        resp.setContentType("text/html;charset=UTF-8");
+        printWriter.println("<!Doctype html>");
+        printWriter.println("<body>");
+        printWriter.println(bookService.showArandomBook().get(1));
+        printWriter.println("</body>");
+        printWriter.println("</html>");
     }
 }
