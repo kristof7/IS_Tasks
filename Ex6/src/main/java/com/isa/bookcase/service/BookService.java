@@ -6,6 +6,7 @@ import com.isa.bookcase.repository.BooksRepository;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import java.util.List;
+import java.util.Optional;
 
 @RequestScoped
 public class BookService {
@@ -13,7 +14,9 @@ public class BookService {
     @EJB
     private BooksRepository booksRepository;
 
-    public Book findByAuthor(String author){return booksRepository.findByAuthor(author).orElse(null);}
+    public List findByAuthor(String author){return booksRepository.findByAuthor(author);}
+
+    public List findByTitle(String title) {return booksRepository.findByTitle(title);}
 
     public List findAll(){return booksRepository.findAll();}
 

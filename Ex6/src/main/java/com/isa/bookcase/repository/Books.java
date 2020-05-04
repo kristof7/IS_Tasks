@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Stateless
 public class Books implements BooksRepository{
@@ -44,10 +46,16 @@ public class Books implements BooksRepository{
     }
 
     @Override
-    public Optional<Book> findByAuthor(String author) {
+    public List<Book> findByAuthor(String author) {
         return findAll().stream()
-                .filter(book -> book.getAuthor().equals(author)).findFirst();
+                .filter(book -> book.getAuthor().contains(author)).collect(Collectors.toList());
 
+    }
+
+    @Override
+    public List<Book> findByTitle(String title) {
+        return findAll().stream()
+                .filter(book -> book.getTitle().contains(title)).collect(Collectors.toList());
     }
 
     @Override

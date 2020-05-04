@@ -10,7 +10,9 @@ import java.util.Optional;
 @Local
 public interface BooksRepository {
 
-    Optional<Book> findByAuthor(String author);
+    List<Book> findByAuthor(String author);
+
+    List<Book> findByTitle(String title);
 
     List<Book> findAll();
 
