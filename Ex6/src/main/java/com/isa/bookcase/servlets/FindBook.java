@@ -2,6 +2,7 @@ package com.isa.bookcase.servlets;
 
 import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.service.BookService;
+
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,25 +19,25 @@ public class FindBook extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String paramAuthor = req.getParameter("author");
-        String title = req.getParameter("title");
         if (paramAuthor == null || paramAuthor.isEmpty()) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
-        resp.setContentType("text/html;charset=UTF-8");
-        resp.getWriter().println("<!DOCTYPE html>");
-
         List<Book> booksForAuthor = bookService.findBookForAuthor(paramAuthor);
-        resp.getWriter().println("<body>");
+        resp.getWriter().println("<!DOCTYPE html>");
         if (booksForAuthor.size() == 0) {
-            resp.getWriter().println("author not fund " + paramAuthor);
+            resp.getWriter().println(String.format("author '%s' not fund", paramAuthor));
         } else {
-            resp.getWriter().println(bookService.findBookForAuthor(paramAuthor.toString()));
+            resp.getWriter().println(booksForAuthor);
         }
         resp.getWriter().println("</body>");
         resp.getWriter().println("</html>");
     }
 }
+
+
+
 
 

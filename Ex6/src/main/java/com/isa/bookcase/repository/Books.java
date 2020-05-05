@@ -54,9 +54,8 @@ public class Books implements BooksRepository {
     }
 
     @Override
-    public Optional<Book> findBookForAuthor(String author) {
-        return findAll().stream()
-                .filter(book -> book.getAuthor().equals(author)).findFirst();
+    public List<Book> findBookForAuthor(String author) {
+        return books;
     }
 
     @Override

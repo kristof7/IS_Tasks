@@ -4,7 +4,6 @@ import com.isa.bookcase.domain.Book;
 
 import javax.ejb.Local;
 import java.util.List;
-import java.util.Optional;
 
 @Local
 public interface BooksRepository {
@@ -13,6 +12,7 @@ public interface BooksRepository {
 
     List<Book>showArandomBook();
 
-    Optional<Book> findBookForAuthor(String author);
-     List<Book>findBookForTitle(String title);
+    List<Book> findBookForAuthor(String author);
+
+    List<Book> findBookForTitle(String title);
 }

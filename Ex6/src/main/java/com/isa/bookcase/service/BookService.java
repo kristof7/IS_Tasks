@@ -21,7 +21,7 @@ public class BookService {
         return booksRepository.showArandomBook();
     }
 
-    public List<Book> findBookForAuthor(String author) {
+    public List<Book>findBookForAuthor(String author) {
         return findAll().stream().
                 filter(book -> book.getAuthor().toLowerCase().
                         contains(author.toLowerCase())).
@@ -31,7 +31,8 @@ public class BookService {
     public List<Book> findBookForTitle(String title) {
         return findAll().stream().
                 filter(book -> book.getTitle().toLowerCase().
-                        contains(title.toLowerCase())).collect(Collectors.toList());
+                        contains(title.toLowerCase())).
+                collect(Collectors.toList());
     }
 
 }
