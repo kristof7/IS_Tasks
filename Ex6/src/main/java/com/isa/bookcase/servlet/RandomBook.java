@@ -1,6 +1,5 @@
 package com.isa.bookcase.servlet;
 
-import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.service.BookService;
 
 import javax.inject.Inject;
@@ -29,12 +28,8 @@ public class RandomBook extends HttpServlet {
         pw.println("<html>");
         pw.println("<body>");
 
-        int length = bookService.findAll().size();
-        int random = (int) (Math.random() * length);
-
-        Book randomBook = bookService.findAll().get(random);
         pw.println("KSIAZKA DNIA:" + "<br>");
-        pw.println("<br>" + bookService.findAll().get(random).printBookDetails(randomBook) + "<br>");
+        pw.println("<br>" + bookService.randomBook().printBookDetails(bookService.randomBook()) + "<br>");
 
         pw.println("</body>");
         pw.println("</html>");

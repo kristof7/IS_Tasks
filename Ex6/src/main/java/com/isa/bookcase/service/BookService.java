@@ -28,4 +28,8 @@ public class BookService {
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
+
+    public Book randomBook() {
+        return bookRepository.randomBook();
+    }
 }

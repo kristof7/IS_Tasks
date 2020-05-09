@@ -29,4 +29,10 @@ public class BookRepositoryBean implements BookRepository {
         return new Books().getBooks();
     }
 
+    @Override
+    public Book randomBook() {
+        int length = findAll().size();
+        int random = (int) (Math.random() * length);
+        return findAll().get(random);
+    }
 }
