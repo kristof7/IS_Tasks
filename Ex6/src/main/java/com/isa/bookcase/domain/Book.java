@@ -41,4 +41,11 @@ public class Book {
         return "{" + author + ", " + title + " (" + pages + "str.)}";
     }
 
+    public String printBookDetails(Book book) {
+        return "Autor: " + book.getAuthor() + "<br>" +
+                "Tytul: " + book.getTitle() + "<br>" +
+                "Kategoria: " + book.getCategory() + "<br>" +
+                "Dla dzieci: " + (book.isForKids() ? "Tak" : "Nie");
+    }
+
 }

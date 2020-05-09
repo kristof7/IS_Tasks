@@ -29,6 +29,7 @@ public class FindBook extends HttpServlet {
         String titleParam = req.getParameter("title");
 
         List<Book> book;
+
         if (titleParam == null || titleParam.isEmpty()) {
             book = bookService.findByAuthor(authorParam);
         } else if (authorParam == null || authorParam.isEmpty()) {
@@ -43,6 +44,7 @@ public class FindBook extends HttpServlet {
         pw.println("<!DOCTYPE html>");
         pw.println("<html>");
         pw.println("<body>");
+        pw.println("Book size: "+ book.size());
 
         if (book != null) {
             for (int i = 0; i < book.size(); i++) {

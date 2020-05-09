@@ -25,5 +25,7 @@ public class BookService {
     {
         return bookRepository.findByAuthorAndTitle(author,title);
     }
-
+    public List<Book> findAll() {
+        return bookRepository.findAll();
+    }
 }
