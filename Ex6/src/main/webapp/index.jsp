@@ -4,7 +4,7 @@
 <h2>Witaj w bibliotece :-)</h2>
 <h3>Zadanie domowe Ex6:</h3>
 <ol type="1">
-    <li>Na potrzeby zadania jest już przygotowany zbiór książek (com.isa.bookcase.repository.Books).</li>
+    <li>Na potrzeby zadania jest już przygotowany zbiór książek (com.isa.com.isa.bookcase.repository.Books).</li>
     <li>Utwórz servlet <b>Bookcase</b> który w kontekście webowym <b>/books</b> wyświetli wszystkie książki z repozytorium na jedynym widoku:</li>
     <ul>
         <li>każda pozycja na liście powinna wyświetlać wszystkie dostępne informacje o danej książce.</li>
