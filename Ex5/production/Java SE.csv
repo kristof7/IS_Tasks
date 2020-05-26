@@ -1,0 +1,6 @@
+1,Wybierz poprawne stwierdzenie dotyczące tablic w Javie:,Rozmiar tablicy jest stały,Posiadają zawsze posortowane elementy,Tablicę można poszerzyć za pomocą metody expand()
+2,Poprawnie napisane polecenie wyświetlające napis Hello World to:,System.out.println(Hello World);,Console.WriteLine(Hello World);,print (Hello World);,echo(Hello World);
+3,By poprawnie umieścić linie komentarza trzeba poprzedzić ją znakami:,//,%%,##
+4,Zmienna przechowująca tekst to:,String,int,char
+5,Dostaniesz długość tekstu za pomocą:,length(),getSize(),getLength(),len()
+6,Wyrażenie przerywające pętle to:,break,exit,stop,return

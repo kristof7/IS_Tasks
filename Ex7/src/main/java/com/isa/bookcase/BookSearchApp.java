@@ -15,37 +15,50 @@ public class BookSearchApp {
         BookService bookService = new BookService();
 
         //  1. znajdź tylko książki dla dzieci
-        List<Book> booksForKids; // TODO dodaj odpowiednią metodę w klasie BookService
+        List<Book> booksForKids; // DONE dodaj odpowiednią metodę w klasie BookService
+        booksForKids = bookService.booksForKids();
         System.out.println("\nKsiążki dla dzieci:");
-        // TODO wypisz wyniki na konsolę
+        // DONE wypisz wyniki na konsolę
+        booksForKids.forEach(book -> System.out.println(book.toString()));
 
         // 2. znajdź książki, których autor zaczyna się na literę "J"
-        List<Book> booksAuthorStartsWithChar; // TODO dodaj odpowiednią metodę w klasie BookService
+        List<Book> booksAuthorStartsWithChar; // DONE dodaj odpowiednią metodę w klasie BookService
+        booksAuthorStartsWithChar = bookService.booksAuthorStartsWithChar();
         System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':");
-        // TODO wypisz wyniki na konsolę
+        // DONE wypisz wyniki na konsolę
+        booksAuthorStartsWithChar.forEach(book -> System.out.println(book.toString()));
 
         // 3. znajdź tytuły książek, które zawiera frazę "ci"
-        List<String> bookTitlesWithFragment; // TODO dodaj odpowiednią metodę w klasie BookService
+        List<String> booksTitlesWithFragment; // DONE dodaj odpowiednią metodę w klasie BookService
+        booksTitlesWithFragment = bookService.booksTitlesWithFragment();
         System.out.println("\nTytuły książek zawierające frazę 'ci':");
-        // TODO wypisz wyniki na konsolę
+        // DONE wypisz wyniki na konsolę
+        booksTitlesWithFragment.forEach(book -> System.out.println("\"" + book + "\""));
 
         // 4. oblicz ile stron mają wszystkie książki razem
-        Integer sumOfPages; // TODO dodaj odpowiednią metodę w klasie BookService
+        Integer sumOfPages; // DONE dodaj odpowiednią metodę w klasie BookService
+        sumOfPages = bookService.sumOfPages();
         System.out.println("\nWszystkie książki mają razem stron:");
-        // TODO wypisz wynik na konsolę
+        // DONE wypisz wynik na konsolę
+        System.out.println(sumOfPages);
 
         // 5. znajdź 3 najkrótsze książki
-        List<Book> threeShortestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
+        List<Book> threeShortestBooks; // DONE dodaj odpowiednią metodę w klasie BookService
+        threeShortestBooks = bookService.threeShortestBooks();
         System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):");
-        // TODO wypisz wyniki na konsolę
+        // DONE wypisz wyniki na konsolę
+        threeShortestBooks.forEach(book -> System.out.println("\"" + book.getTitle().toString() + "\" " + book.getPages()));
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
-        List<String> titlesOfThreeLongestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
+        List<String> titlesOfThreeLongestBooks; // DONE dodaj odpowiednią metodę w klasie BookService
+        titlesOfThreeLongestBooks = bookService.titlesOfThreeLongestBooks();
         System.out.println("\nTytuły trzech najdłuższych książek:");
-        // TODO wypisz wyniki na konsolę
+        // DONE wypisz wyniki na konsolę
+        titlesOfThreeLongestBooks.forEach(book -> System.out.println("\"" + book + "\""));
 
         // 7. znajdź książkę o najdłuższym tytule
         String bookWithLongestTitle; // TODO dodaj odpowiednią metodę w klasie BookService
+        bookWithLongestTitle = bookService.bookWithLongestTitle();
         System.out.println("\nKsiążka o najdłuzszym tytule:");
         // TODO wypisz wynik na konsolę
 
