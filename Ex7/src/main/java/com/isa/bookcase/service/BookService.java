@@ -8,28 +8,26 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class BookService {
 
     private final List<Book> books = new Books().getBooks();
 
-    public List<Book> booksForKids(){
-       return books.stream()
-               .filter(Book::isForKids)
-               .collect(Collectors.toList());
-    }
-
-    public List<Book> booksAuthorStartsWithChar(){
+    public List<Book> booksForKids() {
         return books.stream()
-                .filter(n-> n.getAuthor().startsWith("J"))
+                .filter(Book::isForKids)
                 .collect(Collectors.toList());
     }
 
-    public List<String> bookTitlesWithFragment(){
-        return  books.stream()
+    public List<Book> booksAuthorStartsWithChar() {
+        return books.stream()
+                .filter(n -> n.getAuthor().startsWith("J"))
+                .collect(Collectors.toList());
+    }
+
+    public List<String> bookTitlesWithFragment() {
+        return books.stream()
                 .filter(n -> n.getTitle().contains("ci"))
                 .map(b -> String.valueOf(b.getTitle()))
                 .collect(Collectors.toList());
@@ -57,10 +55,11 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public String bookWithLongestTitle(){
+    public String bookWithLongestTitle() {
         return books.stream()
                 .max(Comparator.comparingInt(t -> t.getTitle().length()))
-                .map(Book::getTitle).get();
+                .map(Book::getTitle)
+                .get();
     }
 
     public List<Book> booksSortedByPagesAsc() {
@@ -69,14 +68,15 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public Map<Category, List<Book>> booksByCategory () {
+    public Map<Category, List<Book>> booksByCategory() {
         return books.stream()
                 .collect(Collectors.groupingBy(Book::getCategory));
     }
 
-
-
-
-
-
+    public Map<Category, Optional<Book>> longestBookInEachCategory() {
+        return books.stream()
+                .collect(Collectors.groupingBy
+                        (Book::getCategory, Collectors.maxBy
+                                (Comparator.comparingInt(Book::getPages))));
+    }
 }
