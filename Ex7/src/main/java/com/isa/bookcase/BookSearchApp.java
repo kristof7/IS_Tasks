@@ -37,7 +37,7 @@ public class BookSearchApp {
         // 5. znajdź 3 najkrótsze książki
         List<Book> threeShortestBooks = bookService.threeShortestBooks();
         System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):");
-        threeShortestBooks.forEach(book -> System.out.println("\"" + book.getTitle().toString() + "\" " + book.getPages()));
+        threeShortestBooks.forEach(book -> System.out.println("\"" + book.getTitle() + "\" " + book.getPages()));
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
         List<String> titlesOfThreeLongestBooks;
@@ -61,8 +61,8 @@ public class BookSearchApp {
         booksByCategory.forEach((category, books) -> System.out.println(category + ":" + books));
 
         // 10. znajdź najdłuższą książkę w każdym gatunku
-        Map<Category, Optional<Book>> longestBookInEachCategory; // TODO dodaj odpowiednią metodę w klasie BookService
+        Map<Category, Optional<Book>> longestBookInEachCategory = bookService.longestBookInEachCategory();
         System.out.println("\nNajdłuższa książka w każdym gatunku:");
-        // TODO wypisz wyniki na konsolę
+        longestBookInEachCategory.forEach((category, book) -> System.out.println(category + ":" + book.get()));
     }
 }

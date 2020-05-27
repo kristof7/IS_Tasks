@@ -8,7 +8,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class BookService {
@@ -64,7 +63,7 @@ public class BookService {
     // 7. znajdź książkę o najdłuższym tytule
     public String bookWithLongestTitle() {
         return books.stream()
-                .map(book -> book.getTitle())
+                .map(Book::getTitle)
                 .max(Comparator.comparingInt(String::length))
                 .orElse("empty");
     }
@@ -83,22 +82,9 @@ public class BookService {
     }
 
     // 10. znajdź najdłuższą książkę w każdym gatunku
-//    public Map<Category, Optional<Book>> longestBookInEachCategory() {
-//        return books.stream()
-
-//                .collect(Collectors.toMap(Book::getCategory, Function.identity(), (existing, limit) -> existing)))
-//
-//                        ??
-
-//                .collect(Collectors.groupingBy(Book::getCategory))
-//                .entrySet()
-//                .stream()
-//                .flatMap(books -> books.getValue().stream())
-//                .max(Comparator.comparingInt(Book::getPages))
-//                .stream()
-//                .collect((Collectors.toMap(Book::getCategory, Function.identity()));
-
-//                            ??
-//    }
+    public Map<Category, Optional<Book>> longestBookInEachCategory() {
+        return books.stream()
+                .collect(Collectors.groupingBy(Book::getCategory, Collectors.maxBy(Comparator.comparingInt(Book::getPages))));
+    }
 
 }
