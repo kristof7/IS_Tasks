@@ -15,23 +15,25 @@ public class BookSearchApp {
         BookService bookService = new BookService();
 
         //  1. znajdź tylko książki dla dzieci
-        List<Book> booksForKids; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki dla dzieci:");
+        List<Book> booksForKids;
+        // TODO dodaj odpowiednią metodę w klasie BookService
+        System.out.println("\nKsiążki dla dzieci:"+ bookService.bookForKids());
         // TODO wypisz wyniki na konsolę
 
         // 2. znajdź książki, których autor zaczyna się na literę "J"
         List<Book> booksAuthorStartsWithChar; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':");
+        System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':"+ bookService.theAuthorIsJ());
         // TODO wypisz wyniki na konsolę
 
         // 3. znajdź tytuły książek, które zawiera frazę "ci"
         List<String> bookTitlesWithFragment; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły książek zawierające frazę 'ci':");
+        System.out.println("\nTytuły książek zawierające frazę 'ci':"+ bookService.titleforCi());
         // TODO wypisz wyniki na konsolę
 
         // 4. oblicz ile stron mają wszystkie książki razem
-        Integer sumOfPages; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nWszystkie książki mają razem stron:");
+        Integer sumOfPages;
+        // TODO dodaj odpowiednią metodę w klasie BookService
+        System.out.println("\nWszystkie książki mają razem stron:"+bookService.sumPagesBook());
         // TODO wypisz wynik na konsolę
 
         // 5. znajdź 3 najkrótsze książki
