@@ -67,10 +67,9 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    // 7. znajdź książkę o najdłuższym tytule
+   //  7. znajdź książkę o najdłuższym tytule
     public String bookWithLongestTitle() {
-        String bookWithLongestTitle =Collectors.
-        return bookWithLongestTitle;
+  return String.valueOf(String.valueOf(books.stream().max(Comparator.comparing(Book::getTitle)).get()));
     }
 
 
@@ -84,10 +83,7 @@ public class BookService {
 
     //   9. podziel książki wg gatunku
     public Map<Category, List<Book>> booksByCategory() {
-        Map<Category, List<Book>> booksByCategory = Collectors.
-        return booksByCategory;
-
-
+      return   books.stream().collect(Collectors.groupingBy(Book::getCategory));
     }
 
 

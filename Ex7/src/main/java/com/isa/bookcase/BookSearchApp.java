@@ -52,21 +52,21 @@ public class BookSearchApp {
         // TODO wypisz wyniki na konsolę
 
         // 7. znajdź książkę o najdłuższym tytule
-        String bookWithLongestTitle; // TODO dodaj odpowiednią metodę w klasie BookService
-   //    System.out.println("\nKsiążka o najdłuzszym tytule:"+bookService.bookWithLongestTitle());
-        // TODO wypisz wynik na konsolę
+        String bookWithLongestTitle=bookService.bookWithLongestTitle(); // TODO dodaj odpowiednią metodę w klasie BookService
+       System.out.println("\nKsiążka o najdłuzszym tytule:"+bookWithLongestTitle);
+       // TODO wypisz wynik na konsolę
 
         // 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
         List<Book> booksSortedByPagesAsc=bookService.booksSortedByPagesAsc();
         // TODO dodaj odpowiednią metodę w klasie BookService
         System.out.println("\nTytuły książek posortowane wg rosnącej liczby stron:");
-        booksSortedByPagesAsc.forEach(book -> System.out.println(book.getAuthor() + " " + book.getPages()));
+        booksSortedByPagesAsc.forEach(book -> System.out.println(book.getTitle() + " " + book.getPages()));
         // TODO wypisz wyniki na konsolę
 
         // 9. podziel książki wg gatunku
-        Map<Category, List<Book>> booksByCategory; // TODO dodaj odpowiednią metodę w klasie BookService
-       // System.out.println("\nKsiążki wg gatunków:"+bookService.booksByCategory());
-        // TODO wypisz wyniki na konsolę
+        Map<Category, List<Book>> booksByCategory =bookService.booksByCategory(); // TODO dodaj odpowiednią metodę w klasie BookService
+       System.out.println("\nKsiążki wg gatunków:"+booksByCategory+"\n");
+      // TODO wypisz wyniki na konsolę
 
         // 10. znajdź najdłuższą książkę w każdym gatunku
         Map<Category, Optional<Book>> longestBookInEachCategory; // TODO dodaj odpowiednią metodę w klasie BookService
