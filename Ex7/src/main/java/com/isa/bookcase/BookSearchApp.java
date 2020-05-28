@@ -38,7 +38,7 @@ public class BookSearchApp {
 
         // 5. znajdź 3 najkrótsze książki
         List<Book> threeShortestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):");
+        System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):"+ bookService.theLongestBook());
         // TODO wypisz wyniki na konsolę
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
