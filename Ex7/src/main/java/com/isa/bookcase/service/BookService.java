@@ -10,108 +10,78 @@ import java.util.stream.Collectors;
 public class BookService {
 
     private final List<Book> books = new Books().getBooks();
-    Comparator<Book> pageComparator = (b1, b2) -> b1.getPages() - b2.getPages();
-    Comparator<Book> titleComparator = (b1, b2) -> b1.getTitle().length() - b2.getTitle().length();
 
-    public void booksForKids() {
-
-        List<Book> booksForKids = books.stream()
-                .filter(book -> book.isForKids())
+    public List<Book> findBooksForKids() {
+        return books.stream()
+                .filter(Book::isForKids)
                 .collect(Collectors.toList());
-
-        booksForKids.forEach(System.out::println);
     }
 
-    public void booksAuthorStartsWithChar() {
+    public List<Book> findBooksAuthorStartsWithChar() {
 
-        List<Book> booksAuthorStartsWithChar = books.stream()
+        return books.stream()
                 .filter(book -> book.getAuthor().startsWith("J"))
                 .collect(Collectors.toList());
-
-        booksAuthorStartsWithChar.forEach(System.out::println);
     }
 
-    public void bookTitlesWithFragment() {
+    public List<String> findBookTitlesWithFragment() {
 
-        List<String> bookTitlesWithFragment = books.stream()
+        return books.stream()
                 .filter(book -> book.getTitle().contains("ci"))
                 .map(Book::getTitle)
                 .collect(Collectors.toList());
-
-        bookTitlesWithFragment.forEach(System.out::println);
     }
 
-    public void sumOfPages() {
+    public Integer findSumOfPages() {
 
-        Integer sumOfPages = books.stream()
+        return books.stream()
                 .map(Book::getPages)
-                .reduce(0, (a1, a2) -> a1 + a2);
-
-        System.out.println(sumOfPages);
+                .reduce(0, Integer::sum);
     }
 
-    public void threeShortestBooks() {
+    public List<Book> findThreeShortestBooks() {
 
-        List<Book> threeShortestBooks = books.stream()
-                .sorted(pageComparator)
+        return books.stream()
+                .sorted(Comparator.comparing(Book::getPages))
                 .limit(3)
                 .collect(Collectors.toList());
-
-        threeShortestBooks.forEach(System.out::println);
     }
 
-    public void titlesOfThreeLongestBooks() {
+    public List<String> findTitlesOfThreeLongestBooks() {
 
-        List<String> threeShortestBooks = books.stream()
-                .sorted(pageComparator.reversed())
+        return books.stream()
+                .sorted(Comparator.comparing(Book::getPages).reversed())
                 .limit(3)
                 .map(Book::getTitle)
                 .collect(Collectors.toList());
-
-        threeShortestBooks.forEach(System.out::println);
     }
 
-    public void bookWithLongestTitle() {
+    public String findBookWithLongestTitle() {
 
-        String bookWithLongestTitle = books.stream()
-                .sorted(titleComparator.reversed())
+        return books.stream()
                 .map(Book::getTitle)
-                .findFirst().get();
-
-        System.out.println(bookWithLongestTitle);
+                .max(Comparator.comparing(String::length))
+                .get();
     }
 
-    public void booksSortedByPagesAsc() {
+    public List<Book> findBooksSortedByPagesAsc() {
 
-        List<Book> booksSortedByPagesAsc = books.stream()
-                .sorted(pageComparator)
+        return books.stream()
+                .sorted(Comparator.comparing(Book::getPages))
                 .collect(Collectors.toList());
-
-        booksSortedByPagesAsc.forEach(System.out::println);
     }
 
-    public void booksByCategory() {
+    public Map<Category, List<Book>> findBooksByCategory() {
 
-        Map<Category, List<Book>> booksByCategory = books.stream()
+        return books.stream()
                 .collect(Collectors.groupingBy(Book::getCategory));
-
-        Set<Map.Entry<Category, List<Book>>> entrySet = booksByCategory.entrySet();
-        entrySet.stream()
-                .collect(Collectors.toSet());
-
-        entrySet.forEach(System.out::println);
     }
 
-    public void longestBookInEachCategory() {
+    public Map<Category, Optional<Book>> findLongestBookInEachCategory() {
 
-        Map<Category, Optional<Book>> longestBookInEachCategory = books.stream()
-                .collect(Collectors.groupingBy(Book::getCategory, Collectors.maxBy(titleComparator)));
-
-        Set<Map.Entry<Category, Optional<Book>>> entrySet = longestBookInEachCategory.entrySet();
-        entrySet.stream()
-                .collect(Collectors.toSet());
-
-        entrySet.forEach(System.out::println);
+        return books.stream()
+                .collect(Collectors.groupingBy(Book::getCategory, Collectors.maxBy
+                        (Comparator.comparing(Book::getPages))));
     }
 
 }
