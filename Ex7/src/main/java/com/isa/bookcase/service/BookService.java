@@ -3,6 +3,7 @@ package com.isa.bookcase.service;
 import com.isa.bookcase.domain.Book;
 import com.isa.bookcase.repository.Books;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -45,9 +46,19 @@ public class BookService {
 
     // 5. znajdź 3 najkrótsze książki
     public List<Book> theLongestBook() {
-        List<Book>newlist=books.stream().sorted(books.get(1),books.get(2)->compareTo(books.get(1)))
+
         return books.stream()
-    List<String> sortedList = list.stream()
-        List<String> sortedList = list.stream()
-                .sorted((o1,o2)-> o2.compareTo(o1))
+                .sorted(Comparator
+                        .comparingInt(Book::getPages))
+                .limit(3)
                 .collect(Collectors.toList());
+    }
+
+    // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
+    public List<String> titlesOfThreeLongestBooks() {
+        return books.stream()
+                .sorted(Comparator.comparingInt(Book::getPages).reversed())
+                .map(Book::getTitle).limit(3)
+                .collect(Collectors.toList());
+    }
+}

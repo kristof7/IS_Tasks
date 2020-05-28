@@ -43,7 +43,7 @@ public class BookSearchApp {
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
         List<String> titlesOfThreeLongestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły trzech najdłuższych książek:");
+        System.out.println("\nTytuły trzech najdłuższych książek:"+ bookService.titlesOfThreeLongestBooks());
         // TODO wypisz wyniki na konsolę
 
         // 7. znajdź książkę o najdłuższym tytule
