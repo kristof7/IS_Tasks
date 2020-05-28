@@ -7,8 +7,11 @@ import com.isa.bookcase.repository.Books;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import static com.isa.bookcase.domain.Category.values;
 
 public class BookService {
 
@@ -57,33 +60,35 @@ public class BookService {
     }
 
     // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
-    public List<String> titlesOfThreeLongestBooks() {
+    public List<Book> titlesOfLongestBooks() {
         return books.stream()
                 .sorted(Comparator.comparingInt(Book::getPages).reversed())
-                .map(Book::getTitle).limit(3)
+                .limit(3)
                 .collect(Collectors.toList());
     }
 
     // 7. znajdź książkę o najdłuższym tytule
     public String bookWithLongestTitle() {
-        String bookWithLongestTitle= String.valueOf(String.valueOf(books.stream().map(Book::getTitle)).length());
+        String bookWithLongestTitle =Collectors.
         return bookWithLongestTitle;
     }
 
 
-
-// 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
+    // 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
     public List<Book> booksSortedByPagesAsc() {
         return books.stream()
                 .sorted(Comparator
-                        .comparingInt(Book::getPages))
+                        .comparingInt(Book::getPages).reversed())
                 .collect(Collectors.toList());
     }
-    // 9. podziel książki wg gatunku
-//  public   Map<Category, List<Book>> booksByCategory(){
-//      Collectors.groupingByConcurrent(o -> booksByCategory().computeIfAbsent(Category.FANTASTYKA_SCIENCE_FICTION)).toString()
-//        return booksByCategory();
 
+    //   9. podziel książki wg gatunku
+    public Map<Category, List<Book>> booksByCategory() {
+        Map<Category, List<Book>> booksByCategory = Collectors.
+        return booksByCategory;
 
 
     }
+
+
+}
