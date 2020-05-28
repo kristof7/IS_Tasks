@@ -48,17 +48,17 @@ public class BookSearchApp {
 
         // 7. znajdź książkę o najdłuższym tytule
         String bookWithLongestTitle; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążka o najdłuzszym tytule:");
+       System.out.println("\nKsiążka o najdłuzszym tytule:"+bookService.bookWithLongestTitle());
         // TODO wypisz wynik na konsolę
 
         // 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
         List<Book> booksSortedByPagesAsc; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły książek posortowane wg rosnącej liczby stron:");
+        System.out.println("\nTytuły książek posortowane wg rosnącej liczby stron:"+bookService.booksSortedByPagesAsc());
         // TODO wypisz wyniki na konsolę
 
         // 9. podziel książki wg gatunku
         Map<Category, List<Book>> booksByCategory; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki wg gatunków:");
+       // System.out.println("\nKsiążki wg gatunków:"+bookService.booksByCategory());
         // TODO wypisz wyniki na konsolę
 
         // 10. znajdź najdłuższą książkę w każdym gatunku

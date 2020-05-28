@@ -1,10 +1,12 @@
 package com.isa.bookcase.service;
 
 import com.isa.bookcase.domain.Book;
+import com.isa.bookcase.domain.Category;
 import com.isa.bookcase.repository.Books;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -61,4 +63,27 @@ public class BookService {
                 .map(Book::getTitle).limit(3)
                 .collect(Collectors.toList());
     }
-}
+
+    // 7. znajdź książkę o najdłuższym tytule
+    public String bookWithLongestTitle() {
+        String bookWithLongestTitle= String.valueOf(String.valueOf(books.stream().map(Book::getTitle)).length());
+        return bookWithLongestTitle;
+    }
+
+
+
+// 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
+    public List<Book> booksSortedByPagesAsc() {
+        return books.stream()
+                .sorted(Comparator
+                        .comparingInt(Book::getPages))
+                .collect(Collectors.toList());
+    }
+    // 9. podziel książki wg gatunku
+//  public   Map<Category, List<Book>> booksByCategory(){
+//      Collectors.groupingByConcurrent(o -> booksByCategory().computeIfAbsent(Category.FANTASTYKA_SCIENCE_FICTION)).toString()
+//        return booksByCategory();
+
+
+
+    }
