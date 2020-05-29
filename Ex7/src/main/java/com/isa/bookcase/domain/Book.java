@@ -36,8 +36,10 @@ public class Book {
         return forKids;
     }
 
+
+
     @Override
     public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
+        return "- Author: " + author + ", title: " + title + ", pages: " + pages + " str.";
     }
 }

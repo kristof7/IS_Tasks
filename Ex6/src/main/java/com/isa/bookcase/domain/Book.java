@@ -1,5 +1,7 @@
 package com.isa.bookcase.domain;
 
+import com.isa.bookcase.service.BookService;
+
 public class Book {
 
     private String author;
@@ -36,7 +38,11 @@ public class Book {
         return forKids;
     }
 
+
     @Override
+            Int i;
+
+    BookService bookService = new BookService();
     public String toString() {
         return "{" + author + ", " + title + " (" + pages + "str.)}";
     }
