@@ -69,6 +69,7 @@ public class BookSearchApp {
         // 10. znajdź najdłuższą książkę w każdym gatunku
         Map<Category, Optional<Book>> longestBookInEachCategory; // TODO dodaj odpowiednią metodę w klasie BookService
         System.out.println("\nNajdłuższa książka w każdym gatunku:");
-        // TODO wypisz wyniki na konsolę
+        longestBookInEachCategory = bookService.longestBookInEachCategory();
+        longestBookInEachCategory.forEach((category, books) -> System.out.println(category +"\n"+ books));
     }
 }
