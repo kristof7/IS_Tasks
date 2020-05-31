@@ -14,25 +14,23 @@ public class BookService {
 
     private final List<Book> books = new Books().getBooks();
 
-    public List<Book> isForKidsList(List<Book> bookList) {
-        books.stream()
+    public List<Book> booksForKids() {
+        return books.stream()
                 .filter(Book::isForKids)
-                .forEach(bookList::add);
-        return bookList;
+                .collect(Collectors.toList());
     }
 
-    public List<Book> authorStartsWithJ(List<Book> bookList) {
-        books.stream()
+    public List<Book> booksAuthorStartsWithChar() {
+        return books.stream()
                 .filter(book -> book.getAuthor().startsWith("J"))
-                .forEach(bookList::add);
-        return bookList;
+                .collect(Collectors.toList());
     }
 
-    public List<String> containsCi(List<String> list) {
-        books.stream()
+    public List<String> bookTitlesWithFragment() {
+        return books.stream()
                 .filter(book -> book.getTitle().contains("ci"))
-                .forEach(book -> list.add(book.getTitle()));
-        return list;
+                .map(Book::getTitle)
+                .collect(Collectors.toList());
     }
 
     public Integer sumOfPages() {

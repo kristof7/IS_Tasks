@@ -16,19 +16,22 @@ public class BookSearchApp {
         BookService bookService = new BookService();
 
         //  1. znajdź tylko książki dla dzieci
-        List<Book> booksForKids = new ArrayList<>(); // TODO dodaj odpowiednią metodę w klasie BookService
+        List<Book> booksForKids; // TODO dodaj odpowiednią metodę w klasie BookService
         System.out.println("\nKsiążki dla dzieci:");
-        bookService.isForKidsList(booksForKids).forEach(System.out::println);
+        booksForKids = bookService.booksForKids();
+        booksForKids.forEach(System.out::println);
 
         // 2. znajdź książki, których autor zaczyna się na literę "J"
-        List<Book> booksAuthorStartsWithChar = new ArrayList<>(); // TODO dodaj odpowiednią metodę w klasie BookService
+        List<Book> booksAuthorStartsWithChar; // TODO dodaj odpowiednią metodę w klasie BookService
         System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':");
-        bookService.authorStartsWithJ(booksAuthorStartsWithChar).forEach(System.out::println);
+        booksAuthorStartsWithChar = bookService.booksAuthorStartsWithChar();
+        booksAuthorStartsWithChar.forEach(System.out::println);
 
         // 3. znajdź tytuły książek, które zawiera frazę "ci"
-        List<String> bookTitlesWithFragment = new ArrayList<>();// TODO dodaj odpowiednią metodę w klasie BookService
+        List<String> bookTitlesWithFragment;// TODO dodaj odpowiednią metodę w klasie BookService
         System.out.println("\nTytuły książek zawierające frazę 'ci':");
-        bookService.containsCi(bookTitlesWithFragment).forEach(System.out::println);
+        bookTitlesWithFragment = bookService.bookTitlesWithFragment();
+        bookTitlesWithFragment.forEach(System.out::println);
 
         // 4. oblicz ile stron mają wszystkie książki razem
         Integer sumOfPages; // TODO dodaj odpowiednią metodę w klasie BookService
