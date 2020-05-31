@@ -38,6 +38,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
+        return " AUTOR : " + author + ", TYTUŁ : " + title + ", ILOŚĆ STRON :" + pages + " ";
     }
 }
