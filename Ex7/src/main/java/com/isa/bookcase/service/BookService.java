@@ -21,13 +21,13 @@ public class BookService {
                 .filter(book -> book.getAuthor().startsWith("J"))
                 .collect(Collectors.toList());
     }
-    public List<String> getBooksForTitleContainingCi(){
+    public List<String> getBookTitlesContainingCi(){
         return books.stream()
                 .map(Book::getTitle)
                 .filter(book -> book.toLowerCase().contains("ci"))
                 .collect(Collectors.toList());
     }
-    public Integer sumForPagesOfAllBooks(){
+    public Integer getSumForPagesOfAllBooks(){
         return books.stream()
                 .mapToInt(Book::getPages)
                 .sum();
@@ -38,7 +38,7 @@ public class BookService {
                 .limit(3)
                 .collect(Collectors.toList());
     }
-    public List<String> getThreeLongestBooks(){
+    public List<String> getThreeLongestBookTitles(){
         return books.stream()
                 .sorted(Comparator.comparingInt(Book::getPages).reversed())
                 .limit(3)

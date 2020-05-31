@@ -28,13 +28,13 @@ public class BookSearchApp {
 
         // 3. znajdź tytuły książek, które zawiera frazę "ci"
 
-        List<String> bookTitlesWithFragment = bookService.getBooksForTitleContainingCi();
+        List<String> bookTitlesWithFragment = bookService.getBookTitlesContainingCi();
         System.out.println("\nTytuły książek zawierające frazę 'ci':");
         bookTitlesWithFragment.forEach(System.out::println);
 
         // 4. oblicz ile stron mają wszystkie książki razem
 
-        Integer sumOfPages = bookService.sumForPagesOfAllBooks();
+        Integer sumOfPages = bookService.getSumForPagesOfAllBooks();
         System.out.println("\nWszystkie książki mają razem stron:");
         System.out.println(sumOfPages);
 
@@ -46,7 +46,7 @@ public class BookSearchApp {
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
 
-        List<String> titlesOfThreeLongestBooks = bookService.getThreeLongestBooks();
+        List<String> titlesOfThreeLongestBooks = bookService.getThreeLongestBookTitles();
         System.out.println("\nTytuły trzech najdłuższych książek:");
         titlesOfThreeLongestBooks.forEach(System.out::println);
 
