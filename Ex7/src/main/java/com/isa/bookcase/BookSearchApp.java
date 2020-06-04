@@ -15,53 +15,43 @@ public class BookSearchApp {
         BookService bookService = new BookService();
 
         //  1. znajdź tylko książki dla dzieci
-        List<Book> booksForKids; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki dla dzieci:");
-        // TODO wypisz wyniki na konsolę
+        List<Book> booksForKids = bookService.findBooksForKids();
+        System.out.println("\nKsiążki dla dzieci:" + booksForKids);
 
         // 2. znajdź książki, których autor zaczyna się na literę "J"
-        List<Book> booksAuthorStartsWithChar; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':");
-        // TODO wypisz wyniki na konsolę
+        List<Book> booksAuthorStartsWithChar = bookService.findBooksWithLetterJForAuthor();
+        System.out.println("\nKsiążki, których autor zaczyna sie na litere 'J':" + booksAuthorStartsWithChar);
 
         // 3. znajdź tytuły książek, które zawiera frazę "ci"
-        List<String> bookTitlesWithFragment; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły książek zawierające frazę 'ci':");
-        // TODO wypisz wyniki na konsolę
+        List<String> bookTitlesWithFragment = bookService.finBooksWithFragmentOfText();
+        System.out.println("\nTytuły książek zawierające frazę 'ci':" + bookTitlesWithFragment);
 
         // 4. oblicz ile stron mają wszystkie książki razem
-        Integer sumOfPages; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nWszystkie książki mają razem stron:");
-        // TODO wypisz wynik na konsolę
+        Integer sum = bookService.sumOfPagesForAllBooks();
+        System.out.println("\nWszystkie książki mają razem stron:" + sum);
 
         // 5. znajdź 3 najkrótsze książki
-        List<Book> threeShortestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):");
-        // TODO wypisz wyniki na konsolę
+        List<Book> threeShortestBooks = bookService.findThreeShortestBooks();
+        System.out.println("\nTrzy najkrótsze książki (tytuł + liczba stron):" + threeShortestBooks);
 
         // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
-        List<String> titlesOfThreeLongestBooks; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły trzech najdłuższych książek:");
-        // TODO wypisz wyniki na konsolę
+        List<String> titlesOfThreeLongestBooks = bookService.findThreeBooksWithMaxNumberOfPages();
+        System.out.println("\nTytuły trzech najdłuższych książek:" + titlesOfThreeLongestBooks);
 
         // 7. znajdź książkę o najdłuższym tytule
-        String bookWithLongestTitle; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążka o najdłuzszym tytule:");
-        // TODO wypisz wynik na konsolę
+        String bookWithLongestTitle = bookService.fingBookWithTheLongestTitle();
+        System.out.println("\nKsiążka o najdłuzszym tytule:" + bookWithLongestTitle);
 
         // 8. wypisz książki (tytuły  i liczbę stron) posortowane wg rosnącej liczby stron
-        List<Book> booksSortedByPagesAsc; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nTytuły książek posortowane wg rosnącej liczby stron:");
-        // TODO wypisz wyniki na konsolę
+        List<Book> booksSortedByPagesAsc = bookService.findBooksWithAscendingOrderForNumbOfPages();
+        System.out.println("\nTytuły książek posortowane wg rosnącej liczby stron:" + booksSortedByPagesAsc);
 
         // 9. podziel książki wg gatunku
-        Map<Category, List<Book>> booksByCategory; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nKsiążki wg gatunków:");
-        // TODO wypisz wyniki na konsolę
+        Map<Category, List<Book>> booksByCategory = bookService.orderByCategory();
+        System.out.println("\nKsiążki wg gatunków:" + booksByCategory);
 
         // 10. znajdź najdłuższą książkę w każdym gatunku
-        Map<Category, Optional<Book>> longestBookInEachCategory; // TODO dodaj odpowiednią metodę w klasie BookService
-        System.out.println("\nNajdłuższa książka w każdym gatunku:");
-        // TODO wypisz wyniki na konsolę
+        Map<Category, Optional<Book>> longestBookInEachCategory = bookService.findTheLongestBookInEachCategory();
+        System.out.println("\nNajdłuższa książka w każdym gatunku:" + longestBookInEachCategory);
     }
 }
