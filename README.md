@@ -20,3 +20,4 @@ Jeśli przeglądasz to repozytorium na GitHub'ie to klikając w poniższe linki 
 * [Zadanie 5 - Java Struktury Danych, Clean Code](./Ex5)
 * [Zadanie 6 - Java EE - Servlet, EJB, CDI](./Ex6)
 * [Zadanie 7 - Java Programowanie Funkcyjne](./Ex7)
+* [Zadanie 8 - Testy jednostkowe, Loggery](./Ex8)
