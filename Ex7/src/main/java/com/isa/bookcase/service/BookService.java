@@ -18,21 +18,21 @@ public class BookService {
     private final List<Book> books = new Books().getBooks();
 
     //  1. znajdź tylko książki dla dzieci
-    public List<Book> bookForKids() {
+    public List<Book> findBookForKids() {
         return books.stream()
                 .filter(Book::isForKids)
                 .collect(Collectors.toList());
     }
 
     // 2. znajdź książki, których autor zaczyna się na literę "J"
-    public List<Book> theAuthorIsJ() {
+    public List<Book> findTheAuthorIsJ() {
         return books.stream().filter(book -> book.getAuthor()
                 .startsWith("J"))
                 .collect(Collectors.toList());
     }
 
     // 3. znajdź tytuły książek, które zawiera frazę "ci"
-    public List<Book> titleforCi() {
+    public List<Book> findTitleforCi() {
         return books.stream().filter(book -> book.getTitle()
                 .contains("ci"))
                 .collect(Collectors.toList());
@@ -50,7 +50,7 @@ public class BookService {
     }
 
     // 5. znajdź 3 najkrótsze książki
-    public List<Book> theLongestBook() {
+    public List<Book> findTheLongestBook() {
         return books.stream()
                 .sorted(Comparator
                         .comparingInt(Book::getPages))
@@ -59,7 +59,7 @@ public class BookService {
     }
 
     // 6. znajdź tytuły 3 książek, które mają największą liczbę stron
-    public List<Book> titlesOfLongestBooks() {
+    public List<Book> findTitlesOfLongestBooks() {
         return books.stream()
                 .sorted(Comparator.comparingInt(Book::getPages).reversed())
                 .limit(3)
@@ -84,9 +84,10 @@ public class BookService {
     public Map<Category, List<Book>> booksByCategory() {
         return books.stream().collect(Collectors.groupingBy(Book::getCategory));
     }
+
     // 10. znajdź najdłuższą książkę w każdym gatunku
-    //Map<Category, Optional<Book>> longestBookInEachCategory()
-
-    //return books.stream().map(Comparator.comparing(o ->  ))
+    public Map<Category, Optional<Book>> findLongestBookByCategory() {
+        return books.stream()
+                .collect(Collectors.groupingBy(Book::getCategory, Collectors.maxBy(Comparator.comparingInt(Book::getPages))));
+    }
 }
-
