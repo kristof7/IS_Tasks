@@ -1,0 +1,5 @@
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593102268146" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593102268" nanoOfSecond="146998000"/>
+    <Message>New file created</Message>
+  </Event>

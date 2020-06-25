@@ -1,0 +1,15 @@
+[
+{
+  "instant" : {
+    "epochSecond" : 1593102268,
+    "nanoOfSecond" : 146998000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "New file created",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
