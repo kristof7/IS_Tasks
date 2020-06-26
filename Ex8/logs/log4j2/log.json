@@ -1,0 +1,1 @@
+{"instant":{"epochSecond":1593206067,"nanoOfSecond":871475000},"thread":"main","level":"ERROR","loggerName":"com.isa.bookcase.utils.FileUtils","message":"Nie ma takiego pliku ani katalogu","endOfBatch":false,"loggerFqcn":"org.apache.logging.log4j.spi.AbstractLogger","contextMap":{},"threadId":1,"threadPriority":5}

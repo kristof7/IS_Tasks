@@ -1,5 +1,7 @@
 package com.isa.bookcase.entity;
 
+import java.util.Objects;
+
 public class Book {
 
     private String author;
@@ -59,5 +61,23 @@ public class Book {
     @Override
     public String toString() {
         return "{" + author + ", " + title + " (" + pages + "str.)}";
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return getPages() == book.getPages() &&
+                isForKids() == book.isForKids() &&
+                Objects.equals(getAuthor(), book.getAuthor()) &&
+                Objects.equals(getTitle(), book.getTitle()) &&
+                getCategory() == book.getCategory();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAuthor(), getTitle(), getCategory(), getPages(), isForKids());
     }
 }

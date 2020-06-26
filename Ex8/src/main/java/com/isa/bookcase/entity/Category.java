@@ -1,17 +1,10 @@
 package com.isa.bookcase.entity;
 
 public enum Category {
-    ACTION,
-    BIOGRAPHY,
-    CLASSIC,
-    COMIC,
-    CRIME,
-    DRAMA,
-    FANTASY,
-    HISTORICAL,
-    HORROR,
-    ROMANCE,
-    SCI_FI,
-    STORY,
-    THRILLER
+    KRYMINAL_SENSACJA_THRILLER,
+    LITERATURA_PIEKNA,
+    HISTORYCZNA,
+    FANTASTYKA_SCIENCE_FICTION,
+    PUBLICYSTYKA_BIOGRAFIA,
+    OBYCZAJOWA_ROMANS
 }
