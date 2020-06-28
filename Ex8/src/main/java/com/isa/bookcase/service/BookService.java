@@ -49,7 +49,7 @@ public class BookService {
         return bookDao.findAllBooks()
                       .stream()
                       .max(Comparator.comparing(p -> p.getTitle()
-                                                      .length()))
+                                        .length()))
                       .map(Book::getTitle)
                       .get();
     }
