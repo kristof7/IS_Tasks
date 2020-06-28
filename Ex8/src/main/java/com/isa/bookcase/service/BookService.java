@@ -36,12 +36,12 @@ public class BookService {
                       .collect(Collectors.toList());
     }
 
-    public List<Book> findLongestBooks(Integer maxSize) {
+    public List<Book> findLongestBooks() {
         return bookDao.findAllBooks()
                       .stream()
                       .sorted(Comparator.comparing(Book::getPages)
                                         .reversed())
-                      .limit(maxSize)
+                      .limit(3)
                       .collect(Collectors.toList());
     }
 

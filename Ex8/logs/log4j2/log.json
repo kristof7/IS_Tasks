@@ -13,3 +13,31 @@
   "threadId" : 1,
   "threadPriority" : 5
 }
+{
+  "instant" : {
+    "epochSecond" : 1593340232,
+    "nanoOfSecond" : 673748000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "New file created",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1593340427,
+    "nanoOfSecond" : 297750000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "New file created",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
