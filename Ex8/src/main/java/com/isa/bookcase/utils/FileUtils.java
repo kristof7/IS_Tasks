@@ -4,12 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.FileHandler;
 
 public class FileUtils {
 
-    private static Logger LOGGER;
+    private static final Logger LOGGER;
     static {
         String path = FileUtils.class.getClassLoader()
                 .getResource("log4j2.xml")
@@ -18,7 +16,7 @@ public class FileUtils {
         LOGGER = LogManager.getLogger(FileUtils.class.getName());
     }
 
-    public static void createFile(String pathName) throws IOException {
+    public static void createFile(String pathName) {
         File file = new File(pathName);
         try {
             file.createNewFile();

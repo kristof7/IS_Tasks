@@ -3,15 +3,11 @@ package com.isa.bookcase.service;
 import com.isa.bookcase.dao.BookDao;
 import com.isa.bookcase.entity.Book;
 import com.isa.bookcase.entity.Category;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
@@ -19,16 +15,10 @@ import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class BookServiceTest {
-
-//    private BookDao bookDao;
-//    private BookService bookService;
 
     @Mock
     BookDao bookDao;
@@ -52,11 +42,6 @@ public class BookServiceTest {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.BIOGRAPHY, 490, false));
         return books;
     }
-
-//    @BeforeAll
-//    public void beforeAll() {
-//        when(bookDao.findAllBooks()).thenReturn(prepareMockData());
-//    }
 
     @BeforeEach
     public void beforeEach() {
