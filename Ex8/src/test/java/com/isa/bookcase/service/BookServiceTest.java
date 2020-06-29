@@ -104,7 +104,9 @@ public class BookServiceTest {
 
         List<Book> result = service.findBooksAuthorStartsWith("Geor");
 
-        assertThat(result).isEqualTo(booksStartsWithGeor);
+        assertThat(result).isEqualTo(booksStartsWithGeor)
+                .contains(new Book("George R.R. Martin", "Gra o tron", Category.FANTASTYKA_SCIENCE_FICTION, 999, false))
+                .hasSize(1);
     }
 
     @Test
