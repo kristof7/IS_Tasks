@@ -13,3 +13,43 @@
     <Instant epochSecond="1593340427" nanoOfSecond="297750000"/>
     <Message>New file created</Message>
   </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447290075" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447290" nanoOfSecond="75135000"/>
+    <Message>New file created</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447340807" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447340" nanoOfSecond="807226000"/>
+    <Message>New file created</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447567339" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447567" nanoOfSecond="339306000"/>
+    <Message>Something goes wrong!</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447567436" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447567" nanoOfSecond="436714000"/>
+    <Message>New file created</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447590036" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447590" nanoOfSecond="36221000"/>
+    <Message>Something goes wrong!</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447590168" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447590" nanoOfSecond="168165000"/>
+    <Message>New file created</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447674746" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447674" nanoOfSecond="746807000"/>
+    <Message>Something goes wrong!</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1593447674870" thread="main" level="INFO" loggerName="com.isa.bookcase.utils.FileUtils" endOfBatch="true" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1593447674" nanoOfSecond="870242000"/>
+    <Message>New file created</Message>
+  </Event>

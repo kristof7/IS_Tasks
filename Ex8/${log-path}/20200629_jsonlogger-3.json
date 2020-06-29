@@ -1,8 +1,22 @@
 [
+, {
+  "instant" : {
+    "epochSecond" : 1593447567,
+    "nanoOfSecond" : 436714000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "New file created",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
 {
   "instant" : {
-    "epochSecond" : 1593447674,
-    "nanoOfSecond" : 746807000
+    "epochSecond" : 1593447590,
+    "nanoOfSecond" : 36221000
   },
   "thread" : "main",
   "level" : "INFO",
@@ -15,8 +29,8 @@
 }
 , {
   "instant" : {
-    "epochSecond" : 1593447674,
-    "nanoOfSecond" : 870242000
+    "epochSecond" : 1593447590,
+    "nanoOfSecond" : 168165000
   },
   "thread" : "main",
   "level" : "INFO",
@@ -27,3 +41,5 @@
   "threadId" : 1,
   "threadPriority" : 5
 }
+
+]

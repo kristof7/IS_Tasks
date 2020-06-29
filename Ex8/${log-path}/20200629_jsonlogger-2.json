@@ -1,22 +1,8 @@
 [
 {
   "instant" : {
-    "epochSecond" : 1593447674,
-    "nanoOfSecond" : 746807000
-  },
-  "thread" : "main",
-  "level" : "INFO",
-  "loggerName" : "com.isa.bookcase.utils.FileUtils",
-  "message" : "Something goes wrong!",
-  "endOfBatch" : false,
-  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
-  "threadId" : 1,
-  "threadPriority" : 5
-}
-, {
-  "instant" : {
-    "epochSecond" : 1593447674,
-    "nanoOfSecond" : 870242000
+    "epochSecond" : 1593447290,
+    "nanoOfSecond" : 75135000
   },
   "thread" : "main",
   "level" : "INFO",
@@ -27,3 +13,33 @@
   "threadId" : 1,
   "threadPriority" : 5
 }
+{
+  "instant" : {
+    "epochSecond" : 1593447340,
+    "nanoOfSecond" : 807226000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "New file created",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1593447567,
+    "nanoOfSecond" : 339306000
+  },
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.isa.bookcase.utils.FileUtils",
+  "message" : "Something goes wrong!",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+
+]

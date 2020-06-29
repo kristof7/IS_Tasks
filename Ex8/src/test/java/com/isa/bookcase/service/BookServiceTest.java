@@ -10,7 +10,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -98,22 +101,8 @@ public class BookServiceTest {
         //when
         List<Book> result = bookService.sortBooksByPagesAsc();
         //then
-        List<Book> sortedList = List.of(
-                new Book("Antoine de Saint-Exupery", "Maly Ksiaze", Category.ROMANCE, 112, true),
-                new Book("Jozef Ignacy Kraszewski", "Stara basn", Category.HISTORICAL, 304, false),
-                new Book("J. R. R. Tolkien", "Hobbit", Category.SCI_FI, 315, false),
-                new Book("J. K. Rowling", "Harry Potter i Kamien Filozoficzny", Category.SCI_FI, 328, true),
-                new Book("Simon Beckett", "Chemia smierci", Category.CRIME, 352, false),
-                new Book("Jojo Moyes", "Zanim sie pojawiles", Category.CLASSIC, 382, false),
-                new Book("Leonie Swann", "Kroczac w ciemnosci", Category.ROMANCE, 424, false),
-                new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.BIOGRAPHY, 490, false),
-                new Book("Maja Lunde", "Historia Pszczol", Category.ROMANCE, 514, false),
-                new Book("Marc Elsberg", "Blackout", Category.CRIME, 784, false),
-                new Book("Hanya Yanagihara", "Male zycie", Category.ROMANCE, 816, false),
-                new Book("George R.R. Martin", "Gra o tron", Category.SCI_FI, 999, false)
-        );
-        assertThat(result == sortedList);
-   }
+        assertThat(result).isSortedAccordingTo(Comparator.comparing(Book::getPages));
 
+   }
 
 }
