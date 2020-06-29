@@ -17,8 +17,7 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatNullPointerException;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,7 +30,7 @@ public class BookServiceTest {
     private BookService bookService;
 
     @BeforeEach
-    void shouldGetAllBooks() {
+    void mockGetAllBooks() {
         List<Book> testBooks = Arrays.asList(
                 new Book("Adam Małysz", "Skakańsko", Category.CRIME, 100, true),
                 new Book("Magda Gesler", "Gotowańsko", Category.BIOGRAPHY, 10, true),
@@ -82,22 +81,22 @@ public class BookServiceTest {
     }
 
     @Test
-    void findBooksTitleContains() {
-        //given
-
-        //when
-
-        //then
+    void testFindBooksTitleContainsCorrectString() {
+       List<Book> result = bookService.findBooksTitleContains("ańsko");
+       assertThat(result).containsExactly(
+               bookDao.findAllBooks().get(0),
+               bookDao.findAllBooks().get(1),
+               bookDao.findAllBooks().get(2)
+       );
     }
 
     @Test
     void findLongestBooks() {
-        //given
-
-        //when
-
-        //then
-
+        List<Book> result = bookService.findLongestBooks(2);
+        assertEquals(2, result.size());
+        assertThat(result).contains(
+                bookDao.findAllBooks().get(2),
+                bookDao.findAllBooks().get(4));
     }
 
     @Test
