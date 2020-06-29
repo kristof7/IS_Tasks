@@ -5,6 +5,7 @@ import com.isa.bookcase.entity.Book;
 import com.isa.bookcase.entity.Category;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
@@ -91,20 +92,11 @@ public class BookServiceTest {
 
     @Test
     void findLongestBooks() {
-        //given
-        //List<Book> longestBooks = new ArrayList<>().add(new Book("George R.R. Martin", "Gra o tron", Category.FANTASY, 999, false));
-        Book longestBook = new Book("George R.R. Martin", "Gra o tron", Category.FANTASY, 999, false);
-        List<Book> longestBooks = new ArrayList<>();
-        longestBooks.add(longestBook);
-
-
         // when
         List<Book> findLongestBooks = bookService.findLongestBooks(1);
 
         // then
-        System.out.println(findLongestBooks);
-        System.out.println(longestBook);
-        assertThat(findLongestBooks).isEqualTo(longestBooks);
+        assertThat(findLongestBooks.get(0).getPages()).isEqualTo(999);
 
     }
 
@@ -123,7 +115,7 @@ public class BookServiceTest {
         List<Book> sortBooksByPagesAsc = bookService.sortBooksByPagesAsc();
 
         // then
-        assertThat(sortBooksByPagesAsc).startsWith(new Book("Antoine de Saint-Exupery", "Maly Ksiaze", Category.CLASSIC, 112, true));
+        assertThat(sortBooksByPagesAsc.get(0).getPages()).isEqualTo(112);
     }
 
     @Test
