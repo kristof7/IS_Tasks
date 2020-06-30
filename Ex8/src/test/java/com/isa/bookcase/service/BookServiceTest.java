@@ -220,14 +220,14 @@ public class BookServiceTest {
     public void findLongestBooksForMaxSize4Test() {
 
         List<Book> booksList = Arrays.asList(
-                new Book("author1", "title1", Category.ACTION, 100, true),
-                new Book("buthor2", "title2", Category.COMIC, 101, false),
-                new Book("cuthor3", "title3", Category.BIOGRAPHY, 102, false),
-                new Book("cuthor4", "title4", Category.CRIME, 103, true));
+                new Book("author1", "title1", Category.ACTION, 101, true),
+                new Book("buthor2", "title2", Category.COMIC, 100, false),
+                new Book("cuthor3", "title3", Category.BIOGRAPHY, 103, false),
+                new Book("cuthor4", "title4", Category.CRIME, 102, true));
         when(bookDao.findAllBooks()).thenReturn(booksList);
         List<Book> result = bookService.findLongestBooks(4);
         assertThat(result).hasSize(4);
-        assertThat(result).containsExactly(booksList.get(3), booksList.get(2), booksList.get(1), booksList.get(0));
+        assertThat(result).containsExactly(booksList.get(2), booksList.get(3), booksList.get(0), booksList.get(1));
     }
     @Test
     public void findLongestBooksForTwoSameSizeBooksWithMaxSize1Test() {
@@ -323,14 +323,14 @@ public class BookServiceTest {
     public void sortBooksByPagesAscForRandomBooksListTest() {
 
         List<Book> booksList = Arrays.asList(
-                new Book("author1", "title1", Category.ACTION, 100, true),
-                new Book("buthor1", "title12", Category.COMIC, 101, false),
-                new Book("cuthor1", "title123", Category.BIOGRAPHY, 102, false),
-                new Book("cuthor1", "title1234", Category.CRIME, 103, true));
+                new Book("author1", "title1", Category.ACTION, 101, true),
+                new Book("buthor1", "title12", Category.COMIC, 103, false),
+                new Book("cuthor1", "title123", Category.BIOGRAPHY, 100, false),
+                new Book("cuthor1", "title1234", Category.CRIME, 104, true));
         when(bookDao.findAllBooks()).thenReturn(booksList);
         List<Book> result = bookService.sortBooksByPagesAsc();
         assertThat(result).hasSize(4);
-        assertThat(result).containsExactly(booksList.get(0), booksList.get(1), booksList.get(2), booksList.get(3));
+        assertThat(result).containsExactly(booksList.get(2), booksList.get(0), booksList.get(1), booksList.get(3));
     }
 
     @Test
