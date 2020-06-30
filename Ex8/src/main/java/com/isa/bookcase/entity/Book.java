@@ -56,8 +56,5 @@ public class Book {
         this.forKids = forKids;
     }
 
-    @Override
-    public String toString() {
-        return "{" + author + ", " + title + " (" + pages + "str.)}";
-    }
+
 }
