@@ -31,8 +31,7 @@ public class BookService {
     public List<Book> findBooksTitleContains(String fragment) {
         return bookDao.findAllBooks()
                       .stream()
-                      .filter(book -> book.getTitle()
-                                          .contains(fragment))
+                      .filter(book -> book.getTitle().contains(fragment))
                       .collect(Collectors.toList());
     }
 
@@ -49,9 +48,9 @@ public class BookService {
         return bookDao.findAllBooks()
                       .stream()
                       .max(Comparator.comparing(p -> p.getTitle()
-                                                      .length()))
+                      .length()))
                       .map(Book::getTitle)
-                      .get();
+                      .orElse(null);
     }
 
     public List<Book> sortBooksByPagesAsc() {
@@ -66,4 +65,6 @@ public class BookService {
                       .stream()
                       .collect(Collectors.groupingBy(Book::getCategory));
     }
+
+
 }
