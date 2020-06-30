@@ -1,0 +1,14 @@
+{
+  "instant" : {
+    "epochSecond" : 1593547235,
+    "nanoOfSecond" : 399577000
+  },
+  "thread" : "main",
+  "level" : "ERROR",
+  "loggerName" : "org.apache.logging.log4j.core.ErrorHandler",
+  "message" : "Metoda createFile error : java.io.IOException: No such file or directory",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
