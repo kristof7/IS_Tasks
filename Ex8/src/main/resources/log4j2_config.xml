@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <XMLLayout></XMLLayout>
+        </Console>
+        <File name="JSONFileAppender" fileName="logs/log4j2/log.json">
+            <JSONLayout></JSONLayout>
+        </File>
+        <Async name="AsyncAppender">
+            <AppenderRef ref="JSONFileAppender"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="AsyncAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>

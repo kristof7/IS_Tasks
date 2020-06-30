@@ -74,7 +74,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksForKidsWithEmptyListOfBooksTest() {
-
         List<Book> booksList = Arrays.asList();
         when(bookDao.findAllBooks()).thenReturn(booksList);
         List<Book> result = bookService.findBooksForKids();
@@ -83,7 +82,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksForKidsWithNoListOfBooksTest() {
-
         List<Book> booksList = null;
         when(bookDao.findAllBooks()).thenReturn(booksList);
         assertThrows(NullPointerException.class, () -> bookService.findBooksForKids());
@@ -101,12 +99,10 @@ public class BookServiceTest {
         List<Book> result = bookService.findBooksAuthorStartsWith("but");
         assertThat(result).hasSize(1);
         assertThat(result).contains(booksList.get(1));
-
     }
 
     @Test
     public void findBooksAuthorStartsWithCutTest() {
-
         List<Book> booksList = Arrays.asList(
                 new Book("author1", "title1", Category.ACTION, 100, true),
                 new Book("buthor2", "title2", Category.COMIC, 101, false),
@@ -120,7 +116,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksAuthorStartsWithAsdTest() {
-
         List<Book> booksList = Arrays.asList(
                 new Book("author1", "title1", Category.ACTION, 100, true),
                 new Book("buthor2", "title2", Category.COMIC, 101, false),
@@ -134,7 +129,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksAuthorStartsWithCutForEmptyListTest() {
-
         List<Book> booksList = Arrays.asList();
         when(bookDao.findAllBooks()).thenReturn(booksList);
         List<Book> result = bookService.findBooksAuthorStartsWith("cut");
@@ -143,7 +137,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksAuthorStartsWithCutForNoListTest() {
-
         List<Book> booksList = null;
         when(bookDao.findAllBooks()).thenReturn(booksList);
         assertThrows(NullPointerException.class, () -> bookService.findBooksAuthorStartsWith("cut"));
@@ -151,7 +144,6 @@ public class BookServiceTest {
 
     @Test
     public void findBooksTitleContainsE2Test() {
-
         List<Book> booksList = Arrays.asList(
                 new Book("author1", "title1", Category.ACTION, 100, true),
                 new Book("buthor2", "title2", Category.COMIC, 101, false),
@@ -161,7 +153,6 @@ public class BookServiceTest {
         List<Book> result = bookService.findBooksTitleContains("e2");
         assertThat(result).hasSize(1);
         assertThat(result).contains(booksList.get(1));
-
     }
 
     @Test
@@ -298,7 +289,7 @@ public class BookServiceTest {
     }
 
     @Test
-    public void bookWithLongestTitleForFewLongestBooksTest() {
+    public void bookWithLongestTitleForManyBooksWithLongestTitleTest() {
 
         List<Book> booksList = Arrays.asList(
                 new Book("author1", "title1", Category.ACTION, 100, true),
@@ -383,7 +374,6 @@ public class BookServiceTest {
         assertThat(result).containsKeys(Category.ACTION, Category.BIOGRAPHY, Category.COMIC, Category.CRIME);
         assertThat(result).containsValues(Arrays.asList(booksList.get(0)), Arrays.asList(booksList.get(1)), Arrays.asList(booksList.get(2)), Arrays.asList(booksList.get(3)));
     }
-
     @Test
     public void groupBooksByCategoryForSameCategoryTest() {
 
@@ -398,7 +388,6 @@ public class BookServiceTest {
         assertThat(result).containsKeys(Category.BIOGRAPHY);
         assertThat(result).containsValues(Arrays.asList(booksList.get(0), booksList.get(1), booksList.get(2), booksList.get(3)));
     }
-
     @Test
     public void groupBooksByCategoryForRandomCategoryTest() {
 
