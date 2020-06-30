@@ -4,6 +4,7 @@ import com.isa.bookcase.dao.BookDao;
 import com.isa.bookcase.entity.Book;
 import com.isa.bookcase.entity.Category;
 import org.assertj.core.api.ThrowableAssert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +13,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,7 +37,7 @@ public class BookServiceTest {
                 new Book("Adam Małysz", "Skakańsko", Category.CRIME, 100, true),
                 new Book("Magda Gesler", "Gotowańsko", Category.BIOGRAPHY, 10, true),
                 new Book("Tomasz Hajto", "Kierowańsko", Category.DRAMA, 500, false),
-                new Book("Szymon Majewski", "Heheszki", Category.HISTORICAL, 38, false),
+                new Book("Szymon Majewski", "Heheszkiiiiiiiiiiiii", Category.HISTORICAL, 38, false),
                 new Book("Szymon Majewski", "Inna Ksiazka", Category.FANTASY, 358, false)
         );
         when(bookDao.findAllBooks()).thenReturn(testBooks);
@@ -69,10 +71,14 @@ public class BookServiceTest {
 
     @Test
     void testFindMoreAuthorsStartingWithCorrectLetter() {
+        //given
+        List<Book> books = bookDao.findAllBooks();
+        //when
         List<Book> result = bookService.findBooksAuthorStartsWith("S");
+        //then
         assertThat(result).contains(
-                bookDao.findAllBooks().get(3),
-                bookDao.findAllBooks().get(4));
+                books.get(3),
+                books.get(4));
     }
 
     @Test
@@ -82,41 +88,49 @@ public class BookServiceTest {
 
     @Test
     void testFindBooksTitleContainsCorrectString() {
-       List<Book> result = bookService.findBooksTitleContains("ańsko");
-       assertThat(result).containsExactly(
-               bookDao.findAllBooks().get(0),
-               bookDao.findAllBooks().get(1),
-               bookDao.findAllBooks().get(2)
-       );
+        //given
+        List<Book> books = bookDao.findAllBooks();
+        //when
+        List<Book> result = bookService.findBooksTitleContains("ańsko");
+        //then
+        assertThat(result).containsExactly(
+                books.get(0),
+                books.get(1),
+                books.get(2)
+        );
     }
 
     @Test
-    void findLongestBooks() {
+    void testFindLongestBooks() {
+        //given
+        List<Book> books = bookDao.findAllBooks();
+        //when
         List<Book> result = bookService.findLongestBooks(2);
+        //then
         assertEquals(2, result.size());
         assertThat(result).contains(
-                bookDao.findAllBooks().get(2),
-                bookDao.findAllBooks().get(4));
+                books.get(2),
+                books.get(4));
     }
 
     @Test
-    void bookWithLongestTitle() {
+    void testFindBookWithLongestTitle() {
         //given
-
+        List<Book> books = bookDao.findAllBooks();
         //when
-
+        String result = bookService.bookWithLongestTitle();
         //then
-
+        assertThat(result).isEqualTo(books.get(3).getTitle());
     }
 
     @Test
     void sortBooksByPagesAsc() {
         //given
-
+        List<Book> books = bookDao.findAllBooks();
         //when
-
+        List<Book> result = bookService.sortBooksByPagesAsc();
         //then
-
+        assertThat(result).isSortedAccordingTo(Comparator.comparingInt(Book::getPages));
     }
 
     @Test
