@@ -3,6 +3,7 @@ package com.isa.bookcase.service;
 import com.isa.bookcase.dao.BookDao;
 import com.isa.bookcase.entity.Book;
 import com.isa.bookcase.entity.Category;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,14 +11,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.mockito.Mockito.when;
 
 
@@ -40,9 +39,10 @@ public class BookServiceTest {
         books.add(new Book("Britton Paul", "Profil Mordercy", Category.CRIME, 528, false));
         books.add(new Book("Jo Nesbo", "Człowiek nietoperz. Harry Hole. Tom 1", Category.CRIME, 344, false));
         books.add(new Book("Alexander Freed", "Rogue One: A Star Wars Story", Category.SCI_FI, 323, false));
-        books.add(new Book("Zahn Timothy", "Star Wars Thrawn. Dziedzic Imperium ", Category.SCI_FI, 400, false));
+        books.add(new Book("Zahn Timothy", "Star Wars Thrawn. Dziedzic Imperium", Category.SCI_FI, 400, false));
         books.add(new Book("Antoine de Saint Exupery", "Mały Książę", Category.STORY, 128, true));
     }
+
 
     @Test
     public void testIfFunctionFindBooksForKidsReturnValidOutput() {
@@ -162,9 +162,11 @@ public class BookServiceTest {
     @Test
     public void testIfFunctionGroupBooksByCategoryReturnsValidOutput() {
         logger.info("Check if function returns books sorted by category");
-        Map<Category, List<Book>> booksSortedByCategory = books
-                .stream()
-                .collect(Collectors.groupingBy(Book::getCategory));
+        Map<Category, List<Book>> booksSortedByCategory = new LinkedHashMap<>();
+        booksSortedByCategory.put(Category.CRIME, books.subList(1, 3));
+        booksSortedByCategory.put(Category.FANTASY, books.subList(0, 1));
+        booksSortedByCategory.put(Category.SCI_FI, books.subList(3, 5));
+        booksSortedByCategory.put(Category.STORY, books.subList(5, 6));
 
         when(bookDao.findAllBooks()).thenReturn(books);
 
@@ -175,4 +177,99 @@ public class BookServiceTest {
                 .hasSize(4);
     }
 
+    //---------------------------- testing invalid ---------------------------------------------
+
+
+    @Test
+    public void testIfExceptionThrownForFunctionFindBooksForKidsWhileBookNotExist() {
+        logger.info("Check if function doesn't find books for kids returns exception");
+        List<Book> books = new ArrayList<>();
+        books.add(new Book("Alexander Freed", "Rogue One: A Star Wars Story", Category.SCI_FI, 323, false));
+        books.add(new Book("Zahn Timothy", "Star Wars Thrawn. Dziedzic Imperium ", Category.SCI_FI, 400, false));
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        List<Book> result = bookService.findBooksForKids();
+
+        assertThat(result).isNullOrEmpty();
+    }
+
+    @Test
+    public void testIfExceptionThrownForFunctionFindBooksAuthorStartsWithWhenBookNotExist() {
+        logger.info("Check if books that there is no author whose name starts with inputted value returns exception");
+        String prefix = "X";
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        List<Book> result = bookService.findBooksAuthorStartsWith(prefix);
+
+        assertThat(result).isNullOrEmpty();
+    }
+
+    @Test
+    public void testIfExceptionThrownForFunctionFindBooksTitleContainsWhenBookNotExist() {
+        logger.info("Check if books witch title doesn't contains inputted value return exception");
+        String fragment = "Crime";
+        List<Book> books = new ArrayList<>();
+        books.add(new Book("Alexander Freed", "Rogue One: A Star Wars Story", Category.SCI_FI, 323, false));
+        books.add(new Book("Zahn Timothy", "Star Wars Thrawn. Dziedzic Imperium ", Category.SCI_FI, 400, false));
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        List<Book> result = bookService.findBooksTitleContains(fragment);
+
+        assertThat(result).isNullOrEmpty();
+    }
+
+    @Test
+    public void testIfExceptionThrownForFunctionFindLongestBooksWhenListIsEmpty() {
+        logger.info("Check if function returns exception if there is no books in list");
+        Integer maxSize = 2;
+        List<Book> books = new ArrayList<>();
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        List<Book> result = bookService.findLongestBooks(maxSize);
+
+        assertThat(result).isNullOrEmpty();
+    }
+
+    @Test
+    public void testIfExceptionThrownForBookWithLongestTitleWhenBookDoesntHaveRequiredField() {
+        logger.info("Check if function returns exception if book doesn't have required field");
+        Book book = new Book();
+        book.setAuthor("Zahn Timothy");
+        book.setCategory(Category.SCI_FI);
+        book.setPages(400);
+        book.setForKids(false);
+
+        List<Book> books = new ArrayList<>();
+        books.add(book);
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        assertThatCode(() -> bookService.bookWithLongestTitle()).isInstanceOf(NoSuchElementException.class)
+                .hasMessage("No value present");
+    }
+
+    @Test
+    public void testIfExceptionThrownForFunctionSortBooksByPagesAscWhenListIsEmpty() {
+        logger.info("Check if function returns null if books sorted by number of pages ascending is working on empty list");
+        List<Book> books = new ArrayList<>();
+        books.add(new Book());
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        assertThatCode(() -> bookService.sortBooksByPagesAsc()).isNull();
+    }
+
+    @Test
+    public void testIfExceptionThrownForFunctionGroupBooksByCategoryWhenListIsEmpty() {
+        logger.info("Check if function returns null if books sorted by category is working on empty list");
+        List<Book> books = new ArrayList<>();
+
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        assertThatCode(() -> bookService.groupBooksByCategory()).isNull();
+    }
 }
