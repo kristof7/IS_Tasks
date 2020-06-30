@@ -132,14 +132,4 @@ public class BookServiceTest {
         //then
         assertThat(result).isSortedAccordingTo(Comparator.comparingInt(Book::getPages));
     }
-
-    @Test
-    void groupBooksByCategory() {
-        //given
-
-        //when
-
-        //then
-
-    }
 }
