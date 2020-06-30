@@ -111,11 +111,29 @@ public class BookServiceTest {
     }
 
     @Test
+    public void isLongestBookWithNull() {
+        //when
+        List<Book> listOfBooks = null;
+        when(bookDao.findAllBooks()).thenReturn(listOfBooks);
+        //then
+        assertThrows(NullPointerException.class, () -> bookService.findLongestBooks(1));
+    }
+
+    @Test
     public void isLongestBookTitle() {
         //when
         String result = bookService.bookWithLongestTitle();
         //then
         assertThat(result).isEqualTo("Jak nie zostałem prezydentem");
+    }
+
+    @Test
+    public void isLongestBookTitleWithNull() {
+        //when
+        List<Book> listOfBooks = null;
+        when(bookDao.findAllBooks()).thenReturn(listOfBooks);
+        //then
+        assertThrows(NullPointerException.class, () -> bookService.bookWithLongestTitle());
     }
 
     @Test
@@ -126,12 +144,23 @@ public class BookServiceTest {
         assertThat(result.get(7).getPages()).isEqualTo(999);
     }
 
+
+
     @Test
     public void booksGroupedByCategory() {
         //when
         Map<Category, List<Book>> result = bookService.groupBooksByCategory();
         //then
         assertThat(result).hasSize(8);
+    }
+
+    @Test
+    public void booksGroupedByCategoryWithoutList() {
+        //when
+        List<Book> listOfBooks = null;
+        when(bookDao.findAllBooks()).thenReturn(listOfBooks);
+        //then
+        assertThrows(NullPointerException.class, () -> bookService.groupBooksByCategory());
     }
 
 }
