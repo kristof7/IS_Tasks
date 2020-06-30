@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="XML Configuration: %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name ="XMLFileAppender" filename="logs/log4j2/log.xml">
+            <XMLLayout></XMLLayout>
+        </File>
+        <Async name="AsyncAppender">
+            <AppenderRef ref="XMLFileAppender"/>
+        </Async>
+        <File name = "JSONFileAppender" filename="logs/log4j2/log.json">
+            <JsonLayout></JsonLayout>
+        </File>
+        <Async name="AsyncAppender">
+            <AppenderRef ref="JSONFileAppender"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="XMLFileAppender"/>
+            <AppenderRef ref="JSONFileAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
