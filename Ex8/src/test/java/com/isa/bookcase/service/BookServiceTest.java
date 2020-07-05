@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -83,6 +84,25 @@ public class BookServiceTest {
     }
 
     @Test
+    @DisplayName("should check if result.isEmpty, when author starts wiht 'Maa' ")
+    public void allBooksAuthorStartsWithout() {
+
+        //when
+        List<Book> result = bookService.findBooksAuthorStartsWith("Maa");
+
+        //then
+        assertThat(result).isEmpty();
+    }
+
+    @Test
+    @DisplayName("should throw NullPointerException when author starts with 'null' ")
+    public void allBooksAuthorStartsWithNull() {
+
+        // when & then
+        assertThatNullPointerException().isThrownBy(() -> bookService.findBooksAuthorStartsWith(null));
+    }
+
+    @Test
     @DisplayName("should return all books, where title contains 'ci' fragment")
     public void BooksTitleContains() {
 
@@ -91,6 +111,17 @@ public class BookServiceTest {
 
         //then
         assertThat(result).hasSize(3);
+    }
+
+    @Test
+    @DisplayName("should check if result.isEmpty, when title doesn't contain 'cii' fragment ")
+    public void BooksTitleDoesNotContain() {
+
+        //when
+        List<Book> result = bookService.findBooksTitleContains("cii");
+
+        //then
+        assertThat(result).isEmpty();
     }
 
     @Test
@@ -105,6 +136,18 @@ public class BookServiceTest {
     }
 
     @Test
+    @DisplayName("should throw NullPointerException when list is 'null' ")
+    public void longestBooksWhenListIsNull() {
+
+        //given
+        List<Book> books = null;
+        when(bookDao.findAllBooks()).thenReturn(books);
+
+        //when & then
+        assertThatNullPointerException().isThrownBy(() -> bookService.findLongestBooks(1));
+    }
+
+    @Test
     @DisplayName("should return book with longest title")
     void bookWithLongestTitle() {
 
@@ -113,6 +156,17 @@ public class BookServiceTest {
 
         // then
         assertThat(result).isEqualTo("Harry Potter i Kamien Filozoficzny");
+    }
+
+    @Test
+    @DisplayName("should check that 'Jedz, modl sie, kochaj' is not the longest title")
+    public void bookWithNotLongestTitle() {
+
+        // when
+        String result = bookService.bookWithLongestTitle();
+
+        // then
+        assertThat(result).isNotEqualTo("Jedz, modl sie, kochaj");
     }
 
     @Test
